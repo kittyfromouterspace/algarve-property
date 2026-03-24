@@ -132,7 +132,7 @@ export const property = {
   // Location details
   location_details: {
     region: "Fonte to Palheiro, Algarve",
-    nearestTown: "TBD", // Update with actual nearest town
+    nearestTown: "Aljezur (~3km)",
     airport: "Faro Airport — approx. 45 minutes",
     coast: "Approx. 40 minutes to the nearest beach",
     supermarket: "Approx. 15 minutes to the nearest supermarket",
