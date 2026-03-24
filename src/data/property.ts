@@ -8,14 +8,14 @@
 
 export const property = {
   // Basic info
-  name: "Fonte to Palheiro Estate",
+  name: "Fonte do Palheiro Estate",
   tagline: "Your New Life in the Algarve Ready and Waiting",
   location: "Algarve Backcountry, Portugal",
   price: "Price on Request", // or e.g. "€795,000"
 
   // Hero section
   hero: {
-    image: "/algarve-property/images/areal1.jpg",
+    image: "/images/areal1.jpg",
     alt: "Aerial view of the estate on the Algarve hilltop",
   },
 
@@ -31,7 +31,7 @@ export const property = {
       "Sleepout",
       "Storage buildings",
     ],
-    factoryBuilding: "~700 m² (currently workshops & storage)",
+    factoryBuilding: "~500 m² (currently workshops & storage)",
     furnished: true,
     carIncluded: true,
     views: "Unobstructed panoramic views from the 2nd highest mountain range in the Algarve, overlooking the hills down to the coastline",
@@ -41,49 +41,54 @@ export const property = {
   description: [
     "Perched on the second-highest mountain range in the Algarve, this extraordinary 2.5-hectare estate offers something rare: a complete, ready-to-live life in one of Europe's most desirable regions.",
     "Two fully furnished houses, a swimming pool, a meditation house, a bar, and multiple outbuildings sit among terraced gardens with unobstructed views stretching from the rolling hills of the Serra do Caldeirão all the way down to the Atlantic coastline.",
-    "For the entrepreneur or creative, there's a remarkable ~700 m² former factory building — currently used for workshops and storage — waiting to become whatever you dream: a retreat center, artist studios, co-working space, or boutique production facility.",
+    "For the entrepreneur or creative, there's a remarkable ~500 m² former factory building — currently used for workshops and storage — waiting to become whatever you dream: a retreat center, artist studios, co-working space, or boutique production facility.",
     "This is not just a property. It's an entire lifestyle, ready for someone who wants to arrive with a suitcase and start living. Fully furnished, right down to a car included in the sale.",
   ],
 
   // Gallery images
   gallery: [
     {
-      src: "/algarve-property/images/sunset1.jpg",
+      src: "/images/sunset3.jpg",
       alt: "Sunset over the Algarve hills",
       caption: "Sunset Views",
     },
     {
-      src: "/algarve-property/images/main-house-and-terraces.jpg",
+      src: "/images/main-house-and-terraces.jpg",
       alt: "Main house with terraces",
       caption: "Main House & Terraces",
     },
     {
-      src: "/algarve-property/images/pool-area1.jpg",
-      alt: "Pool area with sun loungers",
-      caption: "Pool Area",
+      src: "/images/pool2.jpeg",
+      alt: "Pool area",
+      caption: "Pool",
     },
     {
-      src: "/algarve-property/images/outside_seating1.jpg",
-      alt: "Outside seating area",
-      caption: "Outside Seating",
-    },
-    {
-      src: "/algarve-property/images/meditation-house1.jpg",
+      src: "/images/meditation-house1.jpg",
       alt: "Meditation house",
       caption: "Meditation House",
     },
     {
-      src: "/algarve-property/images/factory1.jpg",
-      alt: "Factory building",
-      caption: "Factory Building",
+      src: "/images/outside.jpg",
+      alt: "Outside area",
+      caption: "Outside",
     },
     {
-      src: "/algarve-property/images/main-house-inside1.jpg",
+      src: "/images/outside2.jpg",
+      alt: "Outside seating",
+      caption: "Terrace",
+    },
+    {
+      src: "/images/main-house-inside5.jpg",
       alt: "Main house interior",
       caption: "Interior",
     },
     {
-      src: "/algarve-property/images/small-house-and-office1.jpg",
+      src: "/images/main-house-inside1.jpg",
+      alt: "Main house interior detail",
+      caption: "Interior Detail",
+    },
+    {
+      src: "/images/small-house-and-office1.jpg",
       alt: "Small house and office",
       caption: "Second House & Office",
     },
@@ -94,14 +99,14 @@ export const property = {
   video: {
     // Set to null to hide the video section, or add a URL when ready
     url: null as string | null, // e.g. "https://www.youtube.com/embed/VIDEO_ID" or "/video/walkthrough.mp4"
-    poster: "/algarve-property/images/pool-area1.jpg",
+    poster: "/images/pool-area1.jpg",
   },
 
   // Key features for the highlights section
   highlights: [
-    { icon: "house", title: "2 Houses", description: "Fully furnished and move-in ready" },
+    { icon: "house", title: "Main House", description: "Three-bedroom, fully furnished, including self-contained flat" },
     { icon: "pool", title: "Swimming Pool", description: "Private pool with panoramic views" },
-    { icon: "factory", title: "700 m² Building", description: "Former factory — endless potential" },
+    { icon: "factory", title: "500 m² Building", description: "Former factory — endless potential" },
     { icon: "meditation", title: "Meditation House", description: "Dedicated space for mindfulness" },
     { icon: "bar", title: "Bar & Sleepout", description: "Entertainment ready" },
     { icon: "car", title: "Car Included", description: "Hit the ground running" },
@@ -121,11 +126,19 @@ export const property = {
     },
     {
       title: "Creative Entrepreneurs",
-      description: "The 700 m² factory building is a blank canvas for studios, workshops, co-working, or small-scale production.",
+      description: "The 500 m² factory building is a blank canvas for studios, workshops, co-working, or small-scale production.",
     },
     {
       title: "Rural Tourism",
       description: "Portugal's turismo rural sector is booming. Multiple buildings, stunning location, and existing infrastructure.",
+    },
+    {
+      title: "Co-Living Community",
+      description: "A rare opportunity to create a sustainable co-living or co-working retreat. Space for multiple residences with shared communal areas.",
+    },
+    {
+      title: "Off-Grid Living",
+      description: "Embrace self-sufficiency with land for growing, livestock, and renewable energy. A genuine back-to-the-land opportunity.",
     },
   ],
 
