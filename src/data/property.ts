@@ -15,7 +15,7 @@ export const property = {
 
   // Hero section
   hero: {
-    image: "/algarve-property/images/drone-aerial.jpg",
+    image: "/algarve-property/images/hero.jpg",
     alt: "Aerial view of the estate on the Algarve hilltop",
   },
 
