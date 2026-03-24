@@ -46,48 +46,36 @@ export const property = {
   ],
 
   // Gallery images
-  // REPLACE: Swap these placeholder URLs with your own photos in /public/images/
-  // REPLACE: Swap these placeholder URLs with your own photos in /public/images/
   gallery: [
     {
-      src: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
-      alt: "Main house exterior",
-      caption: "Main House",
+      src: "/algarve-property/images/drone-aerial.jpg",
+      alt: "Aerial view of the entire estate",
+      caption: "The Estate from Above",
     },
     {
-      src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
-      alt: "Second house",
-      caption: "Second House",
+      src: "/algarve-property/images/sunset-views.jpg",
+      alt: "Stunning sunset over the Algarve hills",
+      caption: "Sunset Views",
     },
     {
-      src: "https://images.unsplash.com/photo-1572331165267-854da2b021b1?w=800&q=80",
-      alt: "Swimming pool with views",
-      caption: "Pool & Views",
+      src: "/algarve-property/images/golden-hour-landscape.jpg",
+      alt: "Golden hour view from the property",
+      caption: "Golden Hour",
     },
     {
-      src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
-      alt: "Interior living space",
-      caption: "Living Space",
+      src: "/algarve-property/images/property-buildings.jpg",
+      alt: "Property buildings on the hillside",
+      caption: "The Buildings",
     },
     {
-      src: "https://images.unsplash.com/photo-1505577058444-a3daf1e4ad43?w=800&q=80",
-      alt: "Panoramic hill views",
-      caption: "The Views",
+      src: "/algarve-property/images/workshop-1.jpg",
+      alt: "Workshop inside the factory building",
+      caption: "Factory Building — Workshop",
     },
     {
-      src: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=800&q=80",
-      alt: "Large workshop/factory building",
-      caption: "Factory Building (~700 m²)",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80",
-      alt: "Garden and outdoor area",
-      caption: "Gardens & Terraces",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80",
-      alt: "Meditation house",
-      caption: "Meditation House",
+      src: "/algarve-property/images/workshop-2.jpg",
+      alt: "Another view of the workshop space",
+      caption: "Factory Building — Interior",
     },
   ],
 
@@ -96,7 +84,7 @@ export const property = {
   video: {
     // Set to null to hide the video section, or add a URL when ready
     url: null as string | null, // e.g. "https://www.youtube.com/embed/VIDEO_ID" or "/video/walkthrough.mp4"
-    poster: "https://images.unsplash.com/photo-1505577058444-a3daf1e4ad43?w=1280&q=80",
+    poster: "/algarve-property/images/sunset-views.jpg",
   },
 
   // Key features for the highlights section
