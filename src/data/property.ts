@@ -8,7 +8,7 @@
 
 export const property = {
   // Basic info
-  name: "Serra do Caldeirão Estate",
+  name: "Fonte to Palheiro Estate",
   tagline: "Your New Life in the Algarve Ready and Waiting",
   location: "Algarve Backcountry, Portugal",
   price: "Price on Request", // or e.g. "€795,000"
@@ -131,7 +131,7 @@ export const property = {
 
   // Location details
   location_details: {
-    region: "Serra do Caldeirão, Algarve",
+    region: "Fonte to Palheiro, Algarve",
     nearestTown: "TBD", // Update with actual nearest town
     airport: "Faro Airport — approx. 45 minutes",
     coast: "Approx. 40 minutes to the nearest beach",
