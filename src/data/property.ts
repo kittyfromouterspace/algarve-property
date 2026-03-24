@@ -11,7 +11,7 @@ export const property = {
   name: "Fonte do Palheiro Estate",
   tagline: "Your New Life in the Algarve Ready and Waiting",
   location: "Algarve Backcountry, Portugal",
-  price: "Price on Request", // or e.g. "€795,000"
+  price: "€950.000",
 
   // Hero section
   hero: {
