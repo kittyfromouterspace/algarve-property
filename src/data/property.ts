@@ -9,7 +9,7 @@
 export const property = {
   // Basic info
   name: "Serra do Caldeirão Estate",
-  tagline: "Your New Life in the Algarve — Ready and Waiting",
+  tagline: "Your New Life in the Algarve Ready and Waiting",
   location: "Algarve Backcountry, Portugal",
   price: "Price on Request", // or e.g. "€795,000"
 
