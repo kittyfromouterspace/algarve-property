@@ -21,25 +21,75 @@ import { property } from '../data/property';
 
   <!-- Hero -->
   <section class="hero">
-    <img src={property.hero.image} alt={property.hero.alt} class="hero-img" />
-    <div class="hero-overlay">
-      <div class="hero-content">
-        <p class="hero-location">{property.location}</p>
-        <h1 class="hero-title">{property.tagline}</h1>
-        <p class="hero-price">{property.price}</p>
-        <a href="#contact" class="btn">Enquire Now</a>
+    <div class="hero-bg">
+      <img src={property.hero.image} alt={property.hero.alt} />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-location">{property.location}</p>
+      <h1 class="hero-title">{property.tagline}</h1>
+      <p class="hero-price">{property.price}</p>
+      <a href="#contact" class="btn">Enquire Now</a>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section id="overview" class="section intro">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-text">
+          <p class="intro-label">The Estate</p>
+          <h2 class="intro-title">A New Chapter in the Algarve</h2>
+          {property.description.map((p, i) => (
+            <p class={i === 0 ? "intro-lead" : "intro-body"}>{p}</p>
+          ))}
+        </div>
+        <div class="intro-stats">
+          <div class="stat">
+            <span class="stat-number">2.5</span>
+            <span class="stat-label">Hectares</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">2</span>
+            <span class="stat-label">Houses</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">700m²</span>
+            <span class="stat-label">Workshop</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">∞</span>
+            <span class="stat-label">Possibilities</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Full-width Image Break -->
+  <section class="image-break">
+    <img src="/algarve-property/images/house-exterior.jpg" alt="Property exterior" />
+    <div class="image-break-caption">
+      <span>Main House</span>
+    </div>
+  </section>
+
   <!-- Highlights -->
-  <section class="highlights">
+  <section class="section highlights">
     <div class="container">
+      <div class="highlights-header">
+        <p class="section-label">Features</p>
+        <h2 class="section-title">At a Glance</h2>
+      </div>
       <div class="highlights-grid">
-        {property.highlights.map((h) => (
-          <div class="highlight-card">
+        {property.highlights.map((h, i) => (
+          <div class="highlight-card" style={`animation-delay: ${i * 0.1}s`}>
             <div class="highlight-icon">
-              <Icon name={h.icon} size={40} />
+              <Icon name={h.icon} size={32} />
             </div>
             <h3>{h.title}</h3>
             <p>{h.description}</p>
@@ -49,26 +99,16 @@ import { property } from '../data/property';
     </div>
   </section>
 
-  <!-- Overview -->
-  <section id="overview" class="section">
-    <div class="container">
-      <h2 class="section-title">The Estate</h2>
-      <div class="overview-content">
-        {property.description.map((p) => (
-          <p>{p}</p>
-        ))}
-      </div>
-    </div>
-  </section>
-
   <!-- Gallery -->
-  <section id="gallery" class="section section-warm">
+  <section id="gallery" class="section gallery">
     <div class="container">
-      <h2 class="section-title">Gallery</h2>
-      <p class="section-subtitle">Explore the property</p>
+      <div class="gallery-header">
+        <p class="section-label">Gallery</p>
+        <h2 class="section-title">Explore the Property</h2>
+      </div>
       <div class="gallery-grid">
-        {property.gallery.map((img) => (
-          <figure class="gallery-item">
+        {property.gallery.map((img, i) => (
+          <figure class={`gallery-item gallery-item-${i % 3 === 0 ? 'large' : 'small'}`}>
             <img src={img.src} alt={img.alt} loading="lazy" />
             <figcaption>{img.caption}</figcaption>
           </figure>
@@ -79,7 +119,7 @@ import { property } from '../data/property';
 
   <!-- Video -->
   {property.video.url && (
-    <section id="video" class="section">
+    <section id="video" class="section video">
       <div class="container">
         <h2 class="section-title">Video Tour</h2>
         <div class="video-wrapper">
@@ -101,28 +141,39 @@ import { property } from '../data/property';
     </section>
   )}
 
-  <!-- Video placeholder when no video yet -->
+  <!-- Video placeholder -->
   {!property.video.url && (
-    <section class="section">
+    <section class="section video-placeholder">
       <div class="container">
-        <div class="video-placeholder">
-          <img src={property.video.poster} alt="Property views" class="video-poster" />
-          <div class="video-placeholder-overlay">
-            <p>🎥 Video walkthrough coming soon</p>
+        <div class="video-placeholder-inner">
+          <img src={property.video.poster} alt="Property views" />
+          <div class="video-overlay">
+            <p>Video walkthrough coming soon</p>
           </div>
         </div>
       </div>
     </section>
   )}
 
+  <!-- Image Break -->
+  <section class="image-break">
+    <img src="/algarve-property/images/pool-view.jpg" alt="Pool with view" />
+    <div class="image-break-caption">
+      <span>Private Pool</span>
+    </div>
+  </section>
+
   <!-- Lifestyle -->
-  <section id="lifestyle" class="section section-warm">
+  <section id="lifestyle" class="section lifestyle">
     <div class="container">
-      <h2 class="section-title">Perfect For</h2>
-      <p class="section-subtitle">A property with endless possibilities</p>
+      <div class="lifestyle-header">
+        <p class="section-label">Perfect For</p>
+        <h2 class="section-title">Endless Possibilities</h2>
+      </div>
       <div class="lifestyle-grid">
-        {property.idealFor.map((item) => (
+        {property.idealFor.map((item, i) => (
           <div class="lifestyle-card">
+            <span class="lifestyle-number">0{i + 1}</span>
             <h3>{item.title}</h3>
             <p>{item.description}</p>
           </div>
@@ -132,13 +183,13 @@ import { property } from '../data/property';
   </section>
 
   <!-- Location -->
-  <section id="location" class="section">
+  <section id="location" class="section location">
     <div class="container">
-      <h2 class="section-title">Location</h2>
-      <div class="location-content">
+      <div class="location-grid">
         <div class="location-text">
-          <p class="location-region">{property.location_details.region}</p>
-          <p>{property.location_details.description}</p>
+          <p class="section-label">Location</p>
+          <h2 class="location-region">{property.location_details.region}</h2>
+          <p class="location-desc">{property.location_details.description}</p>
           <ul class="location-details">
             {property.location_details.nearestTown !== "TBD" && (
               <li><strong>Nearest town:</strong> {property.location_details.nearestTown}</li>
@@ -149,10 +200,9 @@ import { property } from '../data/property';
           </ul>
         </div>
         <div class="location-map">
-          <!-- REPLACE: Add a Google Maps embed or static map image -->
           <div class="map-placeholder">
-            <p>📍 Map coming soon</p>
-            <p class="map-sub">Serra do Caldeirão, Algarve, Portugal</p>
+            <span>📍</span>
+            <p>Serra do Caldeirão, Algarve</p>
           </div>
         </div>
       </div>
@@ -160,29 +210,35 @@ import { property } from '../data/property';
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="section section-dark">
+  <section id="contact" class="section contact">
     <div class="container">
-      <h2 class="section-title light">Interested?</h2>
-      <p class="section-subtitle light">Get in touch to arrange a viewing or learn more</p>
-      <div class="contact-info">
-        {property.contact.email !== "TBD@example.com" && (
-          <a href={`mailto:${property.contact.email}`} class="contact-method">
-            ✉️ {property.contact.email}
-          </a>
-        )}
-        {property.contact.phone && (
-          <a href={`tel:${property.contact.phone}`} class="contact-method">
-            📞 {property.contact.phone}
-          </a>
-        )}
-        {property.contact.whatsapp && (
-          <a href={`https://wa.me/${property.contact.whatsapp}`} class="contact-method" target="_blank">
-            💬 WhatsApp
-          </a>
-        )}
-        {property.contact.email === "TBD@example.com" && (
-          <p class="contact-placeholder">Contact details coming soon</p>
-        )}
+      <div class="contact-inner">
+        <p class="section-label light">Get in Touch</p>
+        <h2 class="contact-title">Ready for Your New Life?</h2>
+        <p class="contact-subtitle">Arrange a viewing or learn more about this unique opportunity</p>
+        <div class="contact-methods">
+          {property.contact.email !== "TBD@example.com" && (
+            <a href={`mailto:${property.contact.email}`} class="contact-link">
+              <span class="contact-icon">✉</span>
+              {property.contact.email}
+            </a>
+          )}
+          {property.contact.phone && (
+            <a href={`tel:${property.contact.phone}`} class="contact-link">
+              <span class="contact-icon">📞</span>
+              {property.contact.phone}
+            </a>
+          )}
+          {property.contact.whatsapp && (
+            <a href={`https://wa.me/${property.contact.whatsapp}`} class="contact-link" target="_blank">
+              <span class="contact-icon">💬</span>
+              WhatsApp
+            </a>
+          )}
+          {property.contact.email === "TBD@example.com" && (
+            <p class="contact-placeholder">Contact details coming soon</p>
+          )}
+        </div>
       </div>
     </div>
   </section>
@@ -203,229 +259,385 @@ import { property } from '../data/property';
     left: 0;
     right: 0;
     z-index: 100;
-    background: rgba(255, 255, 255, 0.95);
+    padding: 1.5rem 0;
+    transition: background 0.3s ease, padding 0.3s ease;
+  }
+  .nav.scrolled {
+    background: rgba(248, 245, 240, 0.95);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 1rem 0;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
   }
   .nav-inner {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 0 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   .nav-brand {
     font-family: var(--font-heading);
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--color-white);
+    letter-spacing: 0.02em;
+    transition: color 0.3s ease;
+  }
+  .nav.scrolled .nav-brand {
     color: var(--color-primary);
-    text-decoration: none;
   }
   .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
     align-items: center;
   }
   .nav-links a {
-    color: var(--color-text-light);
+    color: rgba(255,255,255,0.9);
     font-size: 0.9rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: color 0.2s;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    transition: color 0.3s ease;
+  }
+  .nav.scrolled .nav-links a {
+    color: var(--color-text);
   }
   .nav-links a:hover {
-    color: var(--color-primary);
-    text-decoration: none;
+    color: var(--color-accent);
   }
   .nav-cta {
-    background: var(--color-primary) !important;
+    background: var(--color-accent) !important;
     color: var(--color-white) !important;
-    padding: 0.5rem 1.2rem;
-    border-radius: 6px;
+    padding: 0.7rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 500 !important;
   }
   .nav-cta:hover {
-    opacity: 0.9;
+    background: #b39568 !important;
   }
 
   /* Hero */
   .hero {
     position: relative;
     height: 100vh;
-    min-height: 600px;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
   }
-  .hero-img {
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .hero-bg img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    animation: kenBurns 20s ease-in-out infinite alternate;
   }
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    background: linear-gradient(
+      to bottom,
+      rgba(26, 47, 35, 0.3) 0%,
+      rgba(26, 47, 35, 0.5) 50%,
+      rgba(26, 47, 35, 0.7) 100%
+    );
+    z-index: 1;
   }
   .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
     color: var(--color-white);
-    padding: 2rem;
+    max-width: 900px;
+    padding: 0 2rem;
+    animation: fadeInUp 1s ease 0.3s forwards;
+    opacity: 0;
   }
   .hero-location {
-    font-size: 1rem;
-    letter-spacing: 0.15em;
+    font-size: 0.85rem;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     font-weight: 300;
+    opacity: 0.9;
   }
   .hero-title {
     font-family: var(--font-heading);
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 700;
-    line-height: 1.2;
-    max-width: 700px;
-    margin: 0 auto 1.5rem;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
   }
   .hero-price {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 300;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
   }
-
-  /* Button */
   .btn {
     display: inline-block;
     background: var(--color-accent);
     color: var(--color-white);
-    padding: 0.9rem 2.5rem;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 1rem;
-    text-decoration: none;
-    transition: background 0.2s;
+    padding: 1rem 2.5rem;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
   }
   .btn:hover {
-    background: #73570f;
-    text-decoration: none;
+    background: #b39568;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   }
-
-  /* Container */
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
+  .scroll-indicator {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-white);
+    opacity: 0.7;
+    animation: fadeIn 1s ease 1.5s forwards;
+  }
+  .scroll-indicator span {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--color-white), transparent);
   }
 
   /* Sections */
   .section {
-    padding: 5rem 0;
+    padding: 8rem 0;
   }
-  .section-warm {
-    background: var(--color-warm);
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 3rem;
   }
-  .section-dark {
-    background: var(--color-primary);
-    color: var(--color-white);
+  .section-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
   }
   .section-title {
     font-family: var(--font-heading);
-    font-size: 2.2rem;
-    text-align: center;
-    margin-bottom: 1rem;
+    font-size: clamp(2rem, 4vw, 3rem);
     color: var(--color-primary);
-  }
-  .section-title.light {
-    color: var(--color-white);
-  }
-  .section-subtitle {
-    text-align: center;
-    color: var(--color-text-light);
     margin-bottom: 3rem;
-    font-size: 1.1rem;
   }
-  .section-subtitle.light {
-    color: rgba(255,255,255,0.8);
+
+  /* Intro */
+  .intro {
+    background: var(--color-cream);
+  }
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .intro-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+  .intro-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+  }
+  .intro-lead {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+  }
+  .intro-body {
+    color: var(--color-text-light);
+    margin-bottom: 1rem;
+  }
+  .intro-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .stat {
+    text-align: center;
+    padding: 2rem;
+    background: var(--color-white);
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  }
+  .stat-number {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+  .stat-label {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* Image Break */
+  .image-break {
+    position: relative;
+    height: 70vh;
+    overflow: hidden;
+  }
+  .image-break img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .image-break-caption {
+    position: absolute;
+    bottom: 2rem;
+    left: 3rem;
+    background: var(--color-white);
+    padding: 1rem 2rem;
+  }
+  .image-break-caption span {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--color-primary);
   }
 
   /* Highlights */
   .highlights {
-    padding: 3rem 0;
     background: var(--color-white);
-    margin-top: -3rem;
-    position: relative;
-    z-index: 10;
+  }
+  .highlights-header {
+    text-align: center;
+    margin-bottom: 4rem;
   }
   .highlights-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
   }
   .highlight-card {
     text-align: center;
-    padding: 1.5rem 1rem;
+    padding: 2.5rem 1.5rem;
+    background: var(--color-cream);
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+  }
+  .highlight-card:hover {
+    transform: translateY(-5px);
   }
   .highlight-icon {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
   }
   .highlight-card h3 {
     font-family: var(--font-heading);
-    font-size: 1.1rem;
-    margin-bottom: 0.3rem;
+    font-size: 1.3rem;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
   }
   .highlight-card p {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--color-text-light);
   }
 
-  /* Overview */
-  .overview-content {
-    max-width: 800px;
-    margin: 2rem auto 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-  }
-  .overview-content p {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: var(--color-text);
-  }
-
   /* Gallery */
+  .gallery {
+    background: var(--color-cream);
+  }
+  .gallery-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
   .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
   }
   .gallery-item {
-    border-radius: 8px;
+    position: relative;
     overflow: hidden;
-    background: var(--color-white);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-radius: 4px;
   }
   .gallery-item img {
     width: 100%;
-    height: 250px;
+    height: 100%;
     object-fit: cover;
-    transition: transform 0.3s;
+    transition: transform 0.6s ease;
   }
   .gallery-item:hover img {
-    transform: scale(1.03);
+    transform: scale(1.05);
+  }
+  .gallery-item-large {
+    grid-column: span 2;
+    grid-row: span 2;
   }
   .gallery-item figcaption {
-    padding: 0.8rem 1rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--color-text);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(26,47,35,0.8), transparent);
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
   }
 
   /* Video */
+  .video-placeholder {
+    background: var(--color-cream);
+  }
+  .video-placeholder-inner {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .video-placeholder-inner img {
+    width: 100%;
+    aspect-ratio: 21/9;
+    object-fit: cover;
+  }
+  .video-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 47, 35, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .video-overlay p {
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+  }
   .video-wrapper {
-    max-width: 900px;
+    max-width: 1100px;
     margin: 0 auto;
     aspect-ratio: 16/9;
   }
@@ -435,128 +647,159 @@ import { property } from '../data/property';
     height: 100%;
     border-radius: 8px;
   }
-  .video-placeholder {
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  .video-poster {
-    width: 100%;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-  }
-  .video-placeholder-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .video-placeholder-overlay p {
-    color: white;
-    font-size: 1.3rem;
-    font-weight: 500;
-  }
 
   /* Lifestyle */
+  .lifestyle {
+    background: var(--color-primary);
+    color: var(--color-white);
+  }
+  .lifestyle-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .lifestyle-header .section-label {
+    color: var(--color-accent);
+  }
+  .lifestyle-header .section-title {
+    color: var(--color-white);
+  }
   .lifestyle-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
   }
   .lifestyle-card {
-    background: var(--color-white);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    padding: 2.5rem;
+    background: rgba(255,255,255,0.05);
+    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+  }
+  .lifestyle-card:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-3px);
+  }
+  .lifestyle-number {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: var(--color-accent);
+    opacity: 0.6;
+    margin-bottom: 1rem;
   }
   .lifestyle-card h3 {
     font-family: var(--font-heading);
-    font-size: 1.2rem;
-    margin-bottom: 0.8rem;
-    color: var(--color-primary);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
   }
   .lifestyle-card p {
-    color: var(--color-text-light);
+    opacity: 0.8;
+    font-size: 0.95rem;
     line-height: 1.7;
   }
 
   /* Location */
-  .location-content {
+  .location {
+    background: var(--color-cream);
+  }
+  .location-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
-    margin-top: 2rem;
+    gap: 4rem;
+    align-items: center;
   }
   .location-region {
     font-family: var(--font-heading);
-    font-size: 1.3rem;
-    font-weight: 600;
+    font-size: 2.5rem;
     color: var(--color-primary);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
-  .location-text p {
-    margin-bottom: 1rem;
+  .location-desc {
+    margin-bottom: 2rem;
     line-height: 1.8;
+    color: var(--color-text);
   }
   .location-details {
     list-style: none;
-    margin-top: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.75rem;
   }
   .location-details li {
     font-size: 0.95rem;
   }
+  .location-details strong {
+    color: var(--color-primary);
+  }
   .map-placeholder {
     background: var(--color-warm);
     border-radius: 8px;
-    padding: 4rem 2rem;
+    padding: 5rem 2rem;
     text-align: center;
-    min-height: 300px;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-  .map-placeholder p {
-    font-size: 1.2rem;
-    color: var(--color-text-light);
+  .map-placeholder span {
+    font-size: 3rem;
+    margin-bottom: 1rem;
   }
-  .map-sub {
-    font-size: 0.9rem !important;
-    margin-top: 0.5rem;
+  .map-placeholder p {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--color-primary);
   }
 
   /* Contact */
-  .contact-info {
+  .contact {
+    background: var(--color-primary);
+    text-align: center;
+  }
+  .contact-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .contact .section-label.light {
+    color: var(--color-accent);
+  }
+  .contact-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--color-white);
+    margin-bottom: 1rem;
+  }
+  .contact-subtitle {
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 3rem;
+  }
+  .contact-methods {
     display: flex;
-    gap: 2rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 2rem;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
   }
-  .contact-method {
-    background: rgba(255,255,255,0.15);
-    color: var(--color-white) !important;
-    padding: 1rem 2rem;
-    border-radius: 8px;
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--color-white);
     font-size: 1.1rem;
-    transition: background 0.2s;
-    text-decoration: none;
+    padding: 1rem 2rem;
+    background: rgba(255,255,255,0.1);
+    border-radius: 4px;
+    transition: all 0.3s ease;
   }
-  .contact-method:hover {
-    background: rgba(255,255,255,0.25);
-    text-decoration: none;
+  .contact-link:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+  }
+  .contact-icon {
+    font-size: 1.2rem;
   }
   .contact-placeholder {
-    color: rgba(255,255,255,0.7);
-    font-size: 1.1rem;
+    color: rgba(255,255,255,0.6);
   }
 
   /* Footer */
@@ -569,18 +812,38 @@ import { property } from '../data/property';
   }
 
   /* Mobile */
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     .nav-links {
-      display: none; /* TODO: Add hamburger menu */
+      display: none;
     }
-    .highlights-grid {
-      grid-template-columns: repeat(2, 1fr);
+    .intro-grid,
+    .location-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
     }
-    .location-content {
+    .gallery-grid {
       grid-template-columns: 1fr;
     }
-    .hero {
-      min-height: 500px;
+    .gallery-item-large {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    .image-break {
+      height: 50vh;
     }
   }
 </style>
+
+<script>
+  const nav = document.querySelector('.nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      nav?.classList.add('scrolled');
+    } else {
+      nav?.classList.remove('scrolled');
+    }
+  });
+</script>

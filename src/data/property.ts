@@ -15,7 +15,7 @@ export const property = {
 
   // Hero section
   hero: {
-    image: "/algarve-property/images/hero.jpg",
+    image: "/algarve-property/images/drone-aerial-new.jpg",
     alt: "Aerial view of the estate on the Algarve hilltop",
   },
 
@@ -48,34 +48,34 @@ export const property = {
   // Gallery images
   gallery: [
     {
-      src: "/algarve-property/images/drone-aerial.jpg",
-      alt: "Aerial view of the entire estate",
-      caption: "The Estate from Above",
+      src: "/algarve-property/images/landscape.jpg",
+      alt: "Panoramic view of the Algarve hills",
+      caption: "The View",
     },
     {
-      src: "/algarve-property/images/sunset-views.jpg",
-      alt: "Stunning sunset over the Algarve hills",
-      caption: "Sunset Views",
+      src: "/algarve-property/images/house-exterior.jpg",
+      alt: "Main house exterior",
+      caption: "Main House",
     },
     {
-      src: "/algarve-property/images/golden-hour-landscape.jpg",
-      alt: "Golden hour view from the property",
-      caption: "Golden Hour",
+      src: "/algarve-property/images/pool-sunset.jpg",
+      alt: "Swimming pool at sunset",
+      caption: "Pool at Golden Hour",
     },
     {
-      src: "/algarve-property/images/property-buildings.jpg",
-      alt: "Property buildings on the hillside",
-      caption: "The Buildings",
+      src: "/algarve-property/images/terrace.jpg",
+      alt: "Terrace with outdoor seating",
+      caption: "Terrace",
     },
     {
-      src: "/algarve-property/images/workshop-1.jpg",
-      alt: "Workshop inside the factory building",
-      caption: "Factory Building — Workshop",
+      src: "/algarve-property/images/garden.jpg",
+      alt: "Garden and landscaping",
+      caption: "Gardens",
     },
     {
-      src: "/algarve-property/images/workshop-2.jpg",
-      alt: "Another view of the workshop space",
-      caption: "Factory Building — Interior",
+      src: "/algarve-property/images/meditation.jpg",
+      alt: "Meditation house",
+      caption: "Meditation House",
     },
   ],
 
@@ -84,7 +84,7 @@ export const property = {
   video: {
     // Set to null to hide the video section, or add a URL when ready
     url: null as string | null, // e.g. "https://www.youtube.com/embed/VIDEO_ID" or "/video/walkthrough.mp4"
-    poster: "/algarve-property/images/sunset-views.jpg",
+    poster: "/algarve-property/images/pool-sunset.jpg",
   },
 
   // Key features for the highlights section

@@ -19,7 +19,7 @@ const { title, description } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <title>{title}</title>
   </head>
   <body>
@@ -29,14 +29,15 @@ const { title, description } = Astro.props;
 
 <style is:global>
   :root {
-    --color-primary: #2c3e2d;
-    --color-accent: #8b6914;
-    --color-warm: #f5f0e8;
-    --color-text: #333;
+    --color-primary: #1a2f23;
+    --color-accent: #c4a77d;
+    --color-cream: #f8f5f0;
+    --color-warm: #ede8e0;
+    --color-text: #2a2a2a;
     --color-text-light: #666;
     --color-white: #fff;
-    --font-heading: 'Playfair Display', Georgia, serif;
-    --font-body: 'Inter', -apple-system, sans-serif;
+    --font-heading: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'DM Sans', -apple-system, sans-serif;
   }
 
   * {
@@ -52,7 +53,8 @@ const { title, description } = Astro.props;
   body {
     font-family: var(--font-body);
     color: var(--color-text);
-    line-height: 1.6;
+    line-height: 1.7;
+    background: var(--color-cream);
   }
 
   img {
@@ -62,11 +64,48 @@ const { title, description } = Astro.props;
   }
 
   a {
-    color: var(--color-accent);
+    color: inherit;
     text-decoration: none;
+    transition: color 0.3s ease;
   }
 
-  a:hover {
-    text-decoration: underline;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-white);
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes kenBurns {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease forwards;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.6s ease forwards;
   }
 </style>
