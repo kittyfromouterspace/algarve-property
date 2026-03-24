@@ -131,8 +131,8 @@ export const property = {
 
   // Location details
   location_details: {
-    region: "Fonte to Palheiro, Algarve",
-    nearestTown: "Aljezur (~3km)",
+    region: "Fonte do Palheiro, Malhão, Salir, Algarve",
+    nearestTown: "Salir (~4km)",
     airport: "Faro Airport — approx. 45 minutes",
     coast: "Approx. 40 minutes to the nearest beach",
     supermarket: "Approx. 15 minutes to the nearest supermarket",
