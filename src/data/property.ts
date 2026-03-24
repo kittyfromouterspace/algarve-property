@@ -15,7 +15,7 @@ export const property = {
 
   // Hero section
   hero: {
-    image: "/algarve-property/images/drone-aerial-new.jpg",
+    image: "/algarve-property/images/areal1.jpg",
     alt: "Aerial view of the estate on the Algarve hilltop",
   },
 
@@ -48,34 +48,44 @@ export const property = {
   // Gallery images
   gallery: [
     {
-      src: "/algarve-property/images/landscape.jpg",
-      alt: "Panoramic view of the Algarve hills",
-      caption: "The View",
+      src: "/algarve-property/images/sunset1.jpg",
+      alt: "Sunset over the Algarve hills",
+      caption: "Sunset Views",
     },
     {
-      src: "/algarve-property/images/house-exterior.jpg",
-      alt: "Main house exterior",
-      caption: "Main House",
+      src: "/algarve-property/images/main-house-and-terraces.jpg",
+      alt: "Main house with terraces",
+      caption: "Main House & Terraces",
     },
     {
-      src: "/algarve-property/images/pool-sunset.jpg",
-      alt: "Swimming pool at sunset",
-      caption: "Pool at Golden Hour",
+      src: "/algarve-property/images/pool-area1.jpg",
+      alt: "Pool area with sun loungers",
+      caption: "Pool Area",
     },
     {
-      src: "/algarve-property/images/terrace.jpg",
-      alt: "Terrace with outdoor seating",
-      caption: "Terrace",
+      src: "/algarve-property/images/outside_seating1.jpg",
+      alt: "Outside seating area",
+      caption: "Outside Seating",
     },
     {
-      src: "/algarve-property/images/garden.jpg",
-      alt: "Garden and landscaping",
-      caption: "Gardens",
-    },
-    {
-      src: "/algarve-property/images/meditation.jpg",
+      src: "/algarve-property/images/meditation-house1.jpg",
       alt: "Meditation house",
       caption: "Meditation House",
+    },
+    {
+      src: "/algarve-property/images/factory1.jpg",
+      alt: "Factory building",
+      caption: "Factory Building",
+    },
+    {
+      src: "/algarve-property/images/main-house-inside1.jpg",
+      alt: "Main house interior",
+      caption: "Interior",
+    },
+    {
+      src: "/algarve-property/images/small-house-and-office1.jpg",
+      alt: "Small house and office",
+      caption: "Second House & Office",
     },
   ],
 
@@ -84,7 +94,7 @@ export const property = {
   video: {
     // Set to null to hide the video section, or add a URL when ready
     url: null as string | null, // e.g. "https://www.youtube.com/embed/VIDEO_ID" or "/video/walkthrough.mp4"
-    poster: "/algarve-property/images/pool-sunset.jpg",
+    poster: "/algarve-property/images/pool-area1.jpg",
   },
 
   // Key features for the highlights section
