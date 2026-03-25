@@ -8,9 +8,10 @@
 
 export const property = {
   // Basic info
-  name: "Fonte do Palheiro Estate",
+  name: "Quinta Fonte do Palheiro",
   tagline: "Your New Life in the Algarve Ready and Waiting",
-  location: "Algarve Backcountry, Portugal",
+  metaDescription: "Quinta Fonte do Palheiro - Unique rural property in the Algarve interior. 2.5 hectares, 10+ buildings, pool, 500m² workshop. Perfect for retreat, co-living, or rural tourism. €950.000",
+  location: "Salir, Loulé, Algarve, Portugal",
   price: "€950.000",
 
   // Hero section
