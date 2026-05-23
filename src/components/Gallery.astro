@@ -295,5 +295,44 @@ const { images } = Astro.props;
       if (e.key === 'ArrowRight') nextImage();
       if (e.key === 'ArrowLeft') prevImage();
     });
+
+    // Touch / Swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let touchStartY = 0;
+    let isSwiping = false;
+
+    lightbox.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
+      isSwiping = false;
+    }, { passive: true });
+
+    lightbox.addEventListener('touchmove', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      const currentX = e.changedTouches[0].screenX;
+      const currentY = e.changedTouches[0].screenY;
+      const deltaX = Math.abs(currentX - touchStartX);
+      const deltaY = Math.abs(currentY - touchStartY);
+      // If horizontal swipe dominates, prevent scrolling
+      if (deltaX > deltaY && deltaX > 10) {
+        isSwiping = true;
+      }
+    }, { passive: true });
+
+    lightbox.addEventListener('touchend', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      touchEndX = e.changedTouches[0].screenX;
+      const deltaX = touchEndX - touchStartX;
+      const threshold = 50;
+
+      if (Math.abs(deltaX) > threshold && isSwiping) {
+        if (deltaX < 0) {
+          nextImage();
+        } else {
+          prevImage();
+        }
+      }
+    }, { passive: true });
   })();
 </script>
