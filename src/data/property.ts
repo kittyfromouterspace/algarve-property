@@ -195,6 +195,9 @@ export const property = {
     // Other Buildings
     { src: "/images/laundry-pool-house.JPG", alt: "Laundry and pool house", caption: "Laundry & Pool House" },
     { src: "/images/storage-shed.JPG", alt: "Storage shed", caption: "Storage Shed" },
+
+    // Plans
+    { src: "/images/overview-plan1.jpg", alt: "Estate overview plan showing all buildings and land", caption: "Estate Plan" },
   ],
 
   // Key features for the highlights section
