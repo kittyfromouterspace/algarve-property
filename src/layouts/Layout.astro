@@ -5,6 +5,11 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+const siteBase = 'https://kittyfromouterspace.github.io/algarve-property';
+const canonicalURL = new URL(Astro.url.pathname === '/' ? '/algarve-property/' : Astro.url.pathname, siteBase);
+const ogImage = 'https://kittyfromouterspace.github.io/algarve-property/images/og-image.jpg';
+const ogImageAlt = 'Aerial view of Quinta Fonte do Palheiro estate in the Algarve hills';
+const siteName = 'Quinta Fonte do Palheiro';
 ---
 
 <!doctype html>
@@ -13,21 +18,56 @@ const { title, description } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Quinta Fonte do Palheiro" />
+    <meta name="theme-color" content="#1a2f23" />
+    <meta name="msapplication-TileColor" content="#1a2f23" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph (Facebook, LinkedIn, WhatsApp, etc.) -->
+    <meta property="og:site_name" content={siteName} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:secure_url" content={ogImage} />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={ogImageAlt} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:domain" content="kittyfromouterspace.github.io" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
+
+    <!-- WhatsApp uses Open Graph -->
+    <!-- The og:image above + og:title + og:description covers WhatsApp sharing -->
+
+    <!-- Performance -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
     <title>{title}</title>
+
+    <!-- Structured Data: Real Estate Listing -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "RealEstateListing",
-      "name": "Quinta Fonte do Palheiro",
-      "description": "Unique rural quinta in the Algarve interior. 2.5 hectares, 10+ buildings, pool, 500m² workshop.",
-      "url": "https://fonte-do-palheiro.estate",
-      "image": "https://fonte-do-palheiro.estate/images/areal1.jpg",
+      "name": siteName,
+      "description": description,
+      "url": canonicalURL.toString(),
+      "image": ogImage,
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Salir",
@@ -36,14 +76,33 @@ const { title, description } = Astro.props;
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "37.2",
-        "longitude": "-8.0"
+        "latitude": "37.21",
+        "longitude": "-8.00"
       },
       "offers": {
         "@type": "Offer",
         "price": "950000",
-        "priceCurrency": "EUR"
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock"
       }
+    })} />
+
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": siteName,
+      "url": canonicalURL.toString(),
+      "logo": ogImage
+    })} />
+
+    <!-- Structured Data: Image Gallery -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ImageGallery",
+      "name": `${siteName} - Property Gallery`,
+      "description": "Photo gallery of Quinta Fonte do Palheiro, a unique rural property in the Algarve interior.",
+      "url": new URL('#gallery', canonicalURL).toString()
     })} />
   </head>
   <body>
