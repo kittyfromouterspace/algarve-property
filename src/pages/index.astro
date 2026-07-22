@@ -37,7 +37,10 @@ import { property } from '../data/property';
     <div class="hero-content">
       <p class="hero-location">{property.location}</p>
       <h1 class="hero-title">{property.tagline}</h1>
-      <p class="hero-price">{property.price}</p>
+      <p class="hero-price">
+        <span class="price-old"><del>{property.priceOriginal}</del></span>
+        <span class="price-new">{property.price}</span>
+      </p>
       <a href="#contact" class="btn">Enquire Now</a>
     </div>
     <div class="scroll-indicator">
@@ -401,10 +404,29 @@ import { property } from '../data/property';
     letter-spacing: -0.01em;
   }
   .hero-price {
-    font-size: 1.4rem;
-    font-weight: 300;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 1.25rem;
     margin-bottom: 2.5rem;
-    opacity: 0.9;
+    flex-wrap: wrap;
+  }
+  .hero-price .price-old {
+    font-size: 1.1rem;
+    font-weight: 300;
+    opacity: 0.55;
+    line-height: 1;
+  }
+  .hero-price .price-old del {
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+    text-decoration-color: rgba(255,255,255,0.6);
+  }
+  .hero-price .price-new {
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: var(--color-accent);
+    line-height: 1;
   }
   .btn {
     display: inline-block;

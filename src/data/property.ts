@@ -8,9 +8,10 @@ export const property = {
   // Basic info
   name: "Quinta Fonte do Palheiro",
   tagline: "Your New Life in the Algarve Ready and Waiting",
-  metaDescription: "Quinta Fonte do Palheiro - Unique rural property in the Algarve interior. 2.5 hectares, 10+ buildings, pool, 500m² workshop, 3-phase power, 11kW EV charger. Perfect for retreat, co-living, or rural tourism. €950.000",
+  metaDescription: "Quinta Fonte do Palheiro - Unique rural property in the Algarve interior. 2.5 hectares, 10+ buildings, pool, 500m² workshop, 3-phase power, 11kW EV charger. Perfect for retreat, co-living, or rural tourism. Now €890.000 (reduced from €950.000)",
   location: "Salir, Loulé, Algarve, Portugal",
-  price: "€950.000",
+  price: "€890.000",
+  priceOriginal: "€950.000",
 
   // Hero section
   hero: {
