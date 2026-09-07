@@ -1,8 +1,56 @@
 ---
 import OpportunityPage from '../components/OpportunityPage.astro';
-import { opportunities } from '../data/property';
+import { opportunities, property } from '../data/property';
 
 const opportunity = opportunities[1];
 ---
 
-<OpportunityPage {opportunity} />
+<OpportunityPage {opportunity}>
+  <section class="revenue">
+    <p class="eyebrow">The conservative model</p>
+    <h2>€80–130k gross potential, <em>deliberately</em> under-egged.</h2>
+    <p>Most sales brochures model 65% occupancy from month one. We model the way a cautious buyer should: early trading, limited marketing, mid-market rates. Mature rural tourism operations in the Algarve commonly run 45–65% occupancy in season at higher daily rates. That upside is yours, not baked into our ask.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Scenario</th><th class="num">Units</th><th class="num">Avg. rate / night</th><th class="num">Booked nights / unit / year</th><th class="num">Accommodation gross</th><th class="num">Retreat &amp; event weeks</th><th class="num">Total gross</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Careful</th><td class="num">8</td><td class="num">€120</td><td class="num">70 (~19%)</td><td class="num">€67,000</td><td class="num">3 × €4,000 venue hire</td><td class="num"><b>≈ €80,000</b></td></tr>
+          <tr><th scope="row">Base</th><td class="num">9</td><td class="num">€140</td><td class="num">70 (~19%)</td><td class="num">€88,000</td><td class="num">5 × €4,500 venue hire</td><td class="num"><b>≈ €110,000</b></td></tr>
+          <tr><th scope="row">Strong</th><td class="num">10</td><td class="num">€150</td><td class="num">70 (~19%)</td><td class="num">€105,000</td><td class="num">6 × €5,000 venue hire</td><td class="num"><b>≈ €130,000</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">Gross revenue before operating costs, platform fees, utilities, staff and tax. 70 nights ≈ 19% annual occupancy, intentionally far below what an established Algarve operation achieves. Retreat weeks assume venue-hire only. Full assumptions are in the business case PDF. Request it below.</p>
+    <div class="note">
+      <p><b>What this means for the price:</b> at {property.price}, the estate asks roughly 7–11× conservative gross revenue, a sub-10-year payback profile <b>with the owner's residence included</b>. Furniture, bedding and workshop equipment are available by negotiation; the full inventory list is part of the business case PDF.</p>
+    </div>
+    <div class="band">
+      <p class="eyebrow eyebrow--light">Licensing, without the hand-waving</p>
+      <h2>Ask for the <em>licensing one-pager.</em></h2>
+      <p>Current status: the estate is in private use today (no AL, no turismo rural licence). The 500 m² building is commercially zoned; conversion needs a Câmara-approved project. Turismo do Algarve has expressed interest and agreed to help a buyer. No written Câmara approval exists yet, and we do not claim otherwise. Request the one-pager with the business case PDF. One email, both documents.</p>
+      <p style="margin-top:1rem"><a class="button button--ochre" href="mailto:fonte@kfos.nz?subject=Business%20case%20PDF%20%E2%80%94%20Quinta%20Fonte%20do%20Palheiro&body=Hello%2C%0A%0APlease%20send%20me%20the%20business%20case%20PDF%20and%20the%20licensing%20one-pager%20for%20Quinta%20Fonte%20do%20Palheiro.%0A%0AName%3A%0ACountry%3A%0A">Request the business case PDF</a></p>
+    </div>
+  </section>
+</OpportunityPage>
+
+<style>
+  .revenue { padding: clamp(4.5rem, 8vw, 8rem) var(--page-edge); background: var(--paper); }
+  .revenue h2 { margin: 1rem 0 1.3rem; font-size: clamp(1.9rem, 3.4vw, 2.9rem); max-width: 22ch; }
+  .revenue h2 em { font-style: italic; color: var(--clay); }
+  .revenue p { max-width: 44rem; color: rgba(23,54,45,.85); }
+  .table-scroll { overflow-x: auto; margin: 2rem 0; border: 1px solid var(--line); border-radius: .35rem; }
+  table { border-collapse: collapse; width: 100%; min-width: 42rem; font-size: .95rem; }
+  th, td { padding: 1rem 1.2rem; text-align: left; border-bottom: 1px solid var(--line); }
+  thead th { background: var(--ink-deep); color: var(--paper); font: 650 .72rem/1.3 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
+  tbody th { font-weight: 650; color: var(--ink); }
+  tbody tr:nth-child(even) { background: var(--sand); }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .table-note { font-size: .85rem; color: rgba(23,54,45,.6); max-width: 44rem; margin-top: .8rem; }
+  .note { background: var(--sand); border-left: 3px solid var(--clay); border-radius: 0 .35rem .35rem 0; padding: 1.4rem 1.6rem; margin-top: 2.4rem; max-width: 44rem; }
+  .band { background: var(--ink-deep); color: var(--paper); border-radius: .4rem; padding: 3rem; margin: 3rem 0 0; }
+  .band h2 { color: var(--paper); max-width: 24ch; }
+  .band h2 em { color: var(--ochre); }
+  .band p { color: rgba(252,250,246,.78); }
+</style>

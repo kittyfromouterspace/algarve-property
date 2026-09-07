@@ -5,4 +5,60 @@ import { opportunities } from '../data/property';
 const opportunity = opportunities[2];
 ---
 
-<OpportunityPage {opportunity} />
+<OpportunityPage {opportunity}>
+  <section class="compare-section">
+    <div class="wrap">
+      <p class="eyebrow">The honest comparison</p>
+      <h2>What "doing it yourself" <em>actually costs.</em></h2>
+      <p>We have watched friends buy cheap land inland and spend the next years in permit offices. Here is the arithmetic honestly stated, so you can check it against your own quotes:</p>
+      <div class="compare">
+        <div class="diy">
+          <h3>The DIY route</h3>
+          <ul>
+            <li>Land with a ruin near Salir: €150,000–€300,000</li>
+            <li>Building/renovating equivalent living space: €450,000–€600,000+</li>
+            <li>Water, borehole, power, 3-phase, EV infrastructure: €40,000–€60,000+</li>
+            <li>Architects, engineers, licensing, surprises: 3–5 years of your life</li>
+            <li class="total">≈ €700,000–€1,000,000, and years before you live there</li>
+          </ul>
+        </div>
+        <div class="here">
+          <h3>Fonte do Palheiro</h3>
+          <ul>
+            <li>2.5 ha with its own consented borehole: done</li>
+            <li>Renovated houses: done (furniture available by negotiation)</li>
+            <li>500 m² workshop with 3-phase power + 11 kW EV charger: done</li>
+            <li>Pool, bar, meditation house: done</li>
+            <li class="total">€890,000: live here from week one</li>
+          </ul>
+        </div>
+      </div>
+      <div class="note">
+        <p><b>Fairness note:</b> DIY can be cheaper if your time is free and you love the process. Some people do, and honestly, good for them. But if what you want is the <b>life</b>, not the project, this estate is the shortcut: every slow, permit-heavy year is already behind it.</p>
+      </div>
+      <p class="lang-switch"><a href="/off-grid-leben">Auf Deutsch lesen →</a></p>
+    </div>
+  </section>
+</OpportunityPage>
+
+<style>
+  .compare-section { padding: clamp(4.5rem, 8vw, 8rem) var(--page-edge); background: var(--paper); }
+  .compare-section .wrap { max-width: 72rem; margin: 0 auto; }
+  .compare-section h2 { margin: 1rem 0 1.3rem; font-size: clamp(1.9rem, 3.4vw, 2.9rem); max-width: 22ch; }
+  .compare-section h2 em { font-style: italic; color: var(--clay); }
+  .compare-section p { max-width: 44rem; color: rgba(23,54,45,.85); }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: .35rem; overflow: hidden; margin: 2.4rem 0; }
+  .compare > div { padding: 2rem; }
+  .compare .diy { background: var(--sand); }
+  .compare .here { background: var(--ink-deep); color: var(--paper); }
+  .compare h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+  .compare .here h3 { color: var(--ochre); }
+  .compare ul { list-style: none; }
+  .compare li { padding: .6rem 0; border-bottom: 1px solid var(--line); font-size: .95rem; }
+  .compare .here li { border-color: rgba(252,250,246,.18); color: rgba(252,250,246,.85); }
+  .compare .total { font-family: var(--font-display); font-size: 1.35rem; margin-top: 1.2rem; border-bottom: none; }
+  @media (max-width: 760px) { .compare { grid-template-columns: 1fr; } }
+  .note { background: var(--sand); border-left: 3px solid var(--clay); border-radius: 0 .35rem .35rem 0; padding: 1.4rem 1.6rem; margin-top: 2.4rem; max-width: 44rem; }
+  .lang-switch { margin-top: 2rem; font-size: .85rem; }
+  .lang-switch a { color: var(--clay); }
+</style>

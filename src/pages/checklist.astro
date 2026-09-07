@@ -1,0 +1,144 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+---
+
+<Layout
+  title="The Algarve Rural Business Buyer's Checklist: free download | Quinta Fonte do Palheiro"
+  description="Twelve concrete checks (licensing, water, access, power, occupancy rules and more) before you buy a rural tourism property or retreat venue in the Algarve. Free, no spam."
+>
+  <SiteHeader ctaHref="#get-the-checklist" />
+  <main id="main">
+    <header class="hero">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow">Free · 12 checks · written by people selling a rural business themselves</p>
+            <h1>The Algarve Rural Business <em>Buyer's Checklist</em></h1>
+            <p class="lede">Twelve concrete checks to run before you buy a rural tourism property, retreat venue or quinta in the Algarve: licensing, water, access, power, occupancy rules and the questions sellers hope you won't ask. The full checklist is on this page; leave your email and we will send it as a clean PDF you can print and take to viewings.</p>
+            <p class="fine">We are sellers, not brokers. We wrote this because it is the checklist we would want in our hands if the roles were reversed.</p>
+            <figure style="margin-top:2.4rem">
+              <img src="/images/areal1.jpg" alt="Aerial view of Quinta Fonte do Palheiro in the Algarve hills" loading="lazy" decoding="async" />
+              <figcaption>Written while selling our own estate: Quinta Fonte do Palheiro, Salir.</figcaption>
+            </figure>
+          </div>
+          <div class="signup" id="get-the-checklist">
+            <h2>Get it as a PDF</h2>
+            <p>One email with the checklist. Occasional follow-ups only if a property like ours is genuinely relevant to you. No list-selling, no newsletter fog.</p>
+            <!--
+              FORM WIRING: point this action at your email service (Mailchimp/Brevo/Buttondown form endpoint)
+              or a form backend (Formspree/Basin). Until then use the "email us directly" link below.
+            -->
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="checklist-form">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" />
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+              <label for="interest">What are you looking for? (optional)</label>
+              <input type="text" id="interest" name="interest" placeholder="e.g. retreat venue, turismo rural, off-grid" />
+              <button class="button" type="submit">Send me the checklist</button>
+              <p class="privacy">Your email is used to send the checklist and, at most, a handful of personal follow-ups about this property. Unsubscribe any time by replying "stop".</p>
+            </form>
+            <p class="or-mail">Prefer not to use a form? <a data-event="CTA Checklist Mailto" data-page="checklist" href="mailto:fonte@kfos.nz?subject=Buyer%27s%20checklist%20%E2%80%94%20please%20send&body=Hello%2C%0A%0APlease%20send%20me%20the%20Algarve%20Rural%20Business%20Buyer%27s%20Checklist.%0A%0AName%3A%0A">Email us directly</a> and we will send it.</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="wrap">
+        <p class="eyebrow">The checklist itself</p>
+        <h2>Twelve checks. <em>Print it. Take it to every viewing.</em></h2>
+        <p>Each item is phrased as what to verify and the exact question to ask. A seller who answers all twelve in writing is a seller you can work with.</p>
+
+        <div class="check-items">
+          <div class="check-item"><div><h3>1. Licensing path for accommodation</h3><p>Confirm which licence fits your plan: alojamento local (AL) for the existing units or turismo rural for a larger operation, and whether the municipality (Câmara) will support it. Rules differ per parish and have tightened in recent years.</p><p class="ask"><b>Ask:</b> "Is there an existing AL or turismo rural registration, and can I have the licence number and documents?"</p></div></div>
+          <div class="check-item"><div><h3>2. Water: source, rights and yield</h3><p>In the inland Algarve, water is the asset. Establish the source type (borehole, well, spring), its registration and extraction licence, and a realistic dry-season yield. Unregistered water is a liability, not a feature.</p><p class="ask"><b>Ask:</b> "Show me the water source registration and licence, and the lowest it has ever run in August."</p></div></div>
+          <div class="check-item"><div><h3>3. Legal status of every building</h3><p>Portuguese rural properties often have structures that exist physically but not on paper. Cross-check the caderneta predial and certidão de teor against what you see, and ask specifically about every outbuilding.</p><p class="ask"><b>Ask:</b> "Which structures are on the caderneta, which have habitation licences, and which are unregistered?"</p></div></div>
+          <div class="check-item"><div><h3>4. Zoning and what the PDM allows</h3><p>The municipal master plan (PDM) decides what you may build, extend or convert. A "commercial shell" or "expansion potential" claim is only worth what the Câmara will actually approve. Get it in writing before pricing it in.</p><p class="ask"><b>Ask:</b> "What does the PDM classify this land and each building as, and has the Câmara commented on my intended use?"</p></div></div>
+          <div class="check-item"><div><h3>5. Road access, all year, for your biggest vehicle</h3><p>Walk the full access route and think in terms of your worst case: a removals truck, a supplier van, guests in a rental car at night in January rain, or a fire truck. Paved to the gate is worth real money.</p><p class="ask"><b>Ask:</b> "Is access paved to the gate, is any stretch a right-of-way over a neighbour, and can emergency vehicles reach the buildings?"</p></div></div>
+          <div class="check-item"><div><h3>6. Power capacity, not just power</h3><p>A business needs capacity headroom: three-phase supply, the contracted kVA, and the condition of the installation. Adding commercial kitchens, heat pumps, EV charging and event loads to a domestic supply means an expensive upgrade.</p><p class="ask"><b>Ask:</b> "Single or three-phase, what contracted capacity, and what has tripped in the last year?"</p></div></div>
+          <div class="check-item"><div><h3>7. Occupancy and safety rules for paying guests</h3><p>Licensed accommodation brings fire-safety, maximum-occupancy, pool-safety and accessibility obligations, each with fit-out costs. Price these into your model before you price the property.</p><p class="ask"><b>Ask:</b> "For my intended guest count, what fire-safety and pool-compliance work would the licence require here?"</p></div></div>
+          <div class="check-item"><div><h3>8. Internet you can run a business on</h3><p>Bookings, card payments and remote work all die without connectivity. Test on site with your own phone; check whether fibre reaches the gate; budget for Starlink as the reliable baseline in rural areas.</p><p class="ask"><b>Ask:</b> "What connection do you use daily, and can I see a live speed test?"</p></div></div>
+          <div class="check-item"><div><h3>9. Sanitation: septic, soakaway, capacity</h3><p>Rural properties run on septic systems sized for a family, not for ten guest units plus a retreat week. Establish the system type, its capacity, and what expansion would require.</p><p class="ask"><b>Ask:</b> "What sanitation system serves each building, what is it rated for, and when was it last emptied or inspected?"</p></div></div>
+          <div class="check-item"><div><h3>10. True running costs and taxes</h3><p>Get a full year of real numbers: IMI (property tax), water pumping and treatment, pool maintenance, garden and land upkeep, insurance, refuse, accountancy. Gross revenue projections mean nothing against unknown costs.</p><p class="ask"><b>Ask:</b> "Can I see twelve months of actual utility and maintenance costs?"</p></div></div>
+          <div class="check-item"><div><h3>11. Insurance and liability for guests and events</h3><p>Public liability for paying guests, and especially for events, pools and retreats, is its own policy class in Portugal, and some rural property types are harder or pricier to insure. Quote it before you buy, not after.</p><p class="ask"><b>Ask:</b> "What insurance do you carry today, and has any insurer ever declined or loaded a policy here?"</p></div></div>
+          <div class="check-item"><div><h3>12. Seasonality: model the bad months first</h3><p>The Algarve's coast hibernates in winter; the hills hibernate harder. Build your model from November to February first: if the business survives the quiet months on paper, the busy months are the bonus, not the plan.</p><p class="ask"><b>Ask:</b> "What happens here between November and February: bookings, costs, and your own routine?"</p></div></div>
+        </div>
+
+        <div class="note">
+          <p><b>The meta-rule:</b> any seller who will not answer these twelve in writing is telling you something. We answer all twelve about our own estate, <a href="/buyer-facts" style="color:var(--clay)">many of them in our buyer facts</a>, the rest in the buyer-facts brief on request.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-final" style="border-top:1px solid var(--line)">
+      <div class="wrap">
+        <p class="eyebrow">Full disclosure</p>
+        <h2>Yes, we are also <em>selling one.</em></h2>
+        <p>This checklist exists because we are selling Quinta Fonte do Palheiro, a 2.5-hectare estate with guest accommodation, its own water, a pool and a 500 m² commercial shell, under €900k. If it fits what you are looking for, wonderful. If not, take the checklist and buy the right thing elsewhere. That is what it is for.</p>
+        <div class="cta-row">
+          <a class="button button--ochre" href="/retreat-venue">See it as a retreat venue</a>
+          <a class="button" href="/rural-tourism-business">See the business case</a>
+          <a class="button" href="/independent-living">See it off-grid</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+</Layout>
+
+<script>
+  var form = document.getElementById('checklist-form');
+  if (form) {
+    form.addEventListener('submit', function () {
+      if (window.plausible) { window.plausible('Checklist Signup'); }
+    });
+  }
+</script>
+
+<style>
+  .wrap { max-width: 72rem; margin: 0 auto; padding: 0 1.5rem; }
+  .hero { padding: 9rem 0 4rem; }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 4rem; align-items: start; }
+  @media (max-width: 880px) { .hero-grid { grid-template-columns: 1fr; } }
+  .hero h1 { font-size: clamp(2.4rem, 4.8vw, 3.9rem); max-width: 18ch; margin-bottom: 1.4rem; }
+  .hero h1 em { font-style: italic; color: var(--clay); }
+  .hero .lede { font-size: 1.15rem; line-height: 1.75; max-width: 40rem; color: rgba(23,54,45,.82); margin-bottom: 1.6rem; }
+  .hero .fine { font-size: .85rem; color: rgba(23,54,45,.6); margin-top: 1rem; }
+  .signup { background: var(--ink-deep); color: var(--paper); border-radius: .4rem; padding: 2.4rem; }
+  .signup h2 { color: var(--paper); font-size: 1.7rem; margin-bottom: .8rem; }
+  .signup p { color: rgba(252,250,246,.78); font-size: .95rem; margin-bottom: 1.4rem; }
+  .signup label { display: block; font: 650 .68rem/1 var(--font-body); letter-spacing: .1em; text-transform: uppercase; color: var(--ochre); margin: 1.1rem 0 .4rem; }
+  .signup input { width: 100%; padding: .85rem 1rem; border: 1px solid rgba(252,250,246,.3); border-radius: .25rem; background: rgba(252,250,246,.06); color: var(--paper); font: 400 1rem var(--font-body); }
+  .signup input::placeholder { color: rgba(252,250,246,.4); }
+  .signup input:focus { outline: none; border-color: var(--ochre); }
+  .signup .button { width: 100%; justify-content: center; margin-top: 1.4rem; border-color: var(--ochre); background: var(--ochre); color: var(--ink-deep); cursor: pointer; }
+  .signup .button:hover { border-color: var(--paper); background: var(--paper); }
+  .signup .privacy { font-size: .78rem; color: rgba(252,250,246,.55); margin-top: 1rem; line-height: 1.5; }
+  .signup .or-mail { font-size: .8rem; margin-top: 1rem; color: rgba(252,250,246,.6); }
+  .signup .or-mail a { color: var(--ochre); }
+  section { padding: 4.5rem 0; border-top: 1px solid var(--line); }
+  section h2 { font-size: clamp(1.9rem, 3.4vw, 2.9rem); max-width: 22ch; margin-bottom: 1.3rem; }
+  section h2 em { font-style: italic; color: var(--clay); }
+  section p { max-width: 46rem; color: rgba(23,54,45,.85); }
+  section p + p { margin-top: 1rem; }
+  .check-items { max-width: 52rem; counter-reset: item; margin-top: 2rem; }
+  .check-item { display: grid; grid-template-columns: 3.4rem 1fr; gap: 1.2rem; padding: 1.8rem 0; border-bottom: 1px solid var(--line); }
+  .check-item::before { counter-increment: item; content: counter(item, decimal-leading-zero); font-family: var(--font-display); font-size: 2rem; color: var(--clay); line-height: 1; }
+  .check-item:nth-child(1)::before { content: "01"; } .check-item:nth-child(2)::before { content: "02"; } .check-item:nth-child(3)::before { content: "03"; } .check-item:nth-child(4)::before { content: "04"; } .check-item:nth-child(5)::before { content: "05"; } .check-item:nth-child(6)::before { content: "06"; } .check-item:nth-child(7)::before { content: "07"; } .check-item:nth-child(8)::before { content: "08"; } .check-item:nth-child(9)::before { content: "09"; } .check-item:nth-child(10)::before { content: "10"; } .check-item:nth-child(11)::before { content: "11"; } .check-item:nth-child(12)::before { content: "12"; }
+  .check-item h3 { font-size: 1.3rem; margin-bottom: .5rem; }
+  .check-item p { font-size: .95rem; color: rgba(23,54,45,.8); }
+  .check-item .ask { margin-top: .7rem; font-size: .85rem; color: rgba(23,54,45,.65); }
+  .check-item .ask b { color: var(--clay); font: 650 .68rem/1 var(--font-body); letter-spacing: .09em; text-transform: uppercase; }
+  figure img { border-radius: .35rem; }
+  figcaption { font: 400 .82rem/1.5 var(--font-body); color: rgba(23,54,45,.6); margin-top: .7rem; }
+  .note { background: var(--sand); border-left: 3px solid var(--clay); border-radius: 0 .35rem .35rem 0; padding: 1.4rem 1.6rem; margin-top: 2.4rem; max-width: 46rem; }
+  .note p { font-size: .95rem; color: rgba(23,54,45,.85); }
+  .note b { color: var(--ink); }
+  .cta-final { text-align: center; padding: 5.5rem 0; }
+  .cta-final h2 { margin: 0 auto 1.4rem; }
+  .cta-final p { margin: 0 auto 2.2rem; }
+  .cta-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+</style>

@@ -5,4 +5,22 @@ import { opportunities } from '../data/property';
 const opportunity = opportunities[0];
 ---
 
-<OpportunityPage {opportunity} />
+<OpportunityPage {opportunity}>
+  <section class="price-context">
+    <div class="band">
+      <p class="eyebrow" style="color:var(--ochre)">The price, honestly framed</p>
+      <h2>Comparable licensed retreats trade <em>above €1M.</em> This is under €900k.</h2>
+      <p style="margin-top:1.2rem">Licensed, operating retreat venues in southern Portugal are typically listed from €1M to €3.8M. A two-bedroom apartment in Vilamoura can cost more than this entire estate. The ask here is <b>€890,000</b>, with furniture, bedding and workshop equipment available by negotiation.</p>
+      <p style="margin-top:1rem">You are not buying a finished business. You are buying every expensive, slow, permit-heavy year of one, already behind you. The estate is in private use today; confirm the licensing route for your format with Loulé Council before you commit.</p>
+    </div>
+  </section>
+</OpportunityPage>
+
+<style>
+  .price-context { padding: 0 var(--page-edge) clamp(4.5rem, 8vw, 8rem); background: var(--paper); }
+  .band { background: var(--ink-deep); color: var(--paper); border-radius: .4rem; padding: 3rem; }
+  .band h2 { color: var(--paper); max-width: 24ch; font-size: clamp(1.9rem, 3.4vw, 2.9rem); margin-bottom: 0; }
+  .band h2 em { color: var(--ochre); }
+  .band p { color: rgba(252,250,246,.78); max-width: 44rem; }
+  .band b { color: var(--paper); }
+</style>

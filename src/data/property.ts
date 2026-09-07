@@ -49,7 +49,7 @@ export const property = {
     "Two fully furnished houses, a swimming pool, a meditation house, a bar, multiple outbuildings and several established terraces sit above the Serra do Caldeirão, with open views toward the coastline. The estate owns the land in front of the ridge, so no new building can take the sunset away.",
     "For a retreat host or rural-tourism operator, the ~500 m² former factory, commercially zoned, gives you a real building to plan around: event hall, shala, production kitchen, guest overflow. The rest of the estate is private-zoned today, so we put licensing, water rights, access and internet on the table early in our buyer-facts brief.",
     "Three-phase power runs across the estate, with an 11 kW Type 2 EV charger already installed. Own water source, workshop space and 45 minutes to Faro Airport give you the unglamorous infrastructure that decides whether a dream actually operates.",
-    "Furnished down to the cutlery. Come for a live video walkthrough this week and see the estate as it really is, then decide with your eyes open.",
+    "Furniture, bedding and workshop tools available by negotiation. Come for a live video walkthrough this week and see the estate as it really is, then decide with your eyes open.",
   ],
 
   // Scenic images for main page image breaks
@@ -374,22 +374,22 @@ export const buyerFacts = [
   {
     number: "01",
     title: "Can I run retreats or guest stays here?",
-    body: "The former factory is commercially zoned. The houses, gardens and terraces are private-zoned today. All buildings are consented, the water source is consented, and we hold legal plans for everything. This is rare in Portugal, so verify it in your due diligence. That split is exactly why we show it building by building on the video walkthrough. Bring your format and we will walk the matching spaces, then you confirm the route with Loulé Council.",
+    body: "The estate is in private use today: there is no AL registration and no turismo rural licence in place. The former factory is commercially zoned; the houses, gardens and terraces are private-zoned. All buildings are registered and we hold the caderneta, certidão and legal plans for everything, shared in the buyer-facts brief. Turismo do Algarve has expressed interest and agreed to help a buyer with the route; there is no written Câmara approval yet and we do not claim otherwise. Bring your format, walk each building live on video, then confirm the route with Loulé Council.",
   },
   {
     number: "02",
     title: "Water, terrain & growing: is the land usable?",
-    body: "The estate has its own water source and several established terraces. The source has never run dry, not even through last summer which was very dry. The council also has a town water project underway which will add redundancy to our own supply. The land is hillside and varied rather than flat. Honest answer to the 'too steep?' question: walk the terraces on video against your growing or building plan before you fly. Steep in parts, usable in the parts that count.",
+    body: "The estate has its own consented borehole and several established terraces. The source has never run dry, not even through very dry summers, and the council has a town water project underway adding redundancy. A paved public road reaches the estate and is accessible by standard 7.5t trucks, year-round. The land is hillside and varied rather than flat: steep in parts, usable in the parts that count. Honest answer to the 'too steep?' question: horses, no; gardens, orchards, solar, poultry, goats, bees, yes. Walk the terraces on video against your plan before you fly.",
   },
   {
     number: "03",
     title: "What do I actually get for €890,000?",
-    body: "Two furnished houses, pool, meditation house, bar, sleepout, outbuildings, ~500 m² commercial shell, 2.5 ha with surrounding land protecting the view, three-phase power and EV charger. Ask for the building-by-building inventory on your call.",
+    body: "The 2.5-hectare estate with all 10+ registered buildings, its consented borehole, pool, meditation house, bar, sleepout, ~500 m² commercial shell, three-phase power and 11 kW EV charger. Furniture, bedding, cutlery and workshop tools are available by negotiation. Ask for the building-by-building inventory on your call. The car previously mentioned is sold and no longer included.",
   },
   {
     number: "04",
     title: "Power, water, internet: does it operate?",
-    body: "Three-phase electricity throughout, 11 kW Type 2 EV charger installed, own water source. Internet today is Starlink and handles calls, streaming and remote work. Fiber is accessible if you need more. Waste, storage capacity and running costs depend on your use. Validate them for your plan before you offer. We will show you what is there live.",
+    body: "Three-phase electricity throughout, 11 kW Type 2 EV charger installed, own consented borehole. Internet is Starlink in daily use at typically 200–300 Mbps downstream: calls, streaming and remote work all fine, and we will show a live speed test on the video call. Fibre is about 500 m away and confirmed connectable if you want it. Waste, storage capacity and running costs depend on your use, so validate them for your plan before you offer.",
   },
   {
     number: "05",
@@ -399,7 +399,12 @@ export const buyerFacts = [
   {
     number: "06",
     title: "Is funding or a business case realistic?",
-    body: "A qualifying rural-tourism project here may access enhanced EU or Algarve 2030 support rates. Applicant, call and timing decide. Build your own occupancy math first (T1 + T3 × rate × season, expansion second), and never put funding in the spreadsheet until a specialist confirms it.",
+    body: "A qualifying rural-tourism project here may access enhanced EU or Algarve 2030 support rates. Applicant, call and timing decide. Build your own occupancy math first (T1 + T3 × rate × season, expansion second; our conservative model runs €80–130k gross potential), and never put funding in the spreadsheet until a specialist confirms it.",
+  },
+  {
+    number: "07",
+    title: "Why are you selling?",
+    body: "We are going back to sail the world. We lived on land long enough, again, to know it is not for us anymore. The estate was our life project and it is ready for its next chapter; we are happy to tell the longer version on a call.",
   },
 ] as const;
 

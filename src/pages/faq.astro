@@ -1,0 +1,23 @@
+---
+/*
+ * /faq: canonical answers live at /buyer-facts.
+ * The marketing kit (listings, ads, outreach) links to /faq, so this
+ * route redirects there instead of duplicating the content.
+ */
+const canonical = new URL('/buyer-facts', Astro.site ?? Astro.url).toString();
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0; url=/buyer-facts" />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content="noindex" />
+    <title>FAQ: Quinta Fonte do Palheiro</title>
+  </head>
+  <body>
+    <p>
+      Our honest FAQ lives at <a href="/buyer-facts">/buyer-facts</a>.
+    </p>
+  </body>
+</html>
