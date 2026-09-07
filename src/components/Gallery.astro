@@ -14,16 +14,16 @@ interface Props {
 const { images } = Astro.props;
 ---
 
-<section id="gallery" class="section gallery">
-  <div class="container">
+<section id="gallery" class="gallery">
+  <div class="gallery-inner">
     <div class="gallery-header">
-      <p class="section-label">Gallery</p>
-      <h2 class="section-title">Explore the Property</h2>
-      <p class="gallery-subtitle">Click any image to view in full detail — {images.length} photos</p>
+      <p class="eyebrow">The photo record</p>
+      <h2>Walk every corner<br />before you fly.</h2>
+      <p class="gallery-subtitle">{images.length} photos: houses, terraces, workshops, pool and sunsets. Tap any image for the full view.</p>
     </div>
     <div class="gallery-grid">
       {images.map((img, i) => (
-        <figure class="gallery-item" data-index={i}>
+        <button class="gallery-item" type="button" data-index={i} aria-label={`View ${img.caption}`}>
           <img
             src={img.src}
             alt={img.alt}
@@ -32,20 +32,20 @@ const { images } = Astro.props;
             width="400"
             height="300"
           />
-          <figcaption>{img.caption}</figcaption>
-        </figure>
+          <span class="gallery-item__caption">{img.caption}</span>
+        </button>
       ))}
     </div>
   </div>
 
   <!-- Lightbox -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-label="Image gallery" aria-hidden="true">
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image gallery" aria-hidden="true">
     <button class="lightbox-close" aria-label="Close gallery">&times;</button>
     <button class="lightbox-nav lightbox-prev" aria-label="Previous image">&#10094;</button>
     <button class="lightbox-nav lightbox-next" aria-label="Next image">&#10095;</button>
     <div class="lightbox-content">
-      <img src="" alt="" class="lightbox-img" />
-      <p class="lightbox-caption"></p>
+      <img src="" alt="" class="lightbox-img" width="1600" height="1200" />
+      <p class="lightbox-caption" aria-live="polite"></p>
     </div>
     <div class="lightbox-counter">
       <span class="lightbox-current">1</span> / <span class="lightbox-total">{images.length}</span>
@@ -55,16 +55,27 @@ const { images } = Astro.props;
 
 <style>
   .gallery {
-    background: var(--color-white);
+    background: var(--paper);
+    padding: clamp(5rem, 10vw, 10rem) var(--page-edge);
+  }
+  .gallery-inner {
+    max-width: 1440px;
+    margin: 0 auto;
   }
   .gallery-header {
-    text-align: center;
-    margin-bottom: 3rem;
+    max-width: 54rem;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  }
+  .gallery-header h2 {
+    margin: 1rem 0 1rem;
+    font-size: clamp(2.8rem, 5.4vw, 5.8rem);
+    line-height: .85;
+    letter-spacing: -.08em;
   }
   .gallery-subtitle {
-    color: var(--color-text-light);
-    font-size: 0.95rem;
-    margin-top: 0.5rem;
+    color: rgba(24,49,41,.72);
+    font-size: 1rem;
+    max-width: 32rem;
   }
   .gallery-grid {
     display: grid;
@@ -75,9 +86,15 @@ const { images } = Astro.props;
     position: relative;
     overflow: hidden;
     border-radius: 4px;
+    border: 0;
     cursor: pointer;
     margin: 0;
+    padding: 0;
+    text-align: left;
     aspect-ratio: 4/3;
+    background: var(--sand);
+    content-visibility: auto;
+    contain-intrinsic-size: auto 15rem;
   }
   .gallery-item img {
     width: 100%;
@@ -88,7 +105,7 @@ const { images } = Astro.props;
   .gallery-item:hover img {
     transform: scale(1.05);
   }
-  .gallery-item figcaption {
+  .gallery-item__caption {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -101,7 +118,7 @@ const { images } = Astro.props;
     opacity: 0;
     transition: opacity 0.3s ease;
   }
-  .gallery-item:hover figcaption {
+  .gallery-item:hover .gallery-item__caption, .gallery-item:focus-visible .gallery-item__caption {
     opacity: 1;
   }
 
@@ -117,6 +134,7 @@ const { images } = Astro.props;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
+    overscroll-behavior: contain;
   }
   .lightbox.active {
     opacity: 1;
@@ -235,20 +253,25 @@ const { images } = Astro.props;
     const lightboxCaption = lightbox.querySelector('.lightbox-caption');
     const lightboxCurrent = lightbox.querySelector('.lightbox-current');
     const galleryItems = document.querySelectorAll('.gallery-item');
+    const closeButton = lightbox.querySelector('.lightbox-close');
+    let previousFocus = null;
     let currentIndex = 0;
 
     function openLightbox(index) {
       currentIndex = index;
+      previousFocus = document.activeElement;
       updateLightbox();
       lightbox.classList.add('active');
       lightbox.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
+      closeButton.focus();
     }
 
     function closeLightbox() {
       lightbox.classList.remove('active');
       lightbox.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
+      if (previousFocus instanceof HTMLElement) previousFocus.focus();
     }
 
     function updateLightbox() {
@@ -271,17 +294,9 @@ const { images } = Astro.props;
 
     galleryItems.forEach((item, i) => {
       item.addEventListener('click', () => openLightbox(i));
-      item.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          openLightbox(i);
-        }
-      });
-      item.setAttribute('tabindex', '0');
-      item.setAttribute('role', 'button');
     });
 
-    lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+    closeButton.addEventListener('click', closeLightbox);
     lightbox.querySelector('.lightbox-next').addEventListener('click', nextImage);
     lightbox.querySelector('.lightbox-prev').addEventListener('click', prevImage);
 

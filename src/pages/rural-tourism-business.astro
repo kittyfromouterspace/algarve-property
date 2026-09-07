@@ -1,0 +1,8 @@
+---
+import OpportunityPage from '../components/OpportunityPage.astro';
+import { opportunities } from '../data/property';
+
+const opportunity = opportunities[1];
+---
+
+<OpportunityPage {opportunity} />

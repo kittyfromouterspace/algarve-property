@@ -2,14 +2,14 @@
 import { property } from '../data/property';
 
 const shareUrl = encodeURIComponent('https://kittyfromouterspace.github.io/algarve-property/');
-const shareText = encodeURIComponent(`${property.name} — ${property.tagline}. ${property.metaDescription}`);
+const shareText = encodeURIComponent(`${property.name}: ${property.tagline}. ${property.metaDescription}`);
 const shareSubject = encodeURIComponent(`Check out ${property.name}`);
 const shareBody = encodeURIComponent(`${property.name}\n${property.tagline}\n\nhttps://kittyfromouterspace.github.io/algarve-property/`);
 
 const shareLinks = [
   {
     name: 'Twitter',
-    url: `https://twitter.com/intent/tweet?url=${shareUrl}&text=${encodeURIComponent(`${property.name} — ${property.tagline}`)}`,
+    url: `https://twitter.com/intent/tweet?url=${shareUrl}&text=${encodeURIComponent(`${property.name}: ${property.tagline}`)}`,
     icon: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z',
     label: 'Share on X / Twitter'
   },

@@ -1,0 +1,131 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from './SiteHeader.astro';
+import SiteFooter from './SiteFooter.astro';
+import EnquiryPanel from './EnquiryPanel.astro';
+import { property, type opportunities } from '../data/property';
+
+interface Props {
+  opportunity: (typeof opportunities)[number];
+}
+
+const { opportunity } = Astro.props;
+const interest = opportunity.slug === 'retreat-venue'
+  ? 'retreat and wellbeing'
+  : opportunity.slug === 'rural-tourism-business'
+    ? 'rural tourism'
+    : 'independent rural living';
+---
+
+<Layout title={`${opportunity.label}: ${property.name}`} description={opportunity.summary}>
+  <SiteHeader ctaHref="#enquire" />
+  <main id="main">
+    <section class="opportunity-hero" style={`--hero-image: url('${opportunity.image}'); --hero-position: ${opportunity.imagePosition};`}>
+      <div class="opportunity-hero__wash"></div>
+      <div class="opportunity-hero__content">
+        <a class="back-link" href="/#possibilities"><span aria-hidden="true">←</span> The estate, three ways</a>
+        <p class="eyebrow eyebrow--light">{opportunity.number} · {opportunity.label}</p>
+        <h1>{opportunity.title}</h1>
+        <p class="opportunity-hero__summary">{opportunity.summary}</p>
+        <a href="#enquire" class="button button--ochre">Book a video walkthrough of this route <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="opportunity-hero__facts" aria-label="Key facts">
+        {opportunity.facts.map((fact) => <span>{fact}</span>)}
+      </div>
+    </section>
+
+    <section class="opportunity-intro">
+      <p class="eyebrow">The premise</p>
+      <p>{opportunity.introduction}</p>
+    </section>
+
+    <section class="price-frame">
+      <div>
+        <p class="eyebrow">The price, in context</p>
+        <h2>Evaluate the estate,<br /><em>not a villa.</em></h2>
+      </div>
+      <div class="price-frame__copy">
+        <p>The current asking price is a starting point for a serious business and lifestyle conversation. Its value sits in the combination of land, buildings, existing infrastructure and the time saved by not starting with a ruin or an empty plot.</p>
+        <p class="price-frame__note">No income or future permission is implied. The right next step is a documented operating, licensing and investment case for the direction you are considering.</p>
+      </div>
+      <div class="price-frame__amount"><span>Current asking price</span><strong>{property.price}</strong><small>subject to verification and contract</small></div>
+    </section>
+
+    <section class="opportunity-sections">
+      <p class="eyebrow">Read the estate through this lens</p>
+      <div class="opportunity-sections__list">
+        {opportunity.sections.map((section, index) => (
+          <article>
+            <span>{String(index + 1).padStart(2, '0')}</span>
+            <div>
+              <h2>{section.title}</h2>
+              <p>{section.body}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="due-diligence">
+      <div>
+        <p class="eyebrow eyebrow--light">Before you fall in love</p>
+        <h2>The practical questions<br />deserve clear answers.</h2>
+      </div>
+      <ol>
+        {opportunity.checklist.map((item) => <li>{item}</li>)}
+      </ol>
+      <a href="/buyer-facts" class="button button--paper">Read buyer facts <span aria-hidden="true">↗</span></a>
+    </section>
+
+    <section class="opportunity-image" aria-label={opportunity.imageAlt}>
+      <img src={opportunity.image} alt={opportunity.imageAlt} width={opportunity.imageWidth} height={opportunity.imageHeight} loading="lazy" decoding="async" />
+      <p>Quinta Fonte do Palheiro<br />Salir, Loulé · Algarve</p>
+    </section>
+
+    <EnquiryPanel interest={interest} />
+  </main>
+  <SiteFooter />
+</Layout>
+
+<style>
+  .opportunity-hero { min-height: min(52rem, 100vh); position: relative; display: flex; align-items: end; color: var(--paper); background: var(--ink) var(--hero-image) var(--hero-position) / cover no-repeat; isolation: isolate; padding: 9.5rem var(--page-edge) 3.5rem; }
+  .opportunity-hero__wash { position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(11,29,23,.88) 0%, rgba(11,29,23,.5) 45%, rgba(11,29,23,.1) 100%), linear-gradient(0deg, rgba(11,29,23,.58), transparent 46%); }
+  .opportunity-hero__content { max-width: 50rem; }
+  .back-link { display: inline-flex; gap: .6rem; margin-bottom: 4.5rem; color: rgba(246,242,231,.76); font: 500 .62rem/1 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; }
+  .back-link:hover { color: var(--ochre); }
+  .opportunity-hero h1 { max-width: 48rem; margin: 1.15rem 0 1.25rem; font-size: clamp(3.2rem, 6.8vw, 7rem); line-height: .96; letter-spacing: -.02em; font-weight: 560; }
+  .opportunity-hero__summary { max-width: 36rem; font-size: clamp(1rem, 1.65vw, 1.25rem); line-height: 1.5; color: rgba(246,242,231,.86); margin-bottom: 2rem; }
+  .opportunity-hero__facts { position: absolute; right: var(--page-edge); bottom: 3.5rem; display: grid; gap: .45rem; text-align: right; }
+  .opportunity-hero__facts span { font: 500 .61rem/1 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; }
+  .opportunity-intro { display: grid; grid-template-columns: .6fr 1.4fr; gap: 2rem; padding: clamp(5rem, 11vw, 11rem) max(var(--page-edge), calc((100vw - 1100px)/2)); }
+  .opportunity-intro > p:last-child { font: 500 clamp(1.7rem, 3vw, 3.2rem)/1.25 var(--font-display); letter-spacing: -.015em; }
+  .price-frame { display: grid; grid-template-columns: 1fr 1fr .65fr; gap: 3rem; align-items: end; padding: clamp(4.5rem, 8vw, 8rem) var(--page-edge); color: var(--paper); background: var(--clay); }
+  .price-frame h2 { margin-top: 1rem; font-size: clamp(2.4rem, 4.4vw, 4.6rem); line-height: .96; letter-spacing: -.02em; font-weight: 560; }
+  .price-frame h2 em { color: var(--ink); font-weight: 400; }
+  .price-frame__copy { max-width: 31rem; color: rgba(246,242,231,.88); }
+  .price-frame__note { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(246,242,231,.3); font-size: .82rem; color: rgba(246,242,231,.72); }
+  .price-frame__amount { padding-left: 1.2rem; border-left: 1px solid rgba(246,242,231,.5); }
+  .price-frame__amount span, .price-frame__amount small { display: block; font: 500 .58rem/1.45 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; }
+  .price-frame__amount strong { display: block; margin: .35rem 0 .5rem; color: var(--ink); font: 400 clamp(2.2rem, 3.5vw, 3.8rem)/.9 var(--font-display); letter-spacing: -.06em; }
+  .price-frame__amount small { opacity: .75; }
+  .opportunity-sections { padding: clamp(4.5rem, 8vw, 8.5rem) var(--page-edge); background: var(--sand); }
+  .opportunity-sections > .eyebrow { margin-bottom: 3rem; }
+  .opportunity-sections__list { max-width: 1080px; margin-left: auto; }
+  .opportunity-sections article { display: grid; grid-template-columns: 5rem 1fr; gap: 2rem; padding: 2.4rem 0; border-top: 1px solid var(--line); }
+  .opportunity-sections article:last-child { border-bottom: 1px solid var(--line); }
+  .opportunity-sections article > span { color: var(--clay); font: 500 .65rem/1 var(--font-mono); letter-spacing: .1em; }
+  .opportunity-sections h2 { font-size: clamp(1.8rem, 2.8vw, 2.8rem); line-height: 1.02; letter-spacing: -.015em; margin-bottom: .8rem; font-weight: 560; }
+  .opportunity-sections p { max-width: 42rem; color: rgba(24,49,41,.78); }
+  .due-diligence { display: grid; grid-template-columns: 1.1fr 1fr; gap: 3rem 5rem; align-items: end; padding: clamp(5rem, 9vw, 9rem) var(--page-edge); color: var(--paper); background: var(--ink); }
+  .due-diligence h2 { margin-top: 1.1rem; font-size: clamp(2.3rem, 4.4vw, 4.6rem); line-height: .98; letter-spacing: -.02em; font-weight: 560; }
+  .due-diligence ol { display: grid; gap: 1rem; list-style: none; counter-reset: diligence; }
+  .due-diligence li { counter-increment: diligence; display: grid; grid-template-columns: 2rem 1fr; gap: 1rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(246,242,231,.18); color: rgba(246,242,231,.78); }
+  .due-diligence li::before { content: '0' counter(diligence); color: var(--ochre); font: 500 .6rem/1.6 var(--font-mono); letter-spacing: .07em; }
+  .due-diligence .button { grid-column: 2; justify-self: start; }
+  .opportunity-image { height: min(54vw, 46rem); position: relative; overflow: hidden; }
+  .opportunity-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(15,33,28,.58), transparent 38%); }
+  .opportunity-image img { width: 100%; height: 100%; object-fit: cover; object-position: var(--hero-position); }
+  .opportunity-image p { position: absolute; z-index: 1; left: var(--page-edge); bottom: 2rem; color: var(--paper); font: 500 .59rem/1.75 var(--font-mono); letter-spacing: .11em; text-transform: uppercase; }
+  @media (max-width: 800px) { .opportunity-hero { min-height: 43rem; padding-bottom: 7.5rem; } .back-link { margin-bottom: 3.5rem; } .opportunity-hero__facts { left: var(--page-edge); right: auto; bottom: 2.3rem; grid-template-columns: 1fr 1fr; text-align: left; } .opportunity-intro, .price-frame, .due-diligence { grid-template-columns: 1fr; } .opportunity-intro { gap: 1.3rem; } .price-frame { gap: 2rem; } .price-frame__amount { padding: 1rem 0 0; border-left: 0; border-top: 1px solid rgba(246,242,231,.5); } .due-diligence .button { grid-column: auto; } .opportunity-image { height: 76vw; } }
+  @media (max-width: 500px) { .opportunity-hero { min-height: 42rem; } .opportunity-hero h1 { font-size: clamp(3.35rem, 16vw, 4.8rem); } .opportunity-sections article { grid-template-columns: 2.8rem 1fr; gap: .85rem; } .opportunity-image { height: 29rem; } }
+</style>

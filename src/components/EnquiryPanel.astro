@@ -1,0 +1,73 @@
+---
+interface Props {
+  interest?: string;
+}
+
+import { property } from '../data/property';
+
+const { interest = '' } = Astro.props;
+---
+
+<section id="enquire" class="enquiry-panel">
+  <div class="enquiry-panel__intro">
+    <p class="eyebrow eyebrow--light">Book a live video walkthrough</p>
+    <h2>See the exact rooms<br /><em>before you fly.</em></h2>
+    <p>Tell us which future you are pricing: retreat, tourism business or freer living. We will walk those rooms, terraces and systems live on video. Reply within 48 hours, buyer-facts brief included, no obligation.</p>
+    <div class="enquiry-panel__direct">
+      <a class="button button--paper" href={property.contact.whatsapp} target="_blank" rel="noopener">WhatsApp Lenz <span aria-hidden="true">↗</span></a>
+      <a class="enquiry-panel__mail" href={`mailto:${property.contact.email}`}>{property.contact.email}</a>
+    </div>
+    <p class="enquiry-panel__reassurance">€890,000 · T1 + T3 ready · 45 min from Faro</p>
+  </div>
+  <form class="enquiry-form" name="estate-enquiry" method="POST" data-netlify="true" action="/success">
+    <input type="hidden" name="form-name" value="estate-enquiry" />
+    <div class="enquiry-form__field enquiry-form__field--wide">
+      <label for="interest">I am exploring</label>
+      <select id="interest" name="interest" autocomplete="off">
+        <option value="" selected={interest === ''}>Select a direction</option>
+        <option value="retreat and wellbeing" selected={interest === 'retreat and wellbeing'}>Retreat & wellbeing</option>
+        <option value="rural tourism" selected={interest === 'rural tourism'}>Rural tourism</option>
+        <option value="independent rural living" selected={interest === 'independent rural living'}>Independent rural living</option>
+        <option value="the estate generally" selected={interest === 'the estate generally'}>The estate generally</option>
+      </select>
+    </div>
+    <div class="enquiry-form__field">
+      <label for="name">Your name</label>
+      <input id="name" type="text" name="name" autocomplete="name" placeholder="Jane Berger…" required />
+    </div>
+    <div class="enquiry-form__field">
+      <label for="email">Email address</label>
+      <input id="email" type="email" name="email" autocomplete="email" spellcheck="false" placeholder="jane@example.com…" required />
+    </div>
+    <div class="enquiry-form__field enquiry-form__field--wide">
+      <label for="message">Which rooms should we film?</label>
+      <textarea id="message" name="message" rows="4" autocomplete="off" placeholder="For example: film the T1, the T3 and the factory shell, plus the water system…" required></textarea>
+    </div>
+    <button type="submit" class="button button--ochre">Book my video walkthrough <span aria-hidden="true">↗</span></button>
+    <p class="enquiry-form__note">Weekly slots · we confirm your time by email within 48 hours.</p>
+  </form>
+</section>
+
+<style>
+  .enquiry-panel { background: var(--ink); color: var(--paper); padding: clamp(4.5rem, 9vw, 9rem) var(--page-edge); display: grid; grid-template-columns: .92fr 1.08fr; gap: clamp(3rem, 9vw, 11rem); }
+  .enquiry-panel__intro { max-width: 35rem; }
+  .enquiry-panel h2 { margin: 1.25rem 0 1.7rem; font: 400 clamp(3.1rem, 5vw, 5.5rem)/.9 var(--font-display); letter-spacing: -.015em; }
+  .enquiry-panel h2 em { color: var(--ochre); font-weight: 400; }
+  .enquiry-panel__intro > p:last-child { color: rgba(252,250,246,.78); max-width: 31rem; line-height: 1.7; }
+  .enquiry-panel__direct { display: flex; align-items: center; flex-wrap: wrap; gap: .9rem 1.2rem; margin-top: 1.8rem; }
+  .enquiry-panel__mail { color: var(--paper); font: 550 .75rem/1.4 var(--font-mono); letter-spacing: .04em; border-bottom: 1px solid rgba(246,242,231,.48); padding-bottom: .2rem; }
+  .enquiry-panel__mail:hover { color: var(--ochre); border-color: var(--ochre); }
+  .enquiry-panel__reassurance { margin-top: 1.2rem; color: var(--ochre); font: 500 .6rem/1.6 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; }
+  .enquiry-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1.55rem 1.4rem; align-content: start; padding: 1.5rem; border: 1px solid rgba(252,250,246,.2); border-radius: .35rem; background: rgba(252,250,246,.045); }
+  .enquiry-form__field--wide { grid-column: 1 / -1; }
+  .enquiry-form label { display: block; margin-bottom: .5rem; color: var(--ochre); font: 650 .7rem/1 var(--font-mono); letter-spacing: .075em; text-transform: uppercase; }
+  .enquiry-form input, .enquiry-form textarea, .enquiry-form select { width: 100%; color: var(--paper); border: 0; border-bottom: 1px solid rgba(246,242,231,.34); border-radius: 0; background: transparent; padding: .72rem 0; font: 400 1rem/1.5 var(--font-body); }
+  .enquiry-form select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--ochre) 50%), linear-gradient(135deg, var(--ochre) 50%, transparent 50%); background-position: calc(100% - 12px) calc(50% - 2px), calc(100% - 7px) calc(50% - 2px); background-size: 5px 5px, 5px 5px; background-repeat: no-repeat; }
+  .enquiry-form select option { color: var(--ink); }
+  .enquiry-form textarea { resize: vertical; min-height: 7.25rem; }
+  .enquiry-form input:focus-visible, .enquiry-form textarea:focus-visible, .enquiry-form select:focus-visible { border-color: var(--ochre); outline: 2px solid var(--ochre); outline-offset: 3px; }
+  .enquiry-form .button { justify-self: start; margin-top: .5rem; }
+  .enquiry-form__note { grid-column: 1 / -1; margin-top: .2rem; color: rgba(246,242,231,.6); font-size: .82rem; }
+  @media (max-width: 800px) { .enquiry-panel { grid-template-columns: 1fr; gap: 2.7rem; } }
+  @media (max-width: 520px) { .enquiry-form { grid-template-columns: 1fr; padding: 1.2rem; } .enquiry-form__field--wide { grid-column: auto; } }
+</style>

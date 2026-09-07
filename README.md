@@ -1,4 +1,4 @@
-# Algarve Property — Estate Listing Site
+# Algarve Property: Estate Listing Site
 
 Static property listing built with [Astro](https://astro.build/).
 
@@ -43,11 +43,11 @@ video: {
 ### Update Details
 
 Edit any field in `src/data/property.ts`:
-- `price` — set your asking price or keep "Price on Request"
-- `contact` — add your email, phone, WhatsApp
-- `location_details` — fill in nearest town, distances
-- `description` — edit the story paragraphs
-- `gallery` — add/remove photos
+- `price`: set your asking price or keep "Price on Request"
+- `contact`: add your email, phone, WhatsApp
+- `location_details`: fill in nearest town, distances
+- `description`: edit the story paragraphs
+- `gallery`: add/remove photos
 
 ## Deploy (Free)
 
