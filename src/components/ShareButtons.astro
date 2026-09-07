@@ -1,10 +1,10 @@
 ---
 import { property } from '../data/property';
 
-const shareUrl = encodeURIComponent('https://kittyfromouterspace.github.io/algarve-property/');
+const shareUrl = encodeURIComponent('https://fonte-do-palheiro.estate/');
 const shareText = encodeURIComponent(`${property.name}: ${property.tagline}. ${property.metaDescription}`);
 const shareSubject = encodeURIComponent(`Check out ${property.name}`);
-const shareBody = encodeURIComponent(`${property.name}\n${property.tagline}\n\nhttps://kittyfromouterspace.github.io/algarve-property/`);
+const shareBody = encodeURIComponent(`${property.name}\n${property.tagline}\n\nhttps://fonte-do-palheiro.estate/`);
 
 const shareLinks = [
   {
@@ -73,13 +73,13 @@ const shareLinks = [
     
     copyBtn?.addEventListener('click', async () => {
       try {
-        await navigator.clipboard.writeText('https://kittyfromouterspace.github.io/algarve-property/');
+        await navigator.clipboard.writeText('https://fonte-do-palheiro.estate/');
         tooltip?.classList.add('show');
         setTimeout(() => tooltip?.classList.remove('show'), 2000);
       } catch (err) {
         // Fallback for older browsers
         const textarea = document.createElement('textarea');
-        textarea.value = 'https://kittyfromouterspace.github.io/algarve-property/';
+        textarea.value = 'https://fonte-do-palheiro.estate/';
         textarea.style.position = 'fixed';
         textarea.style.opacity = '0';
         document.body.appendChild(textarea);
