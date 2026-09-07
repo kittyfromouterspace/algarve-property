@@ -1,853 +1,206 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Icon from '../components/Icon.astro';
 import Gallery from '../components/Gallery.astro';
-import ShareButtons from '../components/ShareButtons.astro';
-import { property } from '../data/property';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import EnquiryPanel from '../components/EnquiryPanel.astro';
+import { estateFacts, opportunities, property } from '../data/property';
 ---
 
-<Layout title={property.name} description={property.metaDescription}>
-  <!-- Navigation -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="#" class="nav-brand">{property.name}</a>
-      <div class="nav-links">
-        <a href="#overview">Overview</a>
-        <a href="#lifestyle">Lifestyle</a>
-        <a href="#location">Location</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact" class="nav-cta">Get in Touch</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-bg">
-      <img
-        src={property.hero.image}
-        alt={property.hero.alt}
-        width={property.hero.width}
-        height={property.hero.height}
-        fetchpriority="high"
-        decoding="async"
-      />
-    </div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <p class="hero-location">{property.location}</p>
-      <h1 class="hero-title">{property.tagline}</h1>
-      <p class="hero-price">
-        <span class="price-old"><del>{property.priceOriginal}</del></span>
-        <span class="price-new">{property.price}</span>
-      </p>
-      <a href="#contact" class="btn">Enquire Now</a>
-    </div>
-    <div class="scroll-indicator">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
-
-  <!-- Intro -->
-  <section id="overview" class="section intro">
-    <div class="container">
-      <div class="intro-grid">
-        <div class="intro-text">
-          <p class="intro-label">The Estate</p>
-          <h2 class="intro-title">A New Chapter in the Algarve</h2>
-          {property.description.map((p, i) => (
-            <p class={i === 0 ? "intro-lead" : "intro-body"}>{p}</p>
-          ))}
+<Layout title="Skip the ruin: 2.5 ha Algarve estate, €890,000 | Quinta Fonte do Palheiro" description="2.5 ha ridge-line estate with 2 furnished houses, pool, meditation house, 500 m² commercial shell, own water, 45 min from Faro. For retreats, rural tourism or freer living. Book a live video walkthrough.">
+  <SiteHeader ctaHref="#enquire" />
+  <main id="main">
+    <section class="hero">
+      <img class="hero__image" src="/images/areal1.jpg" alt="Aerial view of Quinta Fonte do Palheiro and the Algarve hills" width="1600" height="1200" fetchpriority="high" decoding="async" />
+      <div class="hero__veil"></div>
+      <div class="hero__content">
+        <p class="eyebrow eyebrow--light">Salir, Loulé · Algarve · €890,000</p>
+        <h1>Skip the ruin.<br /><em>Start living in week one.</em></h1>
+        <p class="hero__statement">Quinta Fonte do Palheiro is a 2.5-hectare ridge-line estate with two furnished houses, a pool, a meditation house, a 500&nbsp;m² commercial shell and its own water, 45 minutes from Faro. Built for retreat hosts, tourism operators or a freer life.</p>
+        <div class="hero__actions">
+          <a class="button button--ochre" href="#enquire">Book a live video walkthrough <span aria-hidden="true">↗</span></a>
+          <a class="hero__quiet-link" href="#possibilities">Which future fits you? <span aria-hidden="true">↓</span></a>
         </div>
-        <div class="intro-stats">
-          <div class="stat">
-            <span class="stat-number">2.5</span>
-            <span class="stat-label">Hectares</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">10+</span>
-            <span class="stat-label">Buildings</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">500m²</span>
-            <span class="stat-label">Workshop</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">∞</span>
-            <span class="stat-label">Possibilities</span>
-          </div>
-        </div>
+        <p class="hero__reassurance">Video tours weekly · reply within 48 hours · buyer-facts brief before you fly</p>
       </div>
-    </div>
-  </section>
+      <div class="hero__price"><span>Asking price</span><strong>€890,000</strong></div>
+      <div class="hero__location">37° N · Algarve hills<br />45 min · Faro airport</div>
+    </section>
 
-  <!-- Scenic Image Break: Main House -->
-  <section class="image-break">
-    <img
-      src={property.scenicImages[0].src}
-      alt={property.scenicImages[0].alt}
-      width="1920"
-      height="800"
-      loading="lazy"
-      decoding="async"
-    />
-    <div class="image-break-caption">
-      <span>{property.scenicImages[0].caption}</span>
-    </div>
-  </section>
+    <section class="fact-strip" aria-label="Estate facts">
+      <p>Estate brief <span aria-hidden="true">/</span> 2026</p>
+      {estateFacts.map((fact) => <div><strong>{fact.value}</strong><span>{fact.label}</span></div>)}
+    </section>
 
-  <!-- Highlights -->
-  <section class="section highlights">
-    <div class="container">
-      <div class="highlights-header">
-        <p class="section-label">Features</p>
-        <h2 class="section-title">At a Glance</h2>
+    <section class="manifesto">
+      <div class="manifesto__label"><p class="eyebrow">Stop scrolling villas</p><span>01</span></div>
+      <div class="manifesto__copy">
+        <h2>This is not<br />a villa with extras.</h2>
+        <p>You know the feeling: every portal shows you “3-bed villa with pool, close to beach,” and none of it fits a retreat venue, a tourism business or a freer rural life. Quinta Fonte do Palheiro was never a beach villa. It is 10+ buildings, its own water and a commercially zoned 500&nbsp;m² shell on a ridge the estate owns the view from. So the question is not how many bathrooms. It is <em>what will you make possible here?</em></p>
+        <p class="manifesto__cta"><a class="button" href="#enquire">See it live before you fly <span aria-hidden="true">↗</span></a></p>
       </div>
-      <div class="highlights-grid">
-        {property.highlights.map((h, i) => (
-          <div class="highlight-card" style={`animation-delay: ${i * 0.08}s`}>
-            <div class="highlight-icon">
-              <Icon name={h.icon} size={32} />
-            </div>
-            <h3>{h.title}</h3>
-            <p>{h.description}</p>
-          </div>
+      <figure class="manifesto__image"><img src="/images/main-house-outside-view2.JPG" alt="The main house with Algarve hills beyond" width="1600" height="1201" loading="lazy" decoding="async" /><figcaption>Hills to coastline · outlook you own</figcaption></figure>
+    </section>
+
+    <section id="possibilities" class="possibilities">
+      <header class="possibilities__header"><p class="eyebrow">Choose your lens</p><h2>One estate.<br /><em>Three ways to earn it back.</em></h2><p>The place is the same. The maths, the questions and the walkthrough are different. Pick the future you want to price. We will show you those exact rooms live.</p></header>
+      <div class="possibilities__list">
+        {opportunities.map((opportunity, index) => (
+          <a class:list={['possibility', { 'possibility--reverse': index === 1 }]} href={`/${opportunity.slug}`}>
+            <div class="possibility__image"><img src={opportunity.image} alt={opportunity.imageAlt} width={opportunity.imageWidth} height={opportunity.imageHeight} loading="lazy" decoding="async" /><span>{opportunity.number}</span></div>
+            <div class="possibility__copy"><p class="eyebrow">{opportunity.label}</p><h3>{opportunity.cardTitle}</h3><p>{opportunity.summary}</p><ul>{opportunity.facts.slice(0, 3).map((fact) => <li>{fact}</li>)}</ul><span class="possibility__link">Walk this route live <b aria-hidden="true">↗</b></span></div>
+          </a>
         ))}
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Scenic Image Break: Sunset Views -->
-  <section class="image-break">
-    <img
-      src={property.scenicImages[1].src}
-      alt={property.scenicImages[1].alt}
-      width="1920"
-      height="800"
-      loading="lazy"
-      decoding="async"
-    />
-    <div class="image-break-caption">
-      <span>{property.scenicImages[1].caption}</span>
-    </div>
-  </section>
-
-  <!-- Lifestyle -->
-  <section id="lifestyle" class="section lifestyle">
-    <div class="container">
-      <div class="lifestyle-header">
-        <p class="section-label">Perfect For</p>
-        <h2 class="section-title">Endless Possibilities</h2>
+    <section class="steps" aria-label="How it works">
+      <div class="steps__label"><p class="eyebrow">From click to sunset</p><span>03</span></div>
+      <div class="steps__copy">
+        <h2>See it as it really is<br />in three steps.</h2>
+        <ol>
+          <li><strong>1: Pick your lens.</strong> Retreat, rural tourism or independent living. Each page shows the rooms and numbers that matter for that plan.</li>
+          <li><strong>2: Book a live video walkthrough.</strong> We film the exact guest rooms, terraces, factory shell and water systems you ask about. No staged edit.</li>
+          <li><strong>3: Visit with the facts in hand.</strong> Read the 6 buyer facts first, then fly to Faro knowing the licensing, water and access questions to ask.</li>
+        </ol>
+        <a class="button button--ochre" href="#enquire">Start with step 2: book the walkthrough <span aria-hidden="true">↗</span></a>
       </div>
-      <div class="lifestyle-grid">
-        {property.idealFor.map((item, i) => (
-          <div class="lifestyle-card">
-            <span class="lifestyle-number">0{i + 1}</span>
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
-          </div>
-        ))}
+    </section>
+
+    <section class="estate-assembly">
+      <div class="estate-assembly__heading"><p class="eyebrow eyebrow--light">The physical estate</p><h2>Everything already<br />has a place.</h2><p>Not a floor plan, but a set of settings: arrive in a furnished house, gather by the pool at sunset, make in the workshop, rest in the meditation house and grow on the terraces. Furnished down to the cutlery.</p><a href="#enquire" class="button button--paper">Ask to see your setting live <span aria-hidden="true">↗</span></a></div>
+      <div class="estate-assembly__photos">
+        <figure class="estate-assembly__photo estate-assembly__photo--pool"><img src="/images/pool4.JPG" alt="Poolside terrace overlooking the hills" width="1600" height="900" loading="lazy" decoding="async" /><figcaption>Gather · poolside terrace</figcaption></figure>
+        <figure class="estate-assembly__photo estate-assembly__photo--yoga"><img src="/images/meditation-house1.jpg" alt="Dedicated meditation house in the gardens" width="900" height="1600" loading="lazy" decoding="async" /><figcaption>Rest · meditation house</figcaption></figure>
+        <figure class="estate-assembly__photo estate-assembly__photo--factory"><img src="/images/wood-workshop.jpg" alt="Wood workshop with tools and benches" width="1600" height="902" loading="lazy" decoding="async" /><figcaption>Make · wood workshop</figcaption></figure>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Scenic Image Break: Pool -->
-  <section class="image-break">
-    <img
-      src={property.scenicImages[2].src}
-      alt={property.scenicImages[2].alt}
-      width="1920"
-      height="800"
-      loading="lazy"
-      decoding="async"
-    />
-    <div class="image-break-caption">
-      <span>{property.scenicImages[2].caption}</span>
-    </div>
-  </section>
+    <section class="proof">
+      <div class="proof__figure"><img src="/images/overview-plan1.jpg" alt="Estate overview plan" width="4032" height="2268" loading="lazy" decoding="async" /><span>Estate overview plan</span></div>
+      <div class="proof__content"><p class="eyebrow">The questions that matter</p><h2>A beautiful idea<br />should survive<br /><em>tough questions.</em></h2><p>Commercial vs. private zoning, own water, hillside terraces, access and internet. We put the deal-killers on the table early, so the buyers who fly are the buyers who stay. Read the 6 buyer facts in five minutes.</p><div class="proof__actions"><a href="/buyer-facts" class="button">Read the 6 buyer facts <span aria-hidden="true">↗</span></a><a href="#enquire" class="proof__quiet-link">Or ask us directly ↗</a></div></div>
+    </section>
 
-  <!-- Location -->
-  <section id="location" class="section location">
-    <div class="container">
-      <div class="location-grid">
-        <div class="location-text">
-          <p class="section-label">Location</p>
-          <h2 class="location-region">{property.location_details.region}</h2>
-          <p class="location-desc">{property.location_details.description}</p>
-          <ul class="location-details">
-            {property.location_details.nearestTown !== "TBD" && (
-              <li><strong>Nearest town:</strong> {property.location_details.nearestTown}</li>
-            )}
-            <li><strong>Airport:</strong> {property.location_details.airport}</li>
-            <li><strong>Coast:</strong> {property.location_details.coast}</li>
-            <li><strong>Supermarket:</strong> {property.location_details.supermarket}</li>
-          </ul>
-        </div>
-        <div class="location-map">
-          <iframe
-            src="https://www.openstreetmap.org/export/embed.html?bbox=-8.02%2C37.18%2C-7.98%2C37.24&amp;layer=mapnik&amp;marker=37.21%2C-8.00"
-            width="100%"
-            height="100%"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            title="Property Location">
-          </iframe>
-        </div>
+    <section class="objections" aria-label="Honest answers">
+      <header class="objections__header"><p class="eyebrow">Heard it before? Good.</p><h2>The four objections,<br />answered honestly.</h2></header>
+      <div class="objections__grid">
+        <article><h3>“Too far from the beach?”</h3><p>40 minutes to the coast, 45 to Faro. Retreat guests and rural travellers come for the hills, and you are the venue they fly to, not the villa they walk from.</p></article>
+        <article><h3>“Is the land too steep?”</h3><p>Parts are. The terraces that count for growing, gathering or building are established and walkable. Judge them on live video, not on a contour map.</p></article>
+        <article><h3>“Can I legally operate here?”</h3><p>Factory: commercially zoned. Houses and terraces: private-zoned today. Bring your format and confirm the route with Loulé Council. We show you which building is which first.</p></article>
+        <article><h3>“What about water and power?”</h3><p>Own water source, 3-phase power throughout, 11&nbsp;kW EV charger installed. Ask for seasonal water performance and running costs on your call.</p></article>
       </div>
-    </div>
-  </section>
+      <a href="/buyer-facts" class="objections__link">All six buyer facts with the fine print ↗</a>
+    </section>
 
-  <!-- Scenic Image Break: Factory -->
-  <section class="image-break">
-    <img
-      src={property.scenicImages[3].src}
-      alt={property.scenicImages[3].alt}
-      width="1920"
-      height="800"
-      loading="lazy"
-      decoding="async"
-    />
-    <div class="image-break-caption">
-      <span>{property.scenicImages[3].caption}</span>
-    </div>
-  </section>
-
-  <!-- Gallery: ALL images at the bottom -->
-  <Gallery images={property.gallery} />
-
-  <!-- Contact -->
-  <section id="contact" class="section contact">
-    <div class="container">
-      <div class="contact-inner">
-        <p class="section-label light">Get in Touch</p>
-        <h2 class="contact-title">Ready for Your New Life?</h2>
-        <p class="contact-subtitle">Arrange a viewing or learn more about this unique opportunity</p>
-        <div class="contact-methods">
-          {property.contact.email !== "TBD@example.com" && (
-            <a href={`mailto:${property.contact.email}`} class="contact-link">
-              <span class="contact-icon">✉</span>
-              {property.contact.email}
-            </a>
-          )}
-          {property.contact.phone && (
-            <a href={`tel:${property.contact.phone}`} class="contact-link">
-              <span class="contact-icon">📞</span>
-              {property.contact.phone}
-            </a>
-          )}
-          {property.contact.whatsapp && (
-            <a href={`https://wa.me/${property.contact.whatsapp}`} class="contact-link" target="_blank">
-              <span class="contact-icon">💬</span>
-              WhatsApp
-            </a>
-          )}
-        </div>
-
-        <form class="contact-form" name="contact" method="POST" data-netlify="true" action="/success">
-          <input type="hidden" name="form-name" value="contact" />
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required />
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" />
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-submit">Send Message</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <ShareButtons />
-      <p>&copy; {new Date().getFullYear()} {property.name}. All rights reserved.</p>
-    </div>
-  </footer>
+    <section class="location-band"><p class="eyebrow">A quieter Algarve</p><div><h2>Salir sits beyond<br />the resort noise.</h2><p>Malhão, near Salir: 45 minutes from Faro Airport for guest logistics, around 40 minutes from the coast, 15 minutes to the supermarket. Rural enough for silence and close enough for business, with a ridge-line sunset no one can build in front of.</p><a href="#enquire" class="location-band__cta">Come and watch one sunset ↗</a></div><span class="location-band__marker">Salir<br /><i>37.21° N</i></span></section>
+    <Gallery images={property.gallery} />
+    <EnquiryPanel />
+  </main>
+  <SiteFooter />
 </Layout>
 
 <style>
-  /* Navigation */
-  .nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    padding: 1.5rem 0;
-    transition: background 0.3s ease, padding 0.3s ease;
-  }
-  .nav.scrolled {
-    background: rgba(248, 245, 240, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 1rem 0;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
-  }
-  .nav-inner {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .nav-brand {
-    font-family: var(--font-heading);
-    font-size: 1.4rem;
-    font-weight: 500;
-    color: var(--color-white);
-    letter-spacing: 0.02em;
-    transition: color 0.3s ease;
-  }
-  .nav.scrolled .nav-brand {
-    color: var(--color-primary);
-  }
-  .nav-links {
-    display: flex;
-    gap: 2.5rem;
-    align-items: center;
-  }
-  .nav-links a {
-    color: rgba(255,255,255,0.9);
-    font-size: 0.9rem;
-    font-weight: 400;
-    letter-spacing: 0.03em;
-    transition: color 0.3s ease;
-  }
-  .nav.scrolled .nav-links a {
-    color: var(--color-text);
-  }
-  .nav-links a:hover {
-    color: var(--color-accent);
-  }
-  .nav-cta {
-    background: var(--color-accent) !important;
-    color: var(--color-white) !important;
-    padding: 0.7rem 1.5rem;
-    border-radius: 4px;
-    font-weight: 500 !important;
-  }
-  .nav-cta:hover {
-    background: #b39568 !important;
-  }
-
-  /* Hero */
-  .hero {
-    position: relative;
-    height: 100vh;
-    min-height: 700px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-  }
-  .hero-bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    animation: kenBurns 20s ease-in-out infinite alternate;
-  }
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(26, 47, 35, 0.3) 0%,
-      rgba(26, 47, 35, 0.5) 50%,
-      rgba(26, 47, 35, 0.7) 100%
-    );
-    z-index: 1;
-  }
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    color: var(--color-white);
-    max-width: 900px;
-    padding: 0 2rem;
-    animation: fadeInUp 1s ease 0.3s forwards;
-    opacity: 0;
-  }
-  .hero-location {
-    font-size: 0.85rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    margin-bottom: 1.5rem;
-    font-weight: 300;
-    opacity: 0.9;
-  }
-  .hero-title {
-    font-family: var(--font-heading);
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: 300;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.01em;
-  }
-  .hero-price {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    gap: 1.25rem;
-    margin-bottom: 2.5rem;
-    flex-wrap: wrap;
-  }
-  .hero-price .price-old {
-    font-size: 1.1rem;
-    font-weight: 300;
-    opacity: 0.55;
-    line-height: 1;
-  }
-  .hero-price .price-old del {
-    text-decoration: line-through;
-    text-decoration-thickness: 1px;
-    text-decoration-color: rgba(255,255,255,0.6);
-  }
-  .hero-price .price-new {
-    font-size: 1.7rem;
-    font-weight: 400;
-    color: var(--color-accent);
-    line-height: 1;
-  }
-  .btn {
-    display: inline-block;
-    background: var(--color-accent);
-    color: var(--color-white);
-    padding: 1rem 2.5rem;
-    border-radius: 4px;
-    font-weight: 500;
-    font-size: 0.95rem;
-    letter-spacing: 0.05em;
-    transition: all 0.3s ease;
-  }
-  .btn:hover {
-    background: #b39568;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  }
-  .scroll-indicator {
-    position: absolute;
-    bottom: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--color-white);
-    opacity: 0.7;
-    animation: fadeIn 1s ease 1.5s forwards;
-  }
-  .scroll-indicator span {
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-  }
-  .scroll-line {
-    width: 1px;
-    height: 40px;
-    background: linear-gradient(to bottom, var(--color-white), transparent);
-  }
-
-  /* Sections */
-  .section {
-    padding: 8rem 0;
-  }
-  .container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 3rem;
-  }
-  .section-label {
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--color-accent);
-    margin-bottom: 1rem;
-  }
-  .section-title {
-    font-family: var(--font-heading);
-    font-size: clamp(2rem, 4vw, 3rem);
-    color: var(--color-primary);
-    margin-bottom: 3rem;
-  }
-
-  /* Intro */
-  .intro {
-    background: var(--color-cream);
-  }
-  .intro-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 4rem;
-    align-items: center;
-  }
-  .intro-label {
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--color-accent);
-    margin-bottom: 1rem;
-  }
-  .intro-title {
-    font-family: var(--font-heading);
-    font-size: clamp(2rem, 4vw, 3rem);
-    color: var(--color-primary);
-    margin-bottom: 2rem;
-  }
-  .intro-lead {
-    font-size: 1.25rem;
-    line-height: 1.8;
-    color: var(--color-text);
-    margin-bottom: 1.5rem;
-  }
-  .intro-body {
-    color: var(--color-text-light);
-    margin-bottom: 1rem;
-  }
-  .intro-stats {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-  .stat {
-    text-align: center;
-    padding: 2rem;
-    background: var(--color-white);
-    border-radius: 4px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-  }
-  .stat-number {
-    display: block;
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    color: var(--color-primary);
-    margin-bottom: 0.5rem;
-  }
-  .stat-label {
-    font-size: 0.85rem;
-    color: var(--color-text-light);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-
-  /* Image Break */
-  .image-break {
-    position: relative;
-    height: 70vh;
-    overflow: hidden;
-  }
-  .image-break img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .image-break-caption {
-    position: absolute;
-    bottom: 2rem;
-    left: 3rem;
-    background: var(--color-white);
-    padding: 1rem 2rem;
-  }
-  .image-break-caption span {
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    color: var(--color-primary);
-  }
-
-  /* Highlights */
-  .highlights {
-    background: var(--color-white);
-  }
-  .highlights-header {
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-  .highlights-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-  }
-  .highlight-card {
-    text-align: center;
-    padding: 2.5rem 1.5rem;
-    background: var(--color-cream);
-    border-radius: 4px;
-    transition: transform 0.3s ease;
-    animation: fadeInUp 0.6s ease forwards;
-    opacity: 0;
-  }
-  .highlight-card:hover {
-    transform: translateY(-5px);
-  }
-  .highlight-icon {
-    margin-bottom: 1.5rem;
-  }
-  .highlight-card h3 {
-    font-family: var(--font-heading);
-    font-size: 1.3rem;
-    color: var(--color-primary);
-    margin-bottom: 0.75rem;
-  }
-  .highlight-card p {
-    font-size: 0.9rem;
-    color: var(--color-text-light);
-  }
-
-  /* Lifestyle */
-  .lifestyle {
-    background: var(--color-primary);
-    color: var(--color-white);
-  }
-  .lifestyle-header {
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-  .lifestyle-header .section-label {
-    color: var(--color-accent);
-  }
-  .lifestyle-header .section-title {
-    color: var(--color-white);
-  }
-  .lifestyle-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-  }
-  .lifestyle-card {
-    padding: 2.5rem;
-    background: rgba(255,255,255,0.05);
-    border-radius: 4px;
-    border: 1px solid rgba(255,255,255,0.1);
-    transition: all 0.3s ease;
-  }
-  .lifestyle-card:hover {
-    background: rgba(255,255,255,0.1);
-    transform: translateY(-3px);
-  }
-  .lifestyle-number {
-    display: block;
-    font-family: var(--font-heading);
-    font-size: 3rem;
-    color: var(--color-accent);
-    opacity: 0.6;
-    margin-bottom: 1rem;
-  }
-  .lifestyle-card h3 {
-    font-family: var(--font-heading);
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-  }
-  .lifestyle-card p {
-    opacity: 0.8;
-    font-size: 0.95rem;
-    line-height: 1.7;
-  }
-
-  /* Location */
-  .location {
-    background: var(--color-cream);
-  }
-  .location-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-  }
-  .location-region {
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    color: var(--color-primary);
-    margin-bottom: 1.5rem;
-  }
-  .location-desc {
-    margin-bottom: 2rem;
-    line-height: 1.8;
-    color: var(--color-text);
-  }
-  .location-details {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-  .location-details li {
-    font-size: 0.95rem;
-  }
-  .location-details strong {
-    color: var(--color-primary);
-  }
-  .location-map {
-    border-radius: 8px;
-    overflow: hidden;
-    min-height: 400px;
-  }
-  .location-map iframe {
-    border-radius: 8px;
-  }
-
-  /* Contact */
-  .contact {
-    background: var(--color-primary);
-    text-align: center;
-  }
-  .contact-inner {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  .contact .section-label.light {
-    color: var(--color-accent);
-  }
-  .contact-title {
-    font-family: var(--font-heading);
-    font-size: clamp(2rem, 4vw, 3rem);
-    color: var(--color-white);
-    margin-bottom: 1rem;
-  }
-  .contact-subtitle {
-    color: rgba(255,255,255,0.7);
-    margin-bottom: 3rem;
-  }
-  .contact-methods {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-  }
-  .contact-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    color: var(--color-white);
-    font-size: 1.1rem;
-    padding: 1rem 2rem;
-    background: rgba(255,255,255,0.1);
-    border-radius: 4px;
-    transition: all 0.3s ease;
-  }
-  .contact-link:hover {
-    background: rgba(255,255,255,0.2);
-    transform: translateY(-2px);
-  }
-  .contact-icon {
-    font-size: 1.2rem;
-  }
-
-  /* Contact Form */
-  .contact-form {
-    margin-top: 2rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-  .form-group {
-    margin-bottom: 1.25rem;
-  }
-  .form-group label {
-    display: block;
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.8);
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.03em;
-  }
-  .form-group input,
-  .form-group textarea {
-    width: 100%;
-    padding: 0.9rem 1rem;
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 4px;
-    background: rgba(255,255,255,0.1);
-    color: var(--color-white);
-    font-family: var(--font-body);
-    font-size: 1rem;
-    transition: all 0.3s ease;
-  }
-  .form-group input::placeholder,
-  .form-group textarea::placeholder {
-    color: rgba(255,255,255,0.4);
-  }
-  .form-group input:focus,
-  .form-group textarea:focus {
-    outline: none;
-    border-color: var(--color-accent);
-    background: rgba(255,255,255,0.15);
-  }
-  .form-group textarea {
-    resize: vertical;
-    min-height: 120px;
-  }
-  .btn-submit {
-    width: 100%;
-    border: none;
-    cursor: pointer;
-  }
-
-  /* Footer */
-  .footer {
-    padding: 2rem 0;
-    text-align: center;
-    font-size: 0.85rem;
-    color: var(--color-text-light);
-    background: var(--color-warm);
-  }
-
-  /* Mobile */
-  @media (max-width: 900px) {
-    .nav-links {
-      display: none;
-    }
-    .intro-grid,
-    .location-grid {
-      grid-template-columns: 1fr;
-      gap: 3rem;
-    }
-    .highlights-grid {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-    .hero-title {
-      font-size: 2.5rem;
-    }
-    .image-break {
-      height: 50vh;
-    }
-    .form-row {
-      grid-template-columns: 1fr;
-    }
-  }
+  .hero { min-height: min(56rem, 100svh); position: relative; isolation: isolate; display: flex; align-items: end; overflow: hidden; padding: 10rem var(--page-edge) 5.5rem; color: var(--paper); background: var(--ink); }
+  .hero__image { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 56%; animation: reveal-image 1.6s cubic-bezier(.2,.75,.2,1) both; }
+  .hero__veil { position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(8,28,21,.88), rgba(8,28,21,.46) 54%, rgba(8,28,21,.1)), linear-gradient(0deg, rgba(8,28,21,.64), transparent 50%); }
+  .hero__content { max-width: 47rem; animation: rise-in 1.1s .25s cubic-bezier(.2,.75,.2,1) both; }
+  .hero h1 { margin: 1.25rem 0 1.5rem; font-size: clamp(4.2rem, 8vw, 8.2rem); line-height: .88; letter-spacing: -.018em; font-weight: 400; }
+  .hero h1 em { color: var(--ochre); font-weight: 400; }
+  .hero__statement { max-width: 38rem; font-size: clamp(1.02rem, 1.3vw, 1.18rem); line-height: 1.62; color: rgba(252,250,246,.9); }
+  .hero__actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1.2rem 1.6rem; margin-top: 2.15rem; }
+  .hero__quiet-link { color: var(--paper); font: 500 .64rem/1.4 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; border-bottom: 1px solid rgba(246,242,231,.48); padding-bottom: .2rem; }
+  .hero__quiet-link:hover { color: var(--ochre); border-color: var(--ochre); }
+  .hero__reassurance { margin-top: 1.4rem; font: 500 .6rem/1.6 var(--font-mono); letter-spacing: .09em; text-transform: uppercase; color: rgba(246,242,231,.66); }
+  .hero__price { position: absolute; right: var(--page-edge); bottom: 5.5rem; padding: 1rem 0 1rem 1.2rem; border-left: 1px solid var(--ochre); text-align: right; background: linear-gradient(90deg, transparent, rgba(13,37,30,.24)); }
+  .hero__price span, .hero__price strong { display: block; }
+  .hero__price span, .hero__location { font: 500 .58rem/1.5 var(--font-mono); letter-spacing: .11em; text-transform: uppercase; }
+  .hero__price strong { margin-top: .25rem; color: var(--ochre); font: 400 clamp(1.7rem, 2.6vw, 2.6rem)/1 var(--font-display); letter-spacing: -.04em; }
+  .hero__location { position: absolute; left: var(--page-edge); bottom: 1.25rem; opacity: .75; }
+  .fact-strip { background: var(--ochre); color: var(--ink-deep); min-height: 8rem; display: grid; grid-template-columns: 1.35fr repeat(4, 1fr); align-items: stretch; padding: 0 var(--page-edge); }
+  .fact-strip > p, .fact-strip > div { padding: 1.3rem 1rem; display: flex; flex-direction: column; justify-content: center; border-left: 1px solid rgba(15,33,28,.28); }
+  .fact-strip > p { padding-left: 0; border: 0; align-items: start; font: 500 .59rem/1.7 var(--font-mono); letter-spacing: .11em; text-transform: uppercase; }
+  .fact-strip > p span { opacity: .5; margin: .2rem 0; }
+  .fact-strip strong { font: 400 clamp(2rem, 2.6vw, 2.8rem)/.9 var(--font-display); letter-spacing: -.04em; }
+  .fact-strip span { margin-top: .35rem; font: 500 .57rem/1.1 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
+  .manifesto { display: grid; grid-template-columns: .6fr 1.05fr .82fr; gap: clamp(2rem, 5vw, 7rem); align-items: start; padding: clamp(5.5rem, 11vw, 12rem) var(--page-edge); }
+  .manifesto__label { display: flex; justify-content: space-between; gap: 1rem; }
+  .manifesto__label span { font: 500 .59rem/1 var(--font-mono); letter-spacing: .1em; opacity: .5; }
+  .manifesto__copy h2 { max-width: 42rem; font-size: clamp(2.9rem, 4.8vw, 5.1rem); line-height: .94; letter-spacing: -.015em; font-weight: 400; }
+  .manifesto__copy p { max-width: 37rem; margin: 1.7rem 0 0; font-size: 1.06rem; line-height: 1.7; color: rgba(23,54,45,.8); }
+  .manifesto__copy em { color: var(--clay); font-family: var(--font-display); font-size: 1.25em; font-style: normal; }
+  .manifesto__cta { margin-top: 2rem; }
+  .manifesto__image { margin-top: 4.5rem; position: relative; }
+  .manifesto__image::before { content: ''; position: absolute; z-index: -1; inset: -1rem 1rem 1rem -1rem; border: 1px solid var(--clay); border-radius: .35rem; }
+  .manifesto__image img { aspect-ratio: 4/5; width: 100%; border-radius: .25rem; object-fit: cover; }
+  .manifesto__image figcaption { margin-top: .65rem; color: var(--clay); font: 500 .57rem/1.3 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; }
+  .possibilities { padding: clamp(5.5rem, 10vw, 11rem) var(--page-edge); background: var(--sand); }
+  .possibilities__header { max-width: 54rem; padding-bottom: clamp(3.5rem, 7vw, 7rem); }
+  .possibilities__header h2 { margin: 1.15rem 0 1.35rem; font-size: clamp(3.4rem, 6.4vw, 6.8rem); line-height: .88; letter-spacing: -.018em; font-weight: 400; }
+  .possibilities__header h2 em { color: var(--clay); font-weight: 400; }
+  .possibilities__header > p:last-child { max-width: 32rem; color: rgba(24,49,41,.73); }
+  .possibilities__list { display: grid; gap: clamp(4rem, 8vw, 8rem); }
+  .possibility { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: clamp(2rem, 6vw, 7rem); align-items: center; color: var(--ink); }
+  .possibility--reverse { grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); }
+  .possibility--reverse .possibility__image { order: 2; }
+  .possibility__image { position: relative; overflow: hidden; border-radius: .3rem; box-shadow: 0 1.25rem 3rem rgba(23,54,45,.1); }
+  .possibility__image img { width: 100%; height: clamp(23rem, 36vw, 35rem); object-fit: cover; transition: transform .7s cubic-bezier(.2,.75,.2,1); }
+  .possibility:hover .possibility__image img { transform: scale(1.045); }
+  .possibility__image span { position: absolute; z-index: 1; bottom: 1rem; left: 1rem; color: var(--paper); font: 500 .62rem/1 var(--font-mono); letter-spacing: .1em; }
+  .possibility__copy { max-width: 35rem; }
+  .possibility__copy h3 { margin: .85rem 0 1rem; font-size: clamp(2.5rem, 3.8vw, 4.2rem); line-height: .92; letter-spacing: -.012em; font-weight: 400; }
+  .possibility__copy > p:not(.eyebrow) { color: rgba(23,54,45,.8); font-size: 1.03rem; line-height: 1.7; }
+  .possibility__copy ul { display: flex; flex-wrap: wrap; gap: .45rem .85rem; padding: 1.55rem 0; margin: 1.7rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); list-style: none; }
+  .possibility__copy li { font: 500 .58rem/1.2 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
+  .possibility__copy li:not(:last-child)::after { content: '·'; margin-left: .85rem; color: var(--clay); }
+  .possibility__link { color: var(--clay); font: 500 .65rem/1 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; }
+  .possibility__link b { margin-left: .4rem; font-size: 1rem; font-weight: 400; }
+  .steps { display: grid; grid-template-columns: .6fr 1.4fr; gap: clamp(2rem, 5vw, 7rem); padding: clamp(5rem, 10vw, 10rem) var(--page-edge); background: var(--paper); border-top: 1px solid var(--line); }
+  .steps__label span { font: 500 .59rem/1 var(--font-mono); letter-spacing: .1em; opacity: .5; }
+  .steps__label { display: flex; justify-content: space-between; gap: 1rem; align-items: start; }
+  .steps h2 { font-size: clamp(2.7rem, 4.4vw, 4.8rem); line-height: .92; letter-spacing: -.015em; margin-bottom: 2.2rem; font-weight: 400; }
+  .steps ol { list-style: none; display: grid; gap: 1.1rem; margin-bottom: 2.2rem; }
+  .steps li { max-width: 44rem; padding: 1.3rem 0; border-top: 1px solid var(--line); color: rgba(23,54,45,.82); font-size: 1.02rem; line-height: 1.65; }
+  .steps li:last-child { border-bottom: 1px solid var(--line); }
+  .steps li strong { color: var(--ink); }
+  .objections { padding: clamp(5rem, 10vw, 10rem) var(--page-edge); background: var(--sand); }
+  .objections__header { max-width: 54rem; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+  .objections__header h2 { margin-top: 1rem; font-size: clamp(2.8rem, 4.6vw, 4.9rem); line-height: .92; letter-spacing: -.015em; font-weight: 400; }
+  .objections__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  .objections__grid article { border-top: 2px solid var(--clay); padding: 1.2rem 1.2rem 1.35rem; background: rgba(252,250,246,.45); border-radius: 0 0 .25rem .25rem; }
+  .objections__grid h3 { font-size: 1.7rem; line-height: .98; letter-spacing: -.02em; margin-bottom: .8rem; }
+  .objections__grid p { font-size: .97rem; line-height: 1.6; color: rgba(23,54,45,.78); }
+  .objections__link { display: inline-block; margin-top: 2.2rem; color: var(--clay); font: 500 .65rem/1 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; border-bottom: 1px solid var(--clay); padding-bottom: .25rem; }
+  .estate-assembly { display: grid; grid-template-columns: .76fr 1.24fr; gap: clamp(3rem, 9vw, 12rem); padding: clamp(5.5rem, 11vw, 12rem) var(--page-edge); background: var(--ink); color: var(--paper); }
+  .estate-assembly__heading { max-width: 33rem; }
+  .estate-assembly__heading h2 { margin: 1rem 0 1.45rem; font-size: clamp(3.1rem, 4.8vw, 5.2rem); line-height: .9; letter-spacing: -.018em; font-weight: 400; }
+  .estate-assembly__heading > p:last-child { color: rgba(246,242,231,.72); }
+  .estate-assembly__heading .button { margin-top: 1.8rem; }
+  .estate-assembly__photos { min-height: 33rem; display: grid; grid-template-columns: .8fr 1fr; grid-template-rows: 1fr 1fr; gap: .85rem; }
+  .estate-assembly__photo { position: relative; overflow: hidden; border-radius: .25rem; }
+  .estate-assembly__photo img { width: 100%; height: 100%; object-fit: cover; }
+  .estate-assembly__photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(15,33,28,.7), transparent 45%); }
+  .estate-assembly__photo figcaption { position: absolute; z-index: 1; left: .85rem; bottom: .8rem; color: var(--paper); font: 500 .56rem/1.3 var(--font-mono); letter-spacing: .09em; text-transform: uppercase; }
+  .estate-assembly__photo--pool { grid-row: span 2; }
+  .estate-assembly__photo--factory { grid-column: 2; }
+  .proof { display: grid; grid-template-columns: .9fr 1.1fr; min-height: 52rem; }
+  .proof__figure { overflow: hidden; position: relative; background: var(--clay); }
+  .proof__figure img { width: 100%; height: 100%; object-fit: cover; filter: sepia(.14) contrast(.9); mix-blend-mode: multiply; }
+  .proof__figure span { position: absolute; left: 1.5rem; bottom: 1.5rem; color: var(--ink); font: 500 .58rem/1 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; }
+  .proof__content { align-self: center; padding: clamp(4rem, 10vw, 10rem) var(--page-edge); }
+  .proof__content h2 { margin: 1rem 0 1.35rem; font-size: clamp(3rem, 4.6vw, 5.2rem); line-height: .9; letter-spacing: -.018em; font-weight: 400; }
+  .proof__content h2 em { color: var(--clay); font-weight: 400; }
+  .proof__content > p:not(.eyebrow) { max-width: 31rem; color: rgba(23,54,45,.78); margin-bottom: 1.8rem; line-height: 1.7; }
+  .proof__actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem 1.5rem; }
+  .proof__quiet-link { color: var(--clay); font: 500 .64rem/1.4 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; border-bottom: 1px solid var(--clay); padding-bottom: .2rem; }
+  .location-band { display: grid; grid-template-columns: .55fr 1.25fr .45fr; gap: 2rem; align-items: start; padding: clamp(4rem, 8vw, 8rem) var(--page-edge); background: var(--ochre); color: var(--ink-deep); }
+  .location-band h2 { font-size: clamp(2.8rem, 4.4vw, 4.8rem); line-height: .92; letter-spacing: -.015em; font-weight: 400; }
+  .location-band p:not(.eyebrow) { max-width: 37rem; margin-top: 1.1rem; }
+  .location-band__cta { display: inline-block; margin-top: 1.5rem; font: 500 .65rem/1.4 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; border-bottom: 1px solid var(--ink-deep); padding-bottom: .25rem; }
+  .location-band__marker { justify-self: end; display: grid; place-content: center; width: 7.5rem; height: 7.5rem; border: 1px solid rgba(15,33,28,.5); border-radius: 50%; text-align: center; font: 500 .61rem/1.5 var(--font-mono); letter-spacing: .09em; text-transform: uppercase; }
+  .location-band__marker i { font-style: normal; opacity: .6; }
+  @keyframes reveal-image { from { transform: scale(1.07); } to { transform: scale(1); } }
+  @keyframes rise-in { from { opacity: 0; transform: translateY(1.5rem); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 900px) { .fact-strip { grid-template-columns: repeat(4, 1fr); padding: 0 1.5rem; } .fact-strip > p { grid-column: 1 / -1; padding: 1.2rem 0 .35rem; } .manifesto { grid-template-columns: 1fr 1.25fr; } .manifesto__image { grid-column: 2; margin-top: 0; max-width: 25rem; } .estate-assembly, .proof { grid-template-columns: 1fr; } .estate-assembly__photos { min-height: 38rem; } .proof { min-height: 0; } .proof__figure { height: 28rem; } .proof__content { padding: 5rem var(--page-edge); } .steps { grid-template-columns: 1fr; } .objections__grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 700px) { .hero { min-height: 44rem; padding: 8.5rem 1.25rem 7.5rem; } .hero h1 { font-size: clamp(4.4rem, 18vw, 7rem); } .hero__price { right: 1.25rem; bottom: 2.2rem; } .hero__location { left: 1.25rem; bottom: 2.2rem; } .hero__reassurance { margin-bottom: 4rem; } .fact-strip { padding: 0 1.25rem; } .fact-strip > div { padding: 1.15rem .5rem; } .manifesto { grid-template-columns: 1fr; } .manifesto__image { grid-column: auto; width: 100%; margin-top: 1rem; } .possibility, .possibility--reverse { grid-template-columns: 1fr; gap: 2rem; } .possibility--reverse .possibility__image { order: 0; } .possibility__image img { height: 19rem; } .possibility__copy { padding-left: 1.25rem; border-left: 2px solid var(--clay); } .estate-assembly__photos { min-height: 0; grid-template-columns: 1fr 1fr; grid-template-rows: 16rem 13rem; } .estate-assembly__photo--pool { grid-column: 1 / -1; grid-row: auto; } .estate-assembly__photo--factory { grid-column: auto; } .location-band { grid-template-columns: 1fr; } .location-band__marker { justify-self: start; } .objections__grid { grid-template-columns: 1fr; } }
+  @media (max-width: 430px) { .fact-strip { grid-template-columns: 1fr 1fr; } .estate-assembly__photos { min-height: 0; gap: .5rem; grid-template-rows: 14rem 11rem; } .hero__location { display: none; } }
 </style>
-
-<script>
-  const nav = document.querySelector('.nav');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-      nav?.classList.add('scrolled');
-    } else {
-      nav?.classList.remove('scrolled');
-    }
-  });
-</script>

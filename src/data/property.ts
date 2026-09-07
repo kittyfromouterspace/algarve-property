@@ -7,8 +7,8 @@
 export const property = {
   // Basic info
   name: "Quinta Fonte do Palheiro",
-  tagline: "Your New Life in the Algarve Ready and Waiting",
-  metaDescription: "Quinta Fonte do Palheiro - Unique rural property in the Algarve interior. 2.5 hectares, 10+ buildings, pool, 500m² workshop, 3-phase power, 11kW EV charger. Perfect for retreat, co-living, or rural tourism. Now €890.000 (reduced from €950.000)",
+  tagline: "Skip the ruin and the permits. Arrive with a suitcase.",
+  metaDescription: "Quinta Fonte do Palheiro: 2.5 ha Algarve estate, €890,000. Two furnished houses, pool, meditation house, 500 m² commercial building, own water, 45 min from Faro. Book a live video walkthrough.",
   location: "Salir, Loulé, Algarve, Portugal",
   price: "€890.000",
   priceOriginal: "€950.000",
@@ -35,19 +35,21 @@ export const property = {
     ],
     factoryBuilding: "~500 m² (currently workshops & storage)",
     furnished: true,
-    carIncluded: true,
     power: "3-phase electricity throughout",
     evCharging: "11kW 3-phase Type 2 EV charging point",
     views: "Unobstructed panoramic views from the 2nd highest mountain range in the Algarve, overlooking the hills down to the coastline",
+    zoning: "Former factory commercially zoned; remaining estate currently private-zoned",
+    terraces: "Several existing terraces with potential for additional accommodation or gardening, subject to permission",
+    outlook: "Ridge-line position with surrounding land ownership protecting the outlook from development directly in front",
   },
 
   // Description paragraphs
   description: [
-    "Perched on the second-highest mountain range in the Algarve, this extraordinary 2.5-hectare estate offers something rare: a complete, ready-to-live life in one of Europe's most desirable regions.",
-    "Two fully furnished houses, a swimming pool, a meditation house, a bar, and multiple outbuildings sit among terraced gardens with unobstructed views stretching from the rolling hills of the Serra do Caldeirão all the way down to the Atlantic coastline.",
-    "For the entrepreneur or creative, there's a remarkable ~500 m² former factory building — currently used for workshops and storage — waiting to become whatever you dream: a retreat center, artist studios, co-working space, or boutique production facility.",
-    "The property is equipped with 3-phase electricity throughout the estate, including an 11kW 3-phase Type 2 electric vehicle charging point — ideal for EV owners or running power-hungry equipment in the workshop.",
-    "This is not just a property. It's an entire lifestyle, ready for someone who wants to arrive with a suitcase and start living. Fully furnished, right down to a car included in the sale.",
+    "Stop scrolling villas that were never built for what you want. Quinta Fonte do Palheiro is a 2.5-hectare ridge-line estate above Salir, with the homes, water, power and buildings already in place, so you start from living, not from permits.",
+    "Two fully furnished houses, a swimming pool, a meditation house, a bar, multiple outbuildings and several established terraces sit above the Serra do Caldeirão, with open views toward the coastline. The estate owns the land in front of the ridge, so no new building can take the sunset away.",
+    "For a retreat host or rural-tourism operator, the ~500 m² former factory, commercially zoned, gives you a real building to plan around: event hall, shala, production kitchen, guest overflow. The rest of the estate is private-zoned today, so we put licensing, water rights, access and internet on the table early in our buyer-facts brief.",
+    "Three-phase power runs across the estate, with an 11 kW Type 2 EV charger already installed. Own water source, workshop space and 45 minutes to Faro Airport give you the unglamorous infrastructure that decides whether a dream actually operates.",
+    "Furnished down to the cutlery. Come for a live video walkthrough this week and see the estate as it really is, then decide with your eyes open.",
   ],
 
   // Scenic images for main page image breaks
@@ -203,43 +205,30 @@ export const property = {
 
   // Key features for the highlights section
   highlights: [
-    { icon: "house", title: "Main House", description: "Three-bedroom, fully furnished, including self-contained flat" },
-    { icon: "pool", title: "Swimming Pool", description: "Private pool with panoramic views" },
-    { icon: "factory", title: "500 m² Building", description: "Former factory — endless potential" },
-    { icon: "power", title: "3-Phase Power", description: "Full 3-phase electricity across the estate" },
-    { icon: "ev", title: "EV Charging", description: "11kW 3-phase Type 2 charging point" },
-    { icon: "meditation", title: "Meditation House", description: "Dedicated space for mindfulness" },
-    { icon: "bar", title: "Bar & Sleepout", description: "Entertainment ready" },
-    { icon: "car", title: "Car Included", description: "Hit the ground running" },
-    { icon: "views", title: "Stunning Views", description: "Hills to coastline, unobstructed" },
-    { icon: "land", title: "2.5 Hectares", description: "Space to breathe and grow" },
+    { icon: "house", title: "T1 + T3, renovated", description: "Two fully renovated, one more ready to sleep" },
+    { icon: "pool", title: "Pool with sunset view", description: "Poolside evenings your guests will photograph" },
+    { icon: "factory", title: "500 m² commercial building", description: "Commercially zoned shell for shala, hall or production" },
+    { icon: "power", title: "3-phase power everywhere", description: "Run kitchens, workshops and events without upgrades" },
+    { icon: "ev", title: "11 kW EV charger", description: "Premium-guest ready, installed and working" },
+    { icon: "meditation", title: "Meditation house", description: "A quiet room the retreat story starts in" },
+    { icon: "bar", title: "Bar & sleepout", description: "Shared evenings, handled" },
+    { icon: "views", title: "Sunset you own", description: "Ridge-line outlook with surrounding land included" },
+    { icon: "land", title: "2.5 hectares + own water", description: "Terraces to grow, build on or simply breathe in" },
   ],
 
   // Lifestyle / ideal buyer section
   idealFor: [
     {
-      title: "Expats Starting Fresh",
-      description: "Everything is in place — furnished homes, car, infrastructure. Arrive and begin your Portuguese chapter immediately.",
+      title: "Retreat & wellness hosts",
+      description: "Got a waiting list but no venue? Meditation house, pool sunsets, guest-ready houses and a 500 m² commercial shell 45 minutes from Faro. Take bookings from season one instead of building for three years.",
     },
     {
-      title: "Retreat & Wellness",
-      description: "Meditation house, pool, panoramic serenity, and space for groups. A natural wellness destination.",
+      title: "Rural-tourism operators",
+      description: "Buying numbers, not sunsets? Start with bed-capacity math, 3-phase power, bar, EV charger, own water and terraces to expand on. Then read the buyer-facts brief before you fly.",
     },
     {
-      title: "Creative Entrepreneurs",
-      description: "The 500 m² factory building with 3-phase power is a blank canvas for studios, workshops, co-working, or small-scale production.",
-    },
-    {
-      title: "Rural Tourism",
-      description: "Portugal's turismo rural sector is booming. Multiple buildings, stunning location, and existing infrastructure.",
-    },
-    {
-      title: "Co-Living Community",
-      description: "A rare opportunity to create a sustainable co-living or co-working retreat. Space for multiple residences with shared communal areas.",
-    },
-    {
-      title: "Off-Grid Living",
-      description: "Embrace self-sufficiency with land for growing, livestock, and renewable energy. A genuine back-to-the-land opportunity.",
+      title: "Independent rural living",
+      description: "Want off-grid freedom without the ruin? Own water, lived-in houses, workshop and terraces for growing. Skip the permits queue and start living.",
     },
   ],
 
@@ -247,17 +236,176 @@ export const property = {
   location_details: {
     region: "Fonte do Palheiro, Malhão, Salir, Algarve",
     nearestTown: "Salir (~4km)",
-    airport: "Faro Airport — approx. 45 minutes",
+    airport: "Faro Airport, approx. 45 minutes",
     coast: "Approx. 40 minutes to the nearest beach",
     supermarket: "Approx. 15 minutes to the nearest supermarket",
-    description: "The Algarve backcountry is a world apart from the busy coastal resorts. Rolling hills, cork oak forests, traditional villages, and a pace of life that lets you breathe. Yet the beaches, restaurants, and international airport are just a short drive away. The property's central location makes the entire Algarve your playground — from the dramatic wild west coast to the calm eastern beaches near the Spanish border. Fancy a day trip? Both Lisbon and Sevilla are only about 2.5 hours by car, putting two of Iberia's most vibrant cities within easy reach.",
+    description: "The Algarve backcountry is a world apart from the busy coastal resorts: rolling hills, cork oak forests, traditional villages and some of the region's most extraordinary sunsets. On this ridge line, the estate owns the surrounding land, so the outlook in front of you is not another building plot waiting to be developed. Yet the beaches, restaurants and international airport remain within reach.",
   },
 
   // Contact info
   contact: {
     name: "Lenz",
-    email: "TBD@example.com",
-    phone: null as string | null,
-    whatsapp: null as string | null,
+    email: "fonte@kfos.nz",
+    phone: "+351 911 795 594" as string | null,
+    whatsapp: "https://wa.me/351911795594?text=Ol%C3%A1%20Lenz%2C%20I%27d%20like%20a%20live%20video%20walkthrough%20of%20Quinta%20Fonte%20do%20Palheiro." as string | null,
   },
 };
+
+export const opportunities = [
+  {
+    slug: "retreat-venue",
+    number: "01",
+    label: "Retreat hosts",
+    cardTitle: "Take bookings in season one, not year three",
+    title: "A turn-key retreat venue 45 minutes from Faro.",
+    summary:
+      "Meditation house, poolside sunsets, guest-ready houses and a 500 m² commercially zoned shell for your shala or event hall. Furnished, guest-capable and airport-close: the logistics retreat guests actually pay for.",
+    image: "/images/meditation-house1.jpg",
+    imageAlt: "The circular meditation house at Quinta Fonte do Palheiro",
+    imageWidth: 900,
+    imageHeight: 1600,
+    imagePosition: "center",
+    facts: ["Guest-ready from day one", "500 m² event-hall shell", "45 min to Faro airport"],
+    introduction:
+      "Most retreat venues start with an empty field and three years of building. Here the evening session already has a setting: meditation house for morning practice, pool terrace for sunset, separate houses so groups can gather and retreat. The commercially zoned factory gives you a real shell to plan the shala around. Faro Airport is 45 minutes away, keeping guest logistics simple.",
+    sections: [
+      {
+        title: "Your guests arrive, not your builders",
+        body: "Two furnished houses, pool, bar, sleepout and meditation space are already standing. That means site visits with paying guests in weeks, not architect renders for years, while you work through licensing for the format you want.",
+      },
+      {
+        title: "One commercial shell for the big room",
+        body: "The ~500 m² former factory is commercially zoned and currently workshops and storage. Walk it as your future event hall, yoga shala or production kitchen. Then confirm the conversion route with Loulé Council before you commit.",
+      },
+      {
+        title: "Sunset is your marketing budget",
+        body: "The ridge owns the land in front of it, so the evening view cannot be built out. Poolside sunset sessions photograph themselves. They are the content your retreat sells itself with.",
+      },
+    ],
+    checklist: [
+      "Tell us your group size and format. We will walk the matching guest spaces live on video.",
+      "Read the buyer-facts brief on commercial vs. private zoning before you fly.",
+      "Confirm the licensing route for accommodation and events with Loulé Council.",
+    ],
+  },
+  {
+    slug: "rural-tourism-business",
+    number: "02",
+    label: "Tourism operators",
+    cardTitle: "Start with a T1 + a T3, grow from there",
+    title: "Sleep guests from day one, add units with low effort.",
+    summary:
+      "A T1 and a T3, two fully renovated, one more ready to sleep, plus bar, pool and terraces for several more units with low effort. Three-phase power, 11 kW EV charger and own water on 2.5 ha. Bring your occupancy math.",
+    image: "/images/factory-driveway.jpg",
+    imageAlt: "The driveway and former factory building at Quinta Fonte do Palheiro",
+    imageWidth: 1600,
+    imageHeight: 900,
+    imagePosition: "center",
+    facts: ["T1 + T3 to start", "3-phase + EV + own water", "Room for more, low effort"],
+    introduction:
+      "Buyers of businesses buy beds, not promises. Here the starting inventory is concrete: a T1 and a T3, two fully renovated, one more ready to sleep, so the first guest nights need cleaning, not construction. Beyond that, the sleepout, terraces and 500 m² commercial shell give you several more units with low effort. Model the T1 + T3 first, price the expansion second, and see if the €890,000 ask earns its place.",
+    sections: [
+      {
+        title: "Real beds first, expansion second",
+        body: "A T1 and a T3 open the revenue story: two fully renovated, one more ready to sleep. No renovation queue before the first paying nights. Then grow into the sleepout, terraces and outbuildings with modest effort instead of a full build.",
+      },
+      {
+        title: "The commercial shell anchors the case",
+        body: "A ~500 m² commercially zoned factory, not a barn with a question mark. Price it as event space, production kitchen or guest overflow and put that line in your revenue model.",
+      },
+      {
+        title: "Infrastructure that saves a year of upgrades",
+        body: "Three-phase power throughout, 11 kW EV charger, own water source, bar, laundry and storage. Premium guests expect all of it; installing it from scratch costs time you will not get back.",
+      },
+      {
+        title: "A council that licenses rural lodging",
+        body: "Loulé Council processes lodging licences and pushes economic development in the rural interior. That is a better starting room than a municipality with no rural-tourism agenda. Confirm your exact route in writing.",
+      },
+      {
+        title: "Rural postcode, stronger funding odds",
+        body: "A qualifying tourism project in this low-density zone may access the highest support rates under an EU or Algarve 2030 call. Potential, not a promise. Check applicant, call and timing with a funding specialist before it enters your spreadsheet.",
+      },
+    ],
+    checklist: [
+      "Tell us your plan for the T1 + T3. We will film those exact rooms on the video walkthrough.",
+      "Get written confirmation of licences and permitted uses per building.",
+      "Model revenue, investment and seasonality with qualified local advice.",
+    ],
+  },
+  {
+    slug: "independent-living",
+    number: "03",
+    label: "Independent rural living",
+    cardTitle: "Own water, own power potential, no ruin",
+    title: "2.5 hectares of freedom, lived in from day one.",
+    summary:
+      "Own water source, two furnished houses, workshop, terraces for growing and Algarve sun on a ridge you own the view from. Everything the empty plot promises, without three years of permits.",
+    image: "/images/main-house-and-terraces.jpg",
+    imageAlt: "Main house with surrounding terraces for growing and gathering",
+    imageWidth: 1600,
+    imageHeight: 900,
+    imagePosition: "center",
+    facts: ["Own water source", "Furnished houses", "Workshop + terraces"],
+    introduction:
+      "Most independent-living plots come with a ruin, a well that runs dry in August and three years of paperwork. Here you sleep in a furnished house on night one, drink from the estate's own water source, park tools in a real workshop and plant the first terrace while the sun sets over land you own the outlook from.",
+    sections: [
+      {
+        title: "Infrastructure done, life to make",
+        body: "Two furnished houses, pool, outbuildings, three-phase power and own water are included in the sale. Your first year goes to gardens, solar and making it yours, not to getting a roof over your head.",
+      },
+      {
+        title: "Terraces to grow on, sun to harvest",
+        body: "Several established terraces for gardens or growing, south-facing Algarve hills with serious solar potential, and workshop space for machinery. Walk the terraces against your growing plan on the video tour.",
+      },
+      {
+        title: "Private home, commercial option nearby",
+        body: "Homes and land are private-zoned today; the 500 m² factory is commercially zoned. Live privately, or keep one door open to a studio, workshop business or hospitality plan later.",
+      },
+    ],
+    checklist: [
+      "Ask us for the water source, storage and seasonal performance on the video call.",
+      "Walk the terraces and access routes against your growing and living plan.",
+      "Check private/commercial zoning, solar, internet and running costs before you offer.",
+    ],
+  },
+] as const;
+
+export const buyerFacts = [
+  {
+    number: "01",
+    title: "Can I run retreats or guest stays here?",
+    body: "The former factory is commercially zoned. The houses, gardens and terraces are private-zoned today. All buildings are consented, the water source is consented, and we hold legal plans for everything. This is rare in Portugal, so verify it in your due diligence. That split is exactly why we show it building by building on the video walkthrough. Bring your format and we will walk the matching spaces, then you confirm the route with Loulé Council.",
+  },
+  {
+    number: "02",
+    title: "Water, terrain & growing: is the land usable?",
+    body: "The estate has its own water source and several established terraces. The source has never run dry, not even through last summer which was very dry. The council also has a town water project underway which will add redundancy to our own supply. The land is hillside and varied rather than flat. Honest answer to the 'too steep?' question: walk the terraces on video against your growing or building plan before you fly. Steep in parts, usable in the parts that count.",
+  },
+  {
+    number: "03",
+    title: "What do I actually get for €890,000?",
+    body: "Two furnished houses, pool, meditation house, bar, sleepout, outbuildings, ~500 m² commercial shell, 2.5 ha with surrounding land protecting the view, three-phase power and EV charger. Ask for the building-by-building inventory on your call.",
+  },
+  {
+    number: "04",
+    title: "Power, water, internet: does it operate?",
+    body: "Three-phase electricity throughout, 11 kW Type 2 EV charger installed, own water source. Internet today is Starlink and handles calls, streaming and remote work. Fiber is accessible if you need more. Waste, storage capacity and running costs depend on your use. Validate them for your plan before you offer. We will show you what is there live.",
+  },
+  {
+    number: "05",
+    title: "Will someone build in front of my sunset?",
+    body: "The estate owns the surrounding land on the ridge, so there is no development plot directly in front of the view. Verify title and planning independently, then watch one sunset from the pool terrace and decide.",
+  },
+  {
+    number: "06",
+    title: "Is funding or a business case realistic?",
+    body: "A qualifying rural-tourism project here may access enhanced EU or Algarve 2030 support rates. Applicant, call and timing decide. Build your own occupancy math first (T1 + T3 × rate × season, expansion second), and never put funding in the spreadsheet until a specialist confirms it.",
+  },
+] as const;
+
+export const estateFacts = [
+  { value: "2.5", label: "hectares + own water" },
+  { value: "10+", label: "buildings, furnished" },
+  { value: "500", label: "m² commercial shell" },
+  { value: "45", label: "minutes to Faro" },
+] as const;

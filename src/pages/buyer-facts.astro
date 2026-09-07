@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import EnquiryPanel from '../components/EnquiryPanel.astro';
+import { buyerFacts, property } from '../data/property';
+---
+
+<Layout title={`Buyer facts: ${property.name}`} description="The practical questions to resolve before buying Quinta Fonte do Palheiro.">
+  <SiteHeader ctaHref="#enquire" />
+  <main id="main">
+    <section class="facts-hero">
+      <div class="facts-hero__copy">
+        <p class="eyebrow eyebrow--light">Due diligence, in plain sight</p>
+        <h1>Big dreams need<br />clear <em>facts.</em></h1>
+        <p>Quinta Fonte do Palheiro is unusual enough to reward a careful conversation. This is the practical agenda we would use to make a serious visit worthwhile.</p>
+      </div>
+      <div class="facts-hero__figure">
+        <img src="/images/overview-plan1.jpg" alt="Estate overview plan" width="4032" height="2268" fetchpriority="high" decoding="async" />
+        <span>Estate overview plan · for orientation</span>
+      </div>
+    </section>
+
+    <section class="facts-list">
+      <div class="facts-list__intro">
+        <p class="eyebrow">A useful first conversation</p>
+        <p>We would rather answer a difficult question early than sell an easy fantasy. The items below are not fine print; they are the essentials for deciding whether this estate fits your plans.</p>
+      </div>
+      <div class="facts-list__items">
+        {buyerFacts.map((fact) => (
+          <article>
+            <span>{fact.number}</span>
+            <div>
+              <h2>{fact.title}</h2>
+              <p>{fact.body}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="facts-note">
+      <p class="eyebrow eyebrow--light">A note on representations</p>
+      <p>Information on this site is an introduction to the estate, not a substitute for independent legal, planning, technical or financial advice. A buyer should verify every material matter with the appropriate professional before proceeding. If it helps, we will connect you with the independent local specialists we know and trust. They include lawyers, planners, surveyors and builders we have worked with over many years. This website is written by the owners, directly for a future owner. If you prefer to buy through an agent, we work with several good ones and will gladly connect you.</p>
+    </section>
+
+    <EnquiryPanel interest="the estate generally" />
+  </main>
+  <SiteFooter />
+</Layout>
+
+<style>
+  .facts-hero { min-height: 48rem; display: grid; grid-template-columns: 1.05fr .95fr; color: var(--paper); background: var(--ink); padding: 8.5rem var(--page-edge) 4rem; gap: 4rem; overflow: hidden; }
+  .facts-hero__copy { align-self: end; max-width: 48rem; padding-bottom: 2rem; }
+  .facts-hero h1 { margin: 1.25rem 0 1.5rem; font-size: clamp(3.4rem, 6.8vw, 7rem); line-height: .94; letter-spacing: -.02em; font-weight: 560; }
+  .facts-hero h1 em { color: var(--ochre); font-weight: 400; }
+  .facts-hero__copy > p:last-child { max-width: 33rem; color: rgba(246,242,231,.76); font-size: 1.08rem; }
+  .facts-hero__figure { position: relative; align-self: center; transform: rotate(3.5deg); box-shadow: 1rem 1rem 0 rgba(0,0,0,.2); }
+  .facts-hero__figure img { aspect-ratio: 4/3; width: 100%; object-fit: cover; filter: sepia(.12) contrast(.94); }
+  .facts-hero__figure span { display: block; padding: .8rem 1rem; color: var(--ink); background: var(--paper); font: 500 .58rem/1 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; }
+  .facts-list { padding: clamp(5rem, 10vw, 10rem) var(--page-edge); display: grid; grid-template-columns: .77fr 1.23fr; gap: clamp(3rem, 10vw, 13rem); }
+  .facts-list__intro > p:last-child { margin-top: 1rem; max-width: 25rem; font: 400 clamp(1.55rem, 2.4vw, 2.45rem)/1.1 var(--font-display); letter-spacing: -.04em; }
+  .facts-list__items article { display: grid; grid-template-columns: 4rem 1fr; gap: 1rem; padding: 2rem 0; border-top: 1px solid var(--line); }
+  .facts-list__items article:last-child { border-bottom: 1px solid var(--line); }
+  .facts-list__items span { color: var(--clay); font: 500 .66rem/1.5 var(--font-mono); letter-spacing: .1em; }
+  .facts-list__items h2 { font-size: clamp(1.7rem, 2.6vw, 2.6rem); letter-spacing: -.015em; line-height: 1.02; margin-bottom: .65rem; font-weight: 560; }
+  .facts-list__items p { max-width: 43rem; color: rgba(24,49,41,.76); }
+  .facts-note { background: var(--clay); color: var(--paper); padding: clamp(4rem, 8vw, 7rem) max(var(--page-edge), calc((100vw - 900px)/2)); }
+  .facts-note .eyebrow { color: var(--paper); opacity: .72; margin-bottom: 1.15rem; }
+  .facts-note > p:last-child { font: 500 clamp(1.5rem, 2.6vw, 2.6rem)/1.2 var(--font-display); letter-spacing: -.015em; }
+  @media (max-width: 800px) { .facts-hero, .facts-list { grid-template-columns: 1fr; } .facts-hero { min-height: auto; padding-top: 8rem; gap: 3rem; } .facts-hero__copy { padding-bottom: 0; } .facts-hero__figure { width: 90%; justify-self: end; } }
+  @media (max-width: 500px) { .facts-hero h1 { font-size: 4.25rem; } .facts-list__items article { grid-template-columns: 2.5rem 1fr; gap: .7rem; } }
+</style>
