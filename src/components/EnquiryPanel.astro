@@ -10,9 +10,9 @@ const { interest = '' } = Astro.props;
 
 <section id="enquire" class="enquiry-panel">
   <div class="enquiry-panel__intro">
-    <p class="eyebrow eyebrow--light">Book a live video walkthrough</p>
-    <h2>See both houses<br /><em>before you fly.</em></h2>
-    <p>Tell us who would live here: one family across two houses, two families buying together, or a simpler base for later-life living. We will walk the rooms, terraces and systems that matter to you, live on video. Reply within 48 hours, buyer-facts brief included, no obligation.</p>
+    <p class="eyebrow eyebrow--light">Arrange a visit or ask for more info</p>
+    <h2>See both houses<br /><em>for yourself.</em></h2>
+    <p>Tell us who would live here: one family across two houses, two families buying together, or a simpler base for later-life living. We will show you the rooms, terraces and systems that matter to you on a visit, or send you the details if you cannot travel yet. Reply within 48 hours, buyer-facts brief included, no obligation.</p>
     <div class="enquiry-panel__direct">
       <a class="button button--paper" data-event="Walkthrough click" data-label="Enquiry panel WhatsApp" href={property.contact.whatsapp} target="_blank" rel="noopener">WhatsApp {property.contact.name.split(' ')[0]} <span aria-hidden="true">↗</span></a>
       <a class="enquiry-panel__mail" href={`mailto:${property.contact.email}`} data-event="Email click" data-label="Enquiry panel email">{property.contact.email}</a>
@@ -44,10 +44,10 @@ const { interest = '' } = Astro.props;
       <input id="email" type="email" name="email" autocomplete="email" spellcheck="false" placeholder="jane@example.com…" required />
     </div>
     <div class="enquiry-form__field enquiry-form__field--wide">
-      <label for="message">Which rooms should we film?</label>
-      <textarea id="message" name="message" rows="4" autocomplete="off" placeholder="For example: film both houses, the pool terrace, the office and the water system…" required></textarea>
+      <label for="message">What would you like to see or know?</label>
+      <textarea id="message" name="message" rows="4" autocomplete="off" placeholder="For example: both houses, the pool terrace, the workshop and the water system…" required></textarea>
     </div>
-    <button type="submit" class="button button--ochre" data-event="Walkthrough click" data-label="Enquiry form submit">Book my video walkthrough <span aria-hidden="true">↗</span></button>
+    <button type="submit" class="button button--ochre" data-event="Walkthrough click" data-label="Enquiry form submit">Request a visit or more info <span aria-hidden="true">↗</span></button>
     <p class="enquiry-form__note">Weekly slots · we confirm your time by email within 48 hours.</p>
   </form>
 </section>

@@ -13,8 +13,8 @@ const internal = (path: string) => `${path}?${campaign}`;
 // WhatsApp number is taken from the property data — unchanged from the live site.
 const waNumber = (property.contact.phone ?? '').replace(/[^0-9]/g, '');
 const whatsapp = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
-const walkthroughUrl = whatsapp("Olá Luisa, I'd like a live video walkthrough of the family estate at Quinta Fonte do Palheiro.");
-const coBuyUrl = whatsapp('Olá Luisa, we would like to ask about two families buying Quinta Fonte do Palheiro together.');
+const visitUrl = whatsapp("Olá Luisa, I'd like to visit Quinta Fonte do Palheiro and learn more about the estate.");
+const coBuyUrl = whatsapp('Olá Luisa, we would like to visit Quinta Fonte do Palheiro and ask about two families buying together.');
 const emailUrl = `mailto:${property.contact.email}`;
 
 // No unverified figures are published. See the <!-- VERIFY --> block below for the policy
@@ -23,7 +23,7 @@ const emailUrl = `mailto:${property.contact.email}`;
 
 <Layout
   title="Family estate in the Algarve: two houses, 2.5 ha, under €900k | Quinta Fonte do Palheiro"
-  description="Two independent furnished houses on 2.5 ha near Salir, Loulé. Room for three generations or two families. Saltwater pool, own water, 3-phase power, 11 kW EV charger and home office, 45 min from Faro. Asking €890,000. Book a live video walkthrough."
+  description="Two independent furnished houses on 2.5 ha near Salir, Loulé. Room for three generations or two families. Saltwater pool, own water, 3-phase power, 11 kW EV charger and home office, 45 min from Faro. Asking €890,000. Arrange a visit or ask for more information."
   ogImage="/images/og-family.jpg"
   ogImageAlt="The swimming pool at sunset at Quinta Fonte do Palheiro, Algarve"
 >
@@ -34,7 +34,8 @@ const emailUrl = `mailto:${property.contact.email}`;
          healthcare drive time, the "200–300 Mbps" Starlink figure and the "fibre ~500 m
          away" claim. If any of these are added back, record the confirmed value and its
          source in this block first, then reflect it in the FAQ. Until then the FAQ gives
-         general guidance and points to a live speed test on the video walkthrough. -->
+         Walk-in chiller: reported on site by the seller; copy states it as existing — final check against the inventory.
+         general guidance and points to a live speed test on a visit. -->
     <section class="hero">
       <img class="hero__image" src="/images/areal1.jpg" alt="Aerial view of Quinta Fonte do Palheiro and the Algarve hills" width="1600" height="1200" fetchpriority="high" decoding="async" />
       <div class="hero__veil"></div>
@@ -43,10 +44,10 @@ const emailUrl = `mailto:${property.contact.email}`;
         <h1>Two houses.<br />One estate.<br /><em>Room for everyone.</em></h1>
         <p class="hero__statement">A 2.5-hectare family estate above Salir: a furnished three-bedroom main house, a second independent furnished house, a saltwater pool and ten-plus buildings with their own water. Asking €890,000 — under €900k — for a place that already works.</p>
         <div class="hero__actions">
-          <a class="button button--ochre" data-event="Walkthrough click" data-label="Hero CTA" href={walkthroughUrl} target="_blank" rel="noopener">Book a live video walkthrough <span aria-hidden="true">↗</span></a>
+          <a class="button button--ochre" data-event="Walkthrough click" data-label="Hero CTA" href={visitUrl} target="_blank" rel="noopener">Arrange a visit or ask for info <span aria-hidden="true">↗</span></a>
           <a class="hero__quiet-link" href="#stories">Meet the three family stories <span aria-hidden="true">↓</span></a>
         </div>
-        <p class="hero__reassurance">Live video tours weekly · reply within 48 hours · buyer-facts brief before you fly</p>
+        <p class="hero__reassurance">Visits available locally · reply within 48 hours · buyer-facts brief before you travel</p>
       </div>
       <div class="hero__price"><span>Asking price · under €900k</span><strong>€890,000</strong></div>
       <div class="hero__location">37° N · Algarve hills<br />45 min · Faro airport</div>
@@ -68,13 +69,13 @@ const emailUrl = `mailto:${property.contact.email}`;
             <p class="eyebrow">Multigenerational living</p>
             <h3>Together,<br /><em>but private.</em></h3>
             <p>A three-bedroom main house and a separate furnished second house give grandparents, grown-up children or a live-in helper their own front door and kitchen — while everyone still meets at the pool or the outdoor table.</p>
-            <p>Two houses on 2.5 ha mean quiet when you want it and company when you do not. The meditation house, bar and workshop stay available as shared spaces, not obligations.</p>
+            <p>Two houses on 2.5 ha mean quiet when you want it and company when you do not. The meditation house, bar and 500 m² workshop (with its walk-in chiller) stay available as shared spaces, not obligations.</p>
             <ul>
               <li>Two independent furnished houses</li>
               <li>Shared pool and terrace</li>
               <li>Ten-plus buildings to spread out in</li>
             </ul>
-            <a class="story__link" data-event="Walkthrough click" data-label="Story 1 – multigenerational" href={walkthroughUrl} target="_blank" rel="noopener">See both houses live <b aria-hidden="true">↗</b></a>
+            <a class="story__link" data-event="Walkthrough click" data-label="Story 1 – multigenerational" href={visitUrl} target="_blank" rel="noopener">See both houses on a visit <b aria-hidden="true">↗</b></a>
           </div>
         </article>
 
@@ -110,7 +111,7 @@ const emailUrl = `mailto:${property.contact.email}`;
             <p class="eyebrow">A ready-made landing</p>
             <h3>Arrive with a suitcase.<br /><em>Stay for good.</em></h3>
             <p>For a later-stage family — the children grown, work more flexible — the estate is already set up for daily life. Both houses are furnished, the saltwater pool is there, the second house has its own office, and the internet works well enough for remote days.</p>
-            <p>Three-phase power, an 11 kW EV charger and the estate's own water take care of the unglamorous things. The workshop, bar and meditation house are there when you want them, not a project waiting for permission.</p>
+            <p>Three-phase power, an 11 kW EV charger and the estate's own water take care of the unglamorous things. The 500 m² workshop, bar and meditation house are there when you want them, not a project waiting for permission.</p>
             <ul>
               <li>Furnished houses</li>
               <li>Saltwater pool</li>
@@ -119,7 +120,7 @@ const emailUrl = `mailto:${property.contact.email}`;
               <li>11 kW EV charger</li>
               <li>Home office</li>
             </ul>
-            <a class="story__link" data-event="Walkthrough click" data-label="Story 3 – ready-made landing" href={walkthroughUrl} target="_blank" rel="noopener">Walk it on video <b aria-hidden="true">↗</b></a>
+            <a class="story__link" data-event="Walkthrough click" data-label="Story 3 – ready-made landing" href={visitUrl} target="_blank" rel="noopener">Walk it on a visit <b aria-hidden="true">↗</b></a>
           </div>
         </article>
       </div>
@@ -141,7 +142,7 @@ const emailUrl = `mailto:${property.contact.email}`;
           <details>
             <summary data-event="FAQ open" data-faq data-label="International schools">How far are the international schools?</summary>
             <div class="answer">
-              <p>Families usually ask about international schools in the Loulé and Vilamoura area. We would rather not quote drive times we cannot verify: ask each school about bus routes, admissions and term dates, and ask us on the video call to put you in touch with local parents so you can judge the commute for yourselves.</p>
+              <p>Families usually ask about international schools in the Loulé and Vilamoura area. We would rather not quote drive times we cannot verify: ask each school about bus routes, admissions and term dates, and ask us to put you in touch with local parents so you can judge the commute for yourselves.</p>
             </div>
           </details>
           <details>
@@ -153,19 +154,19 @@ const emailUrl = `mailto:${property.contact.email}`;
           <details>
             <summary data-event="FAQ open" data-faq data-label="Internet and working">Can we actually work from here?</summary>
             <div class="answer">
-              <p>People live and work online here, and the second house has its own office. We will run a live speed test on the walkthrough so you can judge the connection yourself rather than relying on a number in a brochure. Ask us to confirm current broadband options with the operator before you rely on them. Three-phase power covers a workshop or studio without an upgrade.</p>
+              <p>People live and work online here, and the second house has its own office. We will run a live speed test when you visit, or on a call if you cannot travel yet, so you can judge the connection yourself rather than relying on a number in a brochure. Ask us to confirm current broadband options with the operator before you rely on them. Three-phase power covers a workshop or studio without an upgrade.</p>
             </div>
           </details>
           <details>
             <summary data-event="FAQ open" data-faq data-label="Terrain and children">The land is steep — is it safe for kids?</summary>
             <div class="answer">
-              <p>Parts of it are, and we would rather say so up front. Treat the hillside as adventure rather than a flat lawn. On the video walkthrough we will show the level areas around the houses, any gated or fenced sections, the pool terrace and the paths, and talk through pool safety and sightlines. Judge it with your own eyes before you fly.</p>
+              <p>Parts of it are, and we would rather say so up front. Treat the hillside as adventure rather than a flat lawn. On a visit we will show the level areas around the houses, any gated or fenced sections, the pool terrace and the paths, and talk through pool safety and sightlines. Judge it with your own eyes before you fly.</p>
             </div>
           </details>
           <details>
             <summary data-event="FAQ open" data-faq data-label="Daily logistics">What does daily life involve?</summary>
             <div class="answer">
-              <p>About 15 minutes to the supermarket, 45 to Faro Airport and 40 to the nearest beach. A paved public road reaches the gate, so deliveries, trades and visitors arrive year-round. The houses and land are private-zoned; the former workshop is commercially zoned — confirm any business use with Loulé Council.</p>
+              <p>About 15 minutes to the supermarket, 45 to Faro Airport and 40 to the nearest beach. A paved public road reaches the gate, so deliveries, trades and visitors arrive year-round. The houses and land are private-zoned; the 500 m² workshop is commercially zoned — confirm any business use with Loulé Council.</p>
             </div>
           </details>
         </div>
@@ -183,12 +184,27 @@ const emailUrl = `mailto:${property.contact.email}`;
       </div>
     </section>
 
+    <section class="workshop" aria-label="The 500 m² workshop">
+      <figure class="workshop__image">
+        <img src="/images/factory2.jpg" alt="Inside the 500 m² former factory at Quinta Fonte do Palheiro" width="1279" height="1600" loading="lazy" decoding="async" />
+        <figcaption>~500 m² · three-phase power · walk-in chiller</figcaption>
+      </figure>
+      <div class="workshop__copy">
+        <p class="eyebrow eyebrow--light">The 500 m² workshop</p>
+        <h2>A thousand possibilities.<br /><em>One very big floor.</em></h2>
+        <p>The former factory is the most fun building here: high, three-phase-powered, and with a walk-in chiller already on site. It is space for tinkering, not a finished business.</p>
+        <p>Bring your workshop. Set up hydroponic racks. Turn the insulated chiller into a soundproof studio or a climate-controlled growing room. Put up an indoor climbing wall, lay out a makerspace bench, give every tool its place. What you make of it is up to you.</p>
+        <p class="workshop__note">We show the building as it stands. Workshop tools are available by negotiation; any commercial use needs confirming with Loulé Council. We do not promise an income from growing or anything else.</p>
+        <a class="button button--paper" data-event="Walkthrough click" data-label="Workshop visit CTA" href={visitUrl} target="_blank" rel="noopener">Ask to see the workshop <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
     <section class="inventory" aria-label="What is included">
       <div class="inventory__intro">
         <p class="eyebrow eyebrow--light">What is included</p>
         <h2>An honest<br /><em>inventory.</em></h2>
         <p>Furnishings in both houses, the 11 kW EV charger, the three-phase installation and the own-water infrastructure represent roughly €55–85k in replacement value as they stand. That is a working estimate, not a formal valuation. The exact list is agreed in writing as part of the sale.</p>
-        <a class="button button--paper" data-event="Walkthrough click" data-label="Inventory CTA" href={walkthroughUrl} target="_blank" rel="noopener">Ask for the itemised list <span aria-hidden="true">↗</span></a>
+        <a class="button button--paper" data-event="Walkthrough click" data-label="Inventory CTA" href={visitUrl} target="_blank" rel="noopener">Ask for the itemised list <span aria-hidden="true">↗</span></a>
       </div>
       <div class="inventory__detail">
         <div class="inventory__value"><span>Approximate included value</span><strong>€55–85k</strong><small>Replacement value, not an appraisal</small></div>
@@ -197,7 +213,7 @@ const emailUrl = `mailto:${property.contact.email}`;
           <li>11 kW Type 2 EV charger, installed</li>
           <li>Three-phase power throughout</li>
           <li>Own borehole, storage and water infrastructure</li>
-          <li>Saltwater pool, meditation house, bar and workshop buildings</li>
+          <li>Saltwater pool, meditation house, bar and the 500 m² workshop with walk-in chiller</li>
         </ul>
       </div>
     </section>
@@ -287,6 +303,16 @@ const emailUrl = `mailto:${property.contact.email}`;
   .other-possibilities__links a:hover { color: var(--ink); border-color: var(--ink); }
   .other-possibilities__links b { margin-left: .3rem; font-weight: 400; }
 
+  .workshop { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(2rem, 6vw, 7rem); align-items: center; padding: clamp(5rem, 10vw, 10rem) var(--page-edge); background: var(--clay); color: var(--paper); }
+  .workshop__image { overflow: hidden; border-radius: .3rem; }
+  .workshop__image img { width: 100%; height: clamp(24rem, 38vw, 38rem); object-fit: cover; }
+  .workshop__image figcaption { margin-top: .7rem; font: 500 .58rem/1.4 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; color: rgba(246,242,231,.8); }
+  .workshop__copy h2 { margin: 1rem 0 1.4rem; font-size: clamp(2.8rem, 4.6vw, 5rem); line-height: .92; letter-spacing: -.015em; font-weight: 400; }
+  .workshop__copy h2 em { color: var(--ink); font-weight: 400; }
+  .workshop__copy p:not(.eyebrow) { max-width: 38rem; color: rgba(246,242,231,.9); line-height: 1.7; }
+  .workshop__copy p + p { margin-top: 1rem; }
+  .workshop__copy p.workshop__note { font-size: .88rem; color: rgba(246,242,231,.78); }
+  .workshop__copy .button { margin-top: 1.8rem; }
   .inventory { display: grid; grid-template-columns: 1fr .9fr; gap: clamp(3rem, 8vw, 10rem); padding: clamp(5rem, 10vw, 10rem) var(--page-edge); background: var(--ink); color: var(--paper); }
   .inventory__intro { max-width: 34rem; }
   .inventory__intro h2 { margin: 1rem 0 1.45rem; font-size: clamp(3rem, 4.8vw, 5.2rem); line-height: .9; letter-spacing: -.018em; font-weight: 400; }
@@ -302,6 +328,7 @@ const emailUrl = `mailto:${property.contact.email}`;
 
   @keyframes reveal-image { from { transform: scale(1.07); } to { transform: scale(1); } }
   @keyframes rise-in { from { opacity: 0; transform: translateY(1.5rem); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 900px) { .workshop { grid-template-columns: 1fr; } .workshop__image img { height: 22rem; } }
   @media (max-width: 1100px) { .fact-strip { grid-template-columns: repeat(4, 1fr); } .fact-strip > div:nth-child(6n+1) { border-left: 1px solid rgba(15,33,28,.28); padding-left: 1rem; } .fact-strip > div:nth-child(4n+1) { border-left: 0; padding-left: 0; } }
   @media (max-width: 900px) { .family-faq__inner, .inventory { grid-template-columns: 1fr; } .inventory__intro { max-width: 42rem; } .story, .story--reverse { grid-template-columns: 1fr; gap: 2rem; } .story--reverse .story__image { order: 0; } .story__image img { height: 22rem; } .story__copy { padding-left: 1.25rem; border-left: 2px solid var(--clay); } }
   @media (max-width: 700px) { .hero { min-height: 44rem; padding: 8.5rem 1.25rem 9rem; } .hero h1 { font-size: clamp(3.1rem, 12vw, 5.2rem); } .hero__price { right: 1.25rem; bottom: 6.2rem; } .hero__location { left: 1.25rem; bottom: 2.2rem; } .hero__reassurance { margin-bottom: 4rem; } .fact-strip { padding: 0 1.25rem; grid-template-columns: repeat(3, 1fr); } .fact-strip > div { padding: 1.1rem .6rem; } .fact-strip > div:nth-child(4n+1) { border-left: 1px solid rgba(15,33,28,.28); padding-left: .6rem; } .fact-strip > div:nth-child(3n+1) { border-left: 0; padding-left: 0; } .story__image img { height: 19rem; } .math-card { gap: .6rem; padding: 1.1rem; } }

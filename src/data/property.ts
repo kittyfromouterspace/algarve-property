@@ -8,7 +8,7 @@ export const property = {
   // Basic info
   name: "Quinta Fonte do Palheiro",
   tagline: "Two houses. One estate. Room for everyone.",
-  metaDescription: "Quinta Fonte do Palheiro: two furnished houses on 2.5 ha near Salir, Loulé. A family estate under €900k with saltwater pool, own water, 3-phase power and EV charger. €890,000. Book a live video walkthrough.",
+  metaDescription: "Quinta Fonte do Palheiro: two furnished houses on 2.5 ha near Salir, Loulé. A family estate under €900k with saltwater pool, own water, 3-phase power and EV charger. €890,000. Arrange a visit or ask for more information.",
   location: "Salir, Loulé, Algarve, Portugal",
   price: "€890.000",
   priceOriginal: "€950.000",
@@ -33,7 +33,8 @@ export const property = {
       "Sleepout",
       "Storage buildings",
     ],
-    factoryBuilding: "~500 m² (currently workshops & storage)",
+    // VERIFY: walk-in chiller reported on site — confirm against the final inventory.
+  factoryBuilding: "~500 m² powered workshop, currently workshop & storage, walk-in chiller on site",
     furnished: true,
     power: "3-phase electricity throughout",
     evCharging: "11kW 3-phase Type 2 EV charging point",
@@ -47,9 +48,9 @@ export const property = {
   description: [
     "Stop scrolling villas that were never built for what you want. Quinta Fonte do Palheiro is a 2.5-hectare ridge-line estate above Salir, with the homes, water, power and buildings already in place, so you start from living, not from permits.",
     "Two fully furnished houses, a swimming pool, a meditation house, a bar, multiple outbuildings and several established terraces sit above the Serra do Caldeirão, with open views toward the coastline. The estate owns the land in front of the ridge, so no new building can take the sunset away.",
-    "For a retreat host or rural-tourism operator, the ~500 m² former factory, commercially zoned, gives you a real building to plan around: event hall, shala, production kitchen, guest overflow. The rest of the estate is private-zoned today, so we put licensing, water rights, access and internet on the table early in our buyer-facts brief.",
+    "The ~500 m² former factory is the most fun building on the estate: a high, three-phase-powered shell with a walk-in chiller already on site. It is room for tinkering, not a finished business. Bring your workshop, set up hydroponic racks, imagine an indoor climbing wall or a makerspace bench that stays put. The insulated chiller suggests a soundproof studio or a climate-controlled growing room. A thousand possibilities, one big floor. We show it as it stands, tools by negotiation, and we never promise a return from what you make of it.",
     "Three-phase power runs across the estate, with an 11 kW Type 2 EV charger already installed. Own water source, workshop space and 45 minutes to Faro Airport give you the unglamorous infrastructure that decides whether a dream actually operates.",
-    "Furniture, bedding and workshop tools available by negotiation. Come for a live video walkthrough this week and see the estate as it really is, then decide with your eyes open.",
+    "Furniture, bedding and workshop tools available by negotiation. Come and see the estate in person, or ask for the details first, then decide with your eyes open.",
   ],
 
   // Scenic images for main page image breaks
@@ -207,8 +208,8 @@ export const property = {
   highlights: [
     { icon: "house", title: "T1 + T3, renovated", description: "Two fully renovated, one more ready to sleep" },
     { icon: "pool", title: "Pool with sunset view", description: "Poolside evenings your guests will photograph" },
-    { icon: "factory", title: "500 m² commercial building", description: "Commercially zoned shell for shala, hall or production" },
-    { icon: "power", title: "3-phase power everywhere", description: "Run kitchens, workshops and events without upgrades" },
+    { icon: "factory", title: "500 m² powered workshop", description: "Walk-in chiller, three-phase power, room for projects and growing" },
+    { icon: "power", title: "3-phase power everywhere", description: "Run machinery, kilns, hydroponics and tools without upgrades" },
     { icon: "ev", title: "11 kW EV charger", description: "Premium-guest ready, installed and working" },
     { icon: "meditation", title: "Meditation house", description: "A quiet room the retreat story starts in" },
     { icon: "bar", title: "Bar & sleepout", description: "Shared evenings, handled" },
@@ -220,15 +221,15 @@ export const property = {
   idealFor: [
     {
       title: "Retreat & wellness hosts",
-      description: "Got a waiting list but no venue? Meditation house, pool sunsets, guest-ready houses and a 500 m² commercial shell 45 minutes from Faro. Take bookings from season one instead of building for three years.",
+      description: "Meditation house, pool sunsets, guest-ready houses and a 500 m² powered workshop 45 minutes from Faro. Gather here if that is your plan; tinker, grow and build projects if it is not.",
     },
     {
       title: "Rural-tourism operators",
-      description: "Buying numbers, not sunsets? Start with bed-capacity math, 3-phase power, bar, EV charger, own water and terraces to expand on. Then read the buyer-facts brief before you fly.",
+      description: "Start with the powered workshop, three-phase supply, own water, bar and EV charger, then decide whether any of it becomes a business. Read the buyer facts before you travel.",
     },
     {
       title: "Independent rural living",
-      description: "Want off-grid freedom without the ruin? Own water, lived-in houses, workshop and terraces for growing. Skip the permits queue and start living.",
+      description: "Own water, lived-in houses, a 500 m² workshop with a walk-in chiller, and terraces for growing. Skip the permits queue and start living.",
     },
   ],
 
@@ -247,7 +248,7 @@ export const property = {
     name: "Luisa Gebel Basch",
     email: "fonte@kfos.nz",
     phone: "+351 920 695 421" as string | null,
-    whatsapp: "https://wa.me/351920695421?text=Ol%C3%A1%20Luisa%2C%20I%27d%20like%20a%20live%20video%20walkthrough%20of%20Quinta%20Fonte%20do%20Palheiro." as string | null,
+    whatsapp: "https://wa.me/351920695421?text=Ol%C3%A1%20Luisa%2C%20I%27d%20like%20to%20visit%20Quinta%20Fonte%20do%20Palheiro%20or%20receive%20more%20information." as string | null,
   },
 };
 
@@ -259,23 +260,23 @@ export const opportunities = [
     cardTitle: "Take bookings in season one, not year three",
     title: "A turn-key retreat venue 45 minutes from Faro.",
     summary:
-      "Meditation house, poolside sunsets, guest-ready houses and a 500 m² commercially zoned shell for your shala or event hall. Furnished, guest-capable and airport-close: the logistics retreat guests actually pay for.",
+      "Meditation house, poolside sunsets, guest-ready houses and a 500 m² powered workshop with a walk-in chiller. A gathering hall is one option among many — the building is first a space for projects, growing and making. Furnished and airport-close.",
     image: "/images/meditation-house1.jpg",
     imageAlt: "The circular meditation house at Quinta Fonte do Palheiro",
     imageWidth: 900,
     imageHeight: 1600,
     imagePosition: "center",
-    facts: ["Guest-ready from day one", "500 m² event-hall shell", "45 min to Faro airport"],
+    facts: ["Guest-ready from day one", "500 m² workshop + chiller", "45 min to Faro airport"],
     introduction:
-      "Most retreat venues start with an empty field and three years of building. Here the evening session already has a setting: meditation house for morning practice, pool terrace for sunset, separate houses so groups can gather and retreat. The commercially zoned factory gives you a real shell to plan the shala around. Faro Airport is 45 minutes away, keeping guest logistics simple.",
+      "Most retreat venues start with an empty field and three years of building. Here the evening session already has a setting: meditation house for morning practice, pool terrace for sunset, separate houses so groups can gather and retreat. The 500 m² factory is a powered workshop with a walk-in chiller first — a big room for projects, growing and making, with a shala or gathering hall only if that is your plan. Faro Airport is 45 minutes away, keeping guest logistics simple.",
     sections: [
       {
         title: "Your guests arrive, not your builders",
         body: "Two furnished houses, pool, bar, sleepout and meditation space are already standing. That means site visits with paying guests in weeks, not architect renders for years, while you work through licensing for the format you want.",
       },
       {
-        title: "One commercial shell for the big room",
-        body: "The ~500 m² former factory is commercially zoned and currently workshops and storage. Walk it as your future event hall, yoga shala or production kitchen. Then confirm the conversion route with Loulé Council before you commit.",
+        title: "A workshop first. A big room if you want it",
+        body: "The ~500 m² former factory is a three-phase-powered workshop with a walk-in chiller already on site. Think hydroponic racks, a soundproof studio in the insulated chiller, an indoor climbing wall or a makerspace bench. If you would rather gather guests here, confirm the conversion route with Loulé Council before you commit.",
       },
       {
         title: "Sunset is your marketing budget",
@@ -283,7 +284,7 @@ export const opportunities = [
       },
     ],
     checklist: [
-      "Tell us your group size and format. We will walk the matching guest spaces live on video.",
+      "Tell us your group size and format. We will show you the matching guest spaces on a visit, or on a call if you cannot travel yet.",
       "Read the buyer-facts brief on commercial vs. private zoning before you fly.",
       "Confirm the licensing route for accommodation and events with Loulé Council.",
     ],
@@ -295,7 +296,7 @@ export const opportunities = [
     cardTitle: "Start with a T1 + a T3, grow from there",
     title: "Sleep guests from day one, add units with low effort.",
     summary:
-      "A T1 and a T3, two fully renovated, one more ready to sleep, plus bar, pool and terraces for several more units with low effort. Three-phase power, 11 kW EV charger and own water on 2.5 ha. Bring your occupancy math.",
+      "A T1 and a T3 to start, plus bar, pool and a 500 m² powered workshop with a walk-in chiller — room for projects, growing and making. Three-phase power, 11 kW EV charger and own water on 2.5 ha. Bring your own numbers.",
     image: "/images/factory-driveway.jpg",
     imageAlt: "The driveway and former factory building at Quinta Fonte do Palheiro",
     imageWidth: 1600,
@@ -310,8 +311,8 @@ export const opportunities = [
         body: "A T1 and a T3 open the revenue story: two fully renovated, one more ready to sleep. No renovation queue before the first paying nights. Then grow into the sleepout, terraces and outbuildings with modest effort instead of a full build.",
       },
       {
-        title: "The commercial shell anchors the case",
-        body: "A ~500 m² commercially zoned factory, not a barn with a question mark. Price it as event space, production kitchen or guest overflow and put that line in your revenue model.",
+        title: "The workshop anchors the case",
+        body: "A ~500 m² powered workshop, not a barn with a question mark. It comes with three-phase power and a walk-in chiller: space for hydroponics, tools and projects. Any commercial use is a separate question for Loulé Council, not a return we will promise.",
       },
       {
         title: "Infrastructure that saves a year of upgrades",
@@ -327,7 +328,7 @@ export const opportunities = [
       },
     ],
     checklist: [
-      "Tell us your plan for the T1 + T3. We will film those exact rooms on the video walkthrough.",
+      "Tell us your plan for the T1 + T3. We will show you those exact rooms on a visit, or on a call if you cannot travel yet.",
       "Get written confirmation of licences and permitted uses per building.",
       "Model revenue, investment and seasonality with qualified local advice.",
     ],
@@ -339,31 +340,31 @@ export const opportunities = [
     cardTitle: "Own water, own power potential, no ruin",
     title: "2.5 hectares of freedom, lived in from day one.",
     summary:
-      "Own water source, two furnished houses, workshop, terraces for growing and Algarve sun on a ridge you own the view from. Everything the empty plot promises, without three years of permits.",
+      "Own water, two furnished houses, terraces for growing and a 500 m² workshop with a walk-in chiller and three-phase power. Hydroponics, a soundproof studio, indoor climbing, a makerspace: a thousand possibilities from day one.",
     image: "/images/main-house-and-terraces.jpg",
     imageAlt: "Main house with surrounding terraces for growing and gathering",
     imageWidth: 1600,
     imageHeight: 900,
     imagePosition: "center",
-    facts: ["Own water source", "Furnished houses", "Workshop + terraces"],
+    facts: ["Own water source", "Furnished houses", "Workshop + chiller"],
     introduction:
-      "Most independent-living plots come with a ruin, a well that runs dry in August and three years of paperwork. Here you sleep in a furnished house on night one, drink from the estate's own water source, park tools in a real workshop and plant the first terrace while the sun sets over land you own the outlook from.",
+      "Most independent-living plots come with a ruin, a well that runs dry in August and three years of paperwork. Here you sleep in a furnished house on night one, drink from the estate's own water source, park tools in a 500 m² workshop with a walk-in chiller and plant the first terrace while the sun sets over land you own the outlook from.",
     sections: [
       {
         title: "Infrastructure done, life to make",
-        body: "Two furnished houses, pool, outbuildings, three-phase power and own water are included in the sale. Your first year goes to gardens, solar and making it yours, not to getting a roof over your head.",
+        body: "Two furnished houses, pool, a 500 m² powered workshop with a walk-in chiller, three-phase power and own water are included in the sale. Your first year goes to projects, gardens and making it yours, not to getting a roof over your head.",
       },
       {
         title: "Terraces to grow on, sun to harvest",
-        body: "Several established terraces for gardens or growing, south-facing Algarve hills with serious solar potential, and workshop space for machinery. Walk the terraces against your growing plan on the video tour.",
+        body: "Several established terraces for gardens or growing, south-facing Algarve hills with serious solar potential, and a 500 m² workshop for machinery, hydroponics and projects. Walk the terraces against your plan when you visit.",
       },
       {
-        title: "Private home, commercial option nearby",
-        body: "Homes and land are private-zoned today; the 500 m² factory is commercially zoned. Live privately, or keep one door open to a studio, workshop business or hospitality plan later.",
+        title: "A thousand possibilities in 500 m²",
+        body: "The former factory is a high, three-phase-powered shell with a walk-in chiller already on site. Bring your workshop. Set up hydroponic racks. Turn the insulated chiller into a soundproof studio or a climate-controlled growing room. Put up an indoor climbing wall, lay out a makerspace bench, give every tool its place. What you make of it is up to you — we show the building as it stands, tools are available by negotiation, and we promise no income. Homes and land remain private-zoned; the factory is commercially zoned, so confirm any business use with Loulé Council.",
       },
     ],
     checklist: [
-      "Ask us for the water source, storage and seasonal performance on the video call.",
+      "Ask us about the water source, storage and seasonal performance when you visit or get in touch.",
       "Walk the terraces and access routes against your growing and living plan.",
       "Check private/commercial zoning, solar, internet and running costs before you offer.",
     ],
@@ -374,22 +375,22 @@ export const buyerFacts = [
   {
     number: "01",
     title: "Can I run retreats or guest stays here?",
-    body: "The estate is in private use today: there is no AL registration and no turismo rural licence in place. The former factory is commercially zoned; the houses, gardens and terraces are private-zoned. All buildings are registered and we hold the caderneta, certidão and legal plans for everything, shared in the buyer-facts brief. Turismo do Algarve has expressed interest and agreed to help a buyer with the route; there is no written Câmara approval yet and we do not claim otherwise. Bring your format, walk each building live on video, then confirm the route with Loulé Council.",
+    body: "The estate is in private use today: there is no AL registration and no turismo rural licence in place. The former factory is commercially zoned; the houses, gardens and terraces are private-zoned. All buildings are registered and we hold the caderneta, certidão and legal plans for everything, shared in the buyer-facts brief. Turismo do Algarve has expressed interest and agreed to help a buyer with the route; there is no written Câmara approval yet and we do not claim otherwise. Bring your format, see each building on a visit, then confirm the route with Loulé Council.",
   },
   {
     number: "02",
     title: "Water, terrain & growing: is the land usable?",
-    body: "The estate has its own consented borehole and several established terraces. The source has never run dry, not even through very dry summers, and the council has a town water project underway adding redundancy. A paved public road reaches the estate and is accessible by standard 7.5t trucks, year-round. The land is hillside and varied rather than flat: steep in parts, usable in the parts that count. Honest answer to the 'too steep?' question: horses, no; gardens, orchards, solar, poultry, goats, bees, yes. Walk the terraces on video against your plan before you fly.",
+    body: "The estate has its own consented borehole and several established terraces. The source has never run dry, not even through very dry summers, and the council has a town water project underway adding redundancy. A paved public road reaches the estate and is accessible by standard 7.5t trucks, year-round. The land is hillside and varied rather than flat: steep in parts, usable in the parts that count. Honest answer to the 'too steep?' question: horses, no; gardens, orchards, solar, poultry, goats, bees, yes. Walk the terraces with us against your plan before you decide.",
   },
   {
     number: "03",
     title: "What do I actually get for €890,000?",
-    body: "The 2.5-hectare estate with all 10+ registered buildings, its consented borehole, pool, meditation house, bar, sleepout, ~500 m² commercial shell, three-phase power and 11 kW EV charger. Furniture, bedding, cutlery and workshop tools are available by negotiation. Ask for the building-by-building inventory on your call.",
+    body: "The 2.5-hectare estate with all 10+ registered buildings, its consented borehole, pool, meditation house, bar, sleepout, ~500 m² workshop with walk-in chiller, three-phase power and 11 kW EV charger. Furniture, bedding, cutlery and workshop tools are available by negotiation. Ask for the building-by-building inventory on your call.",
   },
   {
     number: "04",
     title: "Power, water, internet: does it operate?",
-    body: "Three-phase electricity throughout, 11 kW Type 2 EV charger installed, own consented borehole. Internet is Starlink in daily use: calls, streaming and remote work are fine, and we will show a live speed test on the video call. Ask us to confirm current broadband options with the operator before you rely on them. Waste, storage capacity and running costs depend on your use, so validate them for your plan before you offer.",
+    body: "Three-phase electricity throughout, 11 kW Type 2 EV charger installed, own consented borehole. Internet is Starlink in daily use: calls, streaming and remote work are fine, and we will show you a live speed test when you visit, or on a call if you cannot travel yet. Ask us to confirm current broadband options with the operator before you rely on them. Waste, storage capacity and running costs depend on your use, so validate them for your plan before you offer.",
   },
   {
     number: "05",

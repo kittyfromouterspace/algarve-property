@@ -32,13 +32,13 @@ const navLinks = [
       ))}
     </nav>
 
-    <a href={ctaHref} class="header-cta">Book a video tour <span aria-hidden="true">↗</span></a>
+    <a href={ctaHref} class="header-cta">Arrange a visit <span aria-hidden="true">↗</span></a>
 
     <details class="mobile-menu">
       <summary aria-label="Open menu"><span></span><span></span></summary>
       <nav aria-label="Mobile navigation">
         {navLinks.map((link) => <a href={link.href}>{link.label}</a>)}
-        <a href={ctaHref} class="mobile-menu__cta">Book a video tour ↗</a>
+        <a href={ctaHref} class="mobile-menu__cta">Arrange a visit ↗</a>
       </nav>
     </details>
   </div>

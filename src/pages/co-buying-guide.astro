@@ -6,7 +6,7 @@ import EnquiryPanel from '../components/EnquiryPanel.astro';
 import { property } from '../data/property';
 
 const waNumber = (property.contact.phone ?? '').replace(/[^0-9]/g, '');
-const whatsapp = `https://wa.me/${waNumber}?text=${encodeURIComponent('Olá Luisa, we would like to ask about two families buying Quinta Fonte do Palheiro together.')}`;
+const whatsapp = `https://wa.me/${waNumber}?text=${encodeURIComponent('Olá Luisa, we would like to visit Quinta Fonte do Palheiro and ask about two families buying together.')}`;
 ---
 
 <Layout
@@ -78,10 +78,10 @@ const whatsapp = `https://wa.me/${waNumber}?text=${encodeURIComponent('Olá Luis
 
     <section class="guide-cta">
       <p class="eyebrow eyebrow--light">Next step</p>
-      <h2>See both houses<br /><em>on a live video call.</em></h2>
-      <p>We will walk the main house and the second house separately, so each family can picture its own front door. Then you take the questions above to your lawyer.</p>
+      <h2>See both houses<br /><em>on a visit.</em></h2>
+      <p>We will show you the main house and the second house separately, so each family can picture its own front door. Then you take the questions above to your lawyer.</p>
       <div class="guide-cta__links">
-        <a class="button button--paper" data-event="Walkthrough click" data-label="Co-buying guide CTA" href={whatsapp} target="_blank" rel="noopener">Book a video walkthrough <span aria-hidden="true">↗</span></a>
+        <a class="button button--paper" data-event="Walkthrough click" data-label="Co-buying guide CTA" href={whatsapp} target="_blank" rel="noopener">Arrange a visit <span aria-hidden="true">↗</span></a>
         <a class="guide-inline-link guide-inline-link--light" data-event="Co-buy click" data-label="Back to estate" href="/?utm_source=site&utm_medium=cta&utm_campaign=family-pivot">Back to the estate <b aria-hidden="true">↗</b></a>
       </div>
     </section>
