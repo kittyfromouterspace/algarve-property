@@ -7,8 +7,8 @@
 export const property = {
   // Basic info
   name: "Quinta Fonte do Palheiro",
-  tagline: "Skip the ruin and the permits. Arrive with a suitcase.",
-  metaDescription: "Quinta Fonte do Palheiro: 2.5 ha Algarve estate, €890,000. Two furnished houses, pool, meditation house, 500 m² commercial building, own water, 45 min from Faro. Book a live video walkthrough.",
+  tagline: "Two houses. One estate. Room for everyone.",
+  metaDescription: "Quinta Fonte do Palheiro: two furnished houses on 2.5 ha near Salir, Loulé. A family estate under €900k with saltwater pool, own water, 3-phase power and EV charger. €890,000. Book a live video walkthrough.",
   location: "Salir, Loulé, Algarve, Portugal",
   price: "€890.000",
   priceOriginal: "€950.000",
@@ -384,12 +384,12 @@ export const buyerFacts = [
   {
     number: "03",
     title: "What do I actually get for €890,000?",
-    body: "The 2.5-hectare estate with all 10+ registered buildings, its consented borehole, pool, meditation house, bar, sleepout, ~500 m² commercial shell, three-phase power and 11 kW EV charger. Furniture, bedding, cutlery and workshop tools are available by negotiation. Ask for the building-by-building inventory on your call. The car previously mentioned is sold and no longer included.",
+    body: "The 2.5-hectare estate with all 10+ registered buildings, its consented borehole, pool, meditation house, bar, sleepout, ~500 m² commercial shell, three-phase power and 11 kW EV charger. Furniture, bedding, cutlery and workshop tools are available by negotiation. Ask for the building-by-building inventory on your call.",
   },
   {
     number: "04",
     title: "Power, water, internet: does it operate?",
-    body: "Three-phase electricity throughout, 11 kW Type 2 EV charger installed, own consented borehole. Internet is Starlink in daily use at typically 200–300 Mbps downstream: calls, streaming and remote work all fine, and we will show a live speed test on the video call. Fibre is about 500 m away and confirmed connectable if you want it. Waste, storage capacity and running costs depend on your use, so validate them for your plan before you offer.",
+    body: "Three-phase electricity throughout, 11 kW Type 2 EV charger installed, own consented borehole. Internet is Starlink in daily use: calls, streaming and remote work are fine, and we will show a live speed test on the video call. Ask us to confirm current broadband options with the operator before you rely on them. Waste, storage capacity and running costs depend on your use, so validate them for your plan before you offer.",
   },
   {
     number: "05",
@@ -409,8 +409,16 @@ export const buyerFacts = [
 ] as const;
 
 export const estateFacts = [
-  { value: "2.5", label: "hectares + own water" },
-  { value: "10+", label: "buildings, furnished" },
-  { value: "500", label: "m² commercial shell" },
-  { value: "45", label: "minutes to Faro" },
+  { value: "2.5 ha", label: "of ridge land" },
+  { value: "10+", label: "registered buildings" },
+  { value: "2 houses", label: "both furnished" },
+  { value: "3 bed", label: "main house" },
+  { value: "Saltwater", label: "swimming pool" },
+  { value: "Meditation", label: "house in the gardens" },
+  { value: "Bar", label: "by the pool" },
+  { value: "~500 m²", label: "workshop" },
+  { value: "3-phase", label: "power throughout" },
+  { value: "11 kW", label: "EV charger" },
+  { value: "Own water", label: "consented borehole" },
+  { value: "45 / 40", label: "min to Faro / beach" },
 ] as const;

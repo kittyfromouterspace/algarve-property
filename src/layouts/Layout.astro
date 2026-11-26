@@ -2,13 +2,24 @@
 interface Props {
   title: string;
   description: string;
+  ogImage?: string;
+  ogImageAlt?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
 }
 
-const { title, description } = Astro.props;
+const {
+  title,
+  description,
+  ogImage: pageOgImage = '/images/og-image.jpg',
+  ogImageAlt: pageOgImageAlt = 'Aerial view of Quinta Fonte do Palheiro estate in the Algarve hills',
+  ogImageWidth = 1200,
+  ogImageHeight = 630,
+} = Astro.props;
 const siteBase = Astro.site ?? Astro.url;
 const canonicalURL = new URL(Astro.url.pathname, siteBase);
-const ogImage = new URL('/images/og-image.jpg', siteBase).toString();
-const ogImageAlt = 'Aerial view of Quinta Fonte do Palheiro estate in the Algarve hills';
+const ogImage = new URL(pageOgImage, siteBase).toString();
+const ogImageAlt = pageOgImageAlt;
 const siteName = 'Quinta Fonte do Palheiro';
 ---
 
@@ -34,8 +45,8 @@ const siteName = 'Quinta Fonte do Palheiro';
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:secure_url" content={ogImage} />
     <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image:width" content={ogImageWidth} />
+    <meta property="og:image:height" content={ogImageHeight} />
     <meta property="og:image:alt" content={ogImageAlt} />
 
     <!-- Twitter Card -->
@@ -49,6 +60,21 @@ const siteName = 'Quinta Fonte do Palheiro';
 
     <!-- WhatsApp uses Open Graph -->
     <!-- The og:image above + og:title + og:description covers WhatsApp sharing -->
+
+    <!-- Meta Pixel placeholder — intentionally inactive. This site stays cookie-banner-free;
+         if a tracking decision is made, paste the standard Meta Pixel snippet here and add
+         the required consent mechanism first. -->
+    <!--
+      <script>
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'REPLACE_WITH_PIXEL_ID');
+        fbq('track', 'PageView');
+      </script>
+    -->
 
     <!-- Performance -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -118,6 +144,8 @@ const siteName = 'Quinta Fonte do Palheiro';
     <slot />
     <a
       class="whatsapp-float"
+      data-event="WhatsApp click"
+      data-label="Floating button"
       href="https://wa.me/351911795594?text=Ol%C3%A1%20Lenz%2C%20I%27d%20like%20a%20live%20video%20walkthrough%20of%20Quinta%20Fonte%20do%20Palheiro."
       target="_blank"
       rel="noopener"
@@ -126,6 +154,29 @@ const siteName = 'Quinta Fonte do Palheiro';
       <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.2-.7.6-.9 1 0 2.4.6 3.5a11.6 11.6 0 0 0 4.5 4c.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2l-.5-.2Z"/></svg>
       <span>WhatsApp us</span>
     </a>
+
+    <script>
+      // Privacy-friendly Plausible events. Any element carrying data-event is tracked;
+      // <summary data-event="FAQ open" data-faq> fires only when the panel opens.
+      type PlausibleFn = (name: string, options?: { props?: Record<string, string> }) => void;
+
+      document.addEventListener('click', (event) => {
+        if (!(event.target instanceof Element)) return;
+        const trigger = event.target.closest<HTMLElement>('[data-event]');
+        if (!trigger || !trigger.dataset.event) return;
+        if (trigger.hasAttribute('data-faq') && trigger.closest('details')?.open) return;
+
+        const plausible = (window as unknown as { plausible?: PlausibleFn }).plausible;
+        if (!plausible) return;
+
+        plausible(trigger.dataset.event, {
+          props: {
+            page: window.location.pathname,
+            ...(trigger.dataset.label ? { label: trigger.dataset.label } : {}),
+          },
+        });
+      });
+    </script>
   </body>
 </html>
 

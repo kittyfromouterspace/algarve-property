@@ -11,13 +11,13 @@ const { interest = '' } = Astro.props;
 <section id="enquire" class="enquiry-panel">
   <div class="enquiry-panel__intro">
     <p class="eyebrow eyebrow--light">Book a live video walkthrough</p>
-    <h2>See the exact rooms<br /><em>before you fly.</em></h2>
-    <p>Tell us which future you are pricing: retreat, tourism business or freer living. We will walk those rooms, terraces and systems live on video. Reply within 48 hours, buyer-facts brief included, no obligation.</p>
+    <h2>See both houses<br /><em>before you fly.</em></h2>
+    <p>Tell us who would live here: one family across two houses, two families buying together, or a simpler base for later-life living. We will walk the rooms, terraces and systems that matter to you, live on video. Reply within 48 hours, buyer-facts brief included, no obligation.</p>
     <div class="enquiry-panel__direct">
-      <a class="button button--paper" href={property.contact.whatsapp} target="_blank" rel="noopener">WhatsApp Lenz <span aria-hidden="true">↗</span></a>
-      <a class="enquiry-panel__mail" href={`mailto:${property.contact.email}`}>{property.contact.email}</a>
+      <a class="button button--paper" data-event="Walkthrough click" data-label="Enquiry panel WhatsApp" href={property.contact.whatsapp} target="_blank" rel="noopener">WhatsApp Lenz <span aria-hidden="true">↗</span></a>
+      <a class="enquiry-panel__mail" href={`mailto:${property.contact.email}`} data-event="Email click" data-label="Enquiry panel email">{property.contact.email}</a>
     </div>
-    <p class="enquiry-panel__reassurance">€890,000 · T1 + T3 ready · 45 min from Faro</p>
+    <p class="enquiry-panel__reassurance">€890,000 · under €900k · two furnished houses · 45 min from Faro</p>
   </div>
   <form class="enquiry-form" name="estate-enquiry" method="POST" data-netlify="true" action="/success">
     <input type="hidden" name="form-name" value="estate-enquiry" />
@@ -25,6 +25,9 @@ const { interest = '' } = Astro.props;
       <label for="interest">I am exploring</label>
       <select id="interest" name="interest" autocomplete="off">
         <option value="" selected={interest === ''}>Select a direction</option>
+        <option value="one family, two houses" selected={interest === 'one family, two houses'}>One family across two houses</option>
+        <option value="two families buying together" selected={interest === 'two families buying together'}>Two families buying together</option>
+        <option value="a ready-made family base" selected={interest === 'a ready-made family base'}>A ready-made family base</option>
         <option value="retreat and wellbeing" selected={interest === 'retreat and wellbeing'}>Retreat & wellbeing</option>
         <option value="rural tourism" selected={interest === 'rural tourism'}>Rural tourism</option>
         <option value="independent rural living" selected={interest === 'independent rural living'}>Independent rural living</option>
@@ -41,9 +44,9 @@ const { interest = '' } = Astro.props;
     </div>
     <div class="enquiry-form__field enquiry-form__field--wide">
       <label for="message">Which rooms should we film?</label>
-      <textarea id="message" name="message" rows="4" autocomplete="off" placeholder="For example: film the T1, the T3 and the factory shell, plus the water system…" required></textarea>
+      <textarea id="message" name="message" rows="4" autocomplete="off" placeholder="For example: film both houses, the pool terrace, the office and the water system…" required></textarea>
     </div>
-    <button type="submit" class="button button--ochre">Book my video walkthrough <span aria-hidden="true">↗</span></button>
+    <button type="submit" class="button button--ochre" data-event="Walkthrough click" data-label="Enquiry form submit">Book my video walkthrough <span aria-hidden="true">↗</span></button>
     <p class="enquiry-form__note">Weekly slots · we confirm your time by email within 48 hours.</p>
   </form>
 </section>
