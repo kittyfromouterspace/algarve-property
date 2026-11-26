@@ -244,10 +244,10 @@ export const property = {
 
   // Contact info
   contact: {
-    name: "Lenz",
+    name: "Luisa Gebel Basch",
     email: "fonte@kfos.nz",
-    phone: "+351 911 795 594" as string | null,
-    whatsapp: "https://wa.me/351911795594?text=Ol%C3%A1%20Lenz%2C%20I%27d%20like%20a%20live%20video%20walkthrough%20of%20Quinta%20Fonte%20do%20Palheiro." as string | null,
+    phone: "+351 920 695 421" as string | null,
+    whatsapp: "https://wa.me/351920695421?text=Ol%C3%A1%20Luisa%2C%20I%27d%20like%20a%20live%20video%20walkthrough%20of%20Quinta%20Fonte%20do%20Palheiro." as string | null,
   },
 };
 

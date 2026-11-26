@@ -13,8 +13,8 @@ const internal = (path: string) => `${path}?${campaign}`;
 // WhatsApp number is taken from the property data — unchanged from the live site.
 const waNumber = (property.contact.phone ?? '').replace(/[^0-9]/g, '');
 const whatsapp = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
-const walkthroughUrl = whatsapp("Olá Lenz, I'd like a live video walkthrough of the family estate at Quinta Fonte do Palheiro.");
-const coBuyUrl = whatsapp('Olá Lenz, we would like to ask about two families buying Quinta Fonte do Palheiro together.');
+const walkthroughUrl = whatsapp("Olá Luisa, I'd like a live video walkthrough of the family estate at Quinta Fonte do Palheiro.");
+const coBuyUrl = whatsapp('Olá Luisa, we would like to ask about two families buying Quinta Fonte do Palheiro together.');
 const emailUrl = `mailto:${property.contact.email}`;
 
 // No unverified figures are published. See the <!-- VERIFY --> block below for the policy
